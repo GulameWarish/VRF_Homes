@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%">
+  <!-- Voltas Authentic Logo -->
+  <g transform="translate(10, 8)">
+    <!-- Voltas Wordmark -->
+    <text x="6" y="27" font-family="'Trebuchet MS', 'Arial Black', sans-serif" font-size="25" font-weight="900" fill="#00508f" letter-spacing="1">VOLTAS</text>
+    
+    <!-- Tata Enterprise Endorsement -->
+    <text x="8" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#666666" letter-spacing="1.5">A TATA ENTERPRISE</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%">
+  <!-- Carrier Authentic Blue Oval Logo -->
+  <g transform="translate(10, 6)">
+    <!-- Blue Oval Container with Angle -->
+    <ellipse cx="110" cy="24" rx="100" ry="22" fill="#003882" transform="rotate(-3, 110, 24)"/>
+    <ellipse cx="110" cy="24" rx="96" ry="19" fill="none" stroke="#ffffff" stroke-width="1.8" transform="rotate(-3, 110, 24)"/>
+    
+    <!-- Carrier Cursive Script Wordmark -->
+    <text x="110" y="32" font-family="'Brush Script MT', 'Lucida Calligraphy', cursive, sans-serif" font-size="28" font-weight="bold" font-style="italic" fill="#ffffff" text-anchor="middle" letter-spacing="1">Carrier</text>
+  </g>
+</svg>

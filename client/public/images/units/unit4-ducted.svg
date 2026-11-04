@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" fill="none">
+  <defs>
+    <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#94a3b8"/>
+      <stop offset="50%" stopColor="#cbd5e1"/>
+      <stop offset="100%" stopColor="#64748b"/>
+    </linearGradient>
+    <linearGradient id="metalTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#cbd5e1"/>
+      <stop offset="100%" stopColor="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="blackPlenum" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#1e293b"/>
+      <stop offset="100%" stopColor="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background container glow -->
+  <rect width="320" height="180" rx="12" fill="#f8fafc"/>
+  
+  <!-- Shadow -->
+  <ellipse cx="160" cy="155" rx="130" ry="12" fill="#000000" opacity="0.15"/>
+
+  <!-- Main Casing 3D Isometric View -->
+  <!-- Back / Top Panel -->
+  <polygon points="50,65 110,35 270,35 210,65" fill="url(#metalTop)" stroke="#475569" stroke-width="2"/>
+  
+  <!-- Right Side Panel -->
+  <polygon points="210,65 270,35 270,105 210,135" fill="#64748b" stroke="#334155" stroke-width="2"/>
+  <rect x="220" y="70" width="35" height="40" rx="4" fill="#334155" opacity="0.6"/>
+  
+  <!-- Service electrical box on right -->
+  <polygon points="225,80 255,65 255,95 225,110" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Front Air Discharge Panel -->
+  <polygon points="50,65 210,65 210,135 50,135" fill="url(#metalBody)" stroke="#475569" stroke-width="2"/>
+
+  <!-- Discharge Opening (Plenum) -->
+  <rect x="65" y="75" width="130" height="45" rx="3" fill="url(#blackPlenum)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Internal Fan Blower Curves -->
+  <ellipse cx="105" cy="98" rx="22" ry="14" fill="#334155" opacity="0.8"/>
+  <ellipse cx="155" cy="98" rx="22" ry="14" fill="#334155" opacity="0.8"/>
+  <line x1="85" y1="98" x2="125" y2="98" stroke="#64748b" stroke-width="2"/>
+  <line x1="135" y1="98" x2="175" y2="98" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Mounting Brackets on sides -->
+  <rect x="40" y="75" width="12" height="6" rx="2" fill="#334155"/>
+  <circle cx="45" cy="78" r="2" fill="#f8fafc"/>
+  
+  <rect x="40" y="120" width="12" height="6" rx="2" fill="#334155"/>
+  <circle cx="45" cy="123" r="2" fill="#f8fafc"/>
+
+  <!-- Branding Plate -->
+  <rect x="65" y="124" width="40" height="7" rx="1.5" fill="#009fe3"/>
+  <text x="70" y="130" font-family="sans-serif" font-size="5" font-weight="bold" fill="white">VRF DUCT</text>
+  
+  <!-- Subtle airflow discharge arrows -->
+  <path d="M 80 145 L 80 152 M 130 145 L 130 152 M 180 145 L 180 152" stroke="#009fe3" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+</svg>

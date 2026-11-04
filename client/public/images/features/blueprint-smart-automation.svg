@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <pattern id="grid4" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0284c7" stroke-width="0.5" opacity="0.25"/>
+    </pattern>
+    <pattern id="subgrid4" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="#0b2447"/>
+  <rect width="600" height="380" fill="url(#grid4)"/>
+  <rect width="600" height="380" fill="url(#subgrid4)"/>
+
+  <!-- Title Block -->
+  <rect x="25" y="20" width="550" height="35" fill="#082f49" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+  <text x="40" y="42" font-family="monospace" font-size="12" font-weight="bold" fill="#38bdf8">DWG NO: EL-IOT-04 // CENTRAL TOUCH BMS &amp; SMART CLOUD TOPOLOGY</text>
+  <text x="495" y="42" font-family="monospace" font-size="11" fill="#7dd3fc">BUS: D-III</text>
+
+  <!-- Central Touch BMS Tablet in Center -->
+  <rect x="220" y="95" width="160" height="110" rx="8" fill="#082f49" stroke="#ffffff" stroke-width="2"/>
+  <rect x="230" y="105" width="140" height="90" rx="4" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="300" cy="140" r="22" stroke="#38bdf8" stroke-width="2" fill="none" stroke-dasharray="4,2"/>
+  <text x="288" y="146" font-family="monospace" font-size="14" font-weight="bold" fill="#ffffff">22°</text>
+  <text x="245" y="180" font-family="monospace" font-size="9" font-weight="bold" fill="#38bdf8">CENTRAL TOUCH BMS</text>
+
+  <!-- Left: Smartphone App Node -->
+  <rect x="60" y="110" width="80" height="140" rx="12" fill="#082f49" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="68" y="125" width="64" height="105" rx="4" fill="#0c4a6e"/>
+  <circle cx="100" cy="240" r="4" fill="#38bdf8"/>
+  <text x="75" y="150" font-family="monospace" font-size="8" fill="#ffffff">VRF APP</text>
+  <text x="72" y="165" font-family="monospace" font-size="8" fill="#38bdf8">ALL ROOMS</text>
+  <text x="72" y="180" font-family="monospace" font-size="8" fill="#7dd3fc">ENERGY: 45%</text>
+
+  <!-- Right: Outdoor Condenser Controller Node -->
+  <rect x="440" y="105" width="110" height="130" rx="4" fill="#082f49" stroke="#ffffff" stroke-width="2"/>
+  <rect x="455" y="120" width="80" height="40" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1"/>
+  <text x="460" y="140" font-family="monospace" font-size="8" font-weight="bold" fill="#ffffff">INVERTER PCB</text>
+  <circle cx="495" cy="190" r="18" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="450" y="225" font-family="monospace" font-size="8" fill="#7dd3fc">MODBUS / BACNET</text>
+
+  <!-- Communication Bus Lines with Data Packets -->
+  <!-- Left Phone to BMS (Wi-Fi Wireless Waves) -->
+  <path d="M 140 150 C 170 150, 190 150, 220 150" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="170" cy="150" r="3" fill="#ffffff"/>
+  <circle cx="190" cy="150" r="3" fill="#ffffff"/>
+  <text x="155" y="140" font-family="monospace" font-size="8" fill="#38bdf8">WI-FI IOT</text>
+
+  <!-- BMS to Outdoor PCB (2-Wire Shielded Bus) -->
+  <path d="M 380 150 C 400 150, 420 150, 440 150" stroke="#ffffff" stroke-width="2"/>
+  <text x="390" y="140" font-family="monospace" font-size="8" fill="#ffffff">RS-485</text>
+
+  <!-- Bottom: Smart Integrations Bar -->
+  <rect x="60" y="275" width="490" height="45" rx="8" fill="#082f49" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="80" y="302" font-family="monospace" font-size="11" font-weight="bold" fill="#ffffff">HOME AUTOMATION INTEGRATION:</text>
+  <text x="325" y="302" font-family="monospace" font-size="10" fill="#38bdf8">CRESTRON • CONTROL4 • KNX • SAVANT • ALEXA</text>
+
+  <!-- Technical Annotation -->
+  <text x="35" y="358" font-family="monospace" font-size="9" fill="#94a3b8">REMOTE CLOUD SCHEDULES, AUTO-FAULT DIAGNOSTICS &amp; PREVENTIVE AMC MONITORING</text>
+</svg>

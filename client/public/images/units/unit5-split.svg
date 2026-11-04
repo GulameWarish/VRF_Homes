@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" fill="none">
+  <defs>
+    <linearGradient id="splitBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff"/>
+      <stop offset="70%" stopColor="#f1f5f9"/>
+      <stop offset="100%" stopColor="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="louverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#cbd5e1"/>
+      <stop offset="100%" stopColor="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="320" height="180" rx="12" fill="#f8fafc"/>
+  
+  <!-- Drop Shadow -->
+  <ellipse cx="160" cy="145" rx="125" ry="10" fill="#000000" opacity="0.12"/>
+
+  <!-- Main Wall Indoor Unit Chassis -->
+  <rect x="35" y="45" width="250" height="85" rx="14" fill="url(#splitBody)" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Top Curved Intake Grille Accent -->
+  <path d="M 45 52 Q 160 48 275 52" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 50 58 Q 160 54 270 58" stroke="#f1f5f9" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Air Intake Recessed Line -->
+  <line x1="45" y1="65" x2="275" y2="65" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Digital Temperature LED Display on Front -->
+  <circle cx="255" cy="85" r="14" fill="#0f172a" opacity="0.06"/>
+  <text x="246" y="90" font-family="monospace" font-size="14" font-weight="bold" fill="#009fe3">22°</text>
+  <circle cx="268" cy="80" r="1.5" fill="#10b981"/>
+
+  <!-- Bottom Discharge Flap / Airflow Louver -->
+  <rect x="42" y="112" width="236" height="12" rx="4" fill="url(#louverGrad)" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="45" y1="118" x2="275" y2="118" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Brand logo center-bottom -->
+  <text x="145" y="105" font-family="sans-serif" font-size="7" font-weight="extrabold" fill="#64748b" letter-spacing="1">VRF INVERTER</text>
+
+  <!-- Cold Air Flow Waves below -->
+  <path d="M 80 135 Q 90 145 100 135 T 120 135" stroke="#009fe3" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M 140 135 Q 150 145 160 135 T 180 135" stroke="#009fe3" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M 200 135 Q 210 145 220 135 T 240 135" stroke="#009fe3" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+</svg>

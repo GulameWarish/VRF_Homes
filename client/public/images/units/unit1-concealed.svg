@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" fill="none">
+  <defs>
+    <linearGradient id="slimMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#94a3b8"/>
+      <stop offset="60%" stopColor="#cbd5e1"/>
+      <stop offset="100%" stopColor="#64748b"/>
+    </linearGradient>
+    <linearGradient id="grilleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#0f172a"/>
+      <stop offset="100%" stopColor="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="320" height="180" rx="12" fill="#f8fafc"/>
+  <ellipse cx="160" cy="150" rx="125" ry="10" fill="#000000" opacity="0.12"/>
+
+  <!-- Slim Concealed Unit Body -->
+  <polygon points="45,55 95,30 275,30 225,55" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="225,55 275,30 275,95 225,120" fill="#64748b" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="45,55 225,55 225,120 45,120" fill="url(#slimMetal)" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Linear Slot Diffuser Discharge -->
+  <rect x="58" y="70" width="155" height="35" rx="3" fill="url(#grilleGrad)" stroke="#334155" stroke-width="1.5"/>
+  
+  <!-- Linear slot grilles -->
+  <line x1="65" y1="80" x2="205" y2="80" stroke="#475569" stroke-width="2"/>
+  <line x1="65" y1="87" x2="205" y2="87" stroke="#475569" stroke-width="2"/>
+  <line x1="65" y1="94" x2="205" y2="94" stroke="#475569" stroke-width="2"/>
+
+  <!-- Condensate Drain Pipe on Left -->
+  <rect x="35" y="105" width="12" height="6" rx="2" fill="#009fe3"/>
+  <path d="M 35 108 L 25 108 L 25 125" stroke="#009fe3" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Status / Brand text -->
+  <text x="60" y="114" font-family="sans-serif" font-size="6" font-weight="bold" fill="#009fe3">SLIM CONCEALED 200mm</text>
+
+  <!-- Cool airflow arrows -->
+  <path d="M 90 128 L 90 138 M 135 128 L 135 138 M 180 128 L 180 138" stroke="#009fe3" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+</svg>

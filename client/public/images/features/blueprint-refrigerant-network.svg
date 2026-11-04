@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <!-- Blueprint Grid Pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0284c7" stroke-width="0.5" opacity="0.25"/>
+    </pattern>
+    <pattern id="subgrid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Blue Blueprint Background -->
+  <rect width="600" height="380" rx="16" fill="#0b2447"/>
+  <rect width="600" height="380" fill="url(#grid)"/>
+  <rect width="600" height="380" fill="url(#subgrid)"/>
+
+  <!-- Blueprint Header / Title Block in Technical Drafting Font -->
+  <rect x="25" y="20" width="550" height="35" fill="#082f49" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+  <text x="40" y="42" font-family="monospace" font-size="12" font-weight="bold" fill="#38bdf8">DWG NO: VRF-REF-SCH-01 // VARIABLE REFRIGERANT PIPING CIRCUIT</text>
+  <text x="460" y="42" font-family="monospace" font-size="11" fill="#7dd3fc">SCALE: N.T.S.</text>
+
+  <!-- Outdoor Condenser Unit Drafting Symbol on Left -->
+  <rect x="45" y="110" width="110" height="170" rx="4" fill="#082f49" stroke="#ffffff" stroke-width="2"/>
+  <!-- Fans inside outdoor unit -->
+  <circle cx="100" cy="155" r="30" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="100" cy="235" r="30" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="56" y="295" font-family="monospace" font-size="10" font-weight="bold" fill="#ffffff">OUTDOOR UNIT (ODU)</text>
+  <text x="65" y="310" font-family="monospace" font-size="9" fill="#7dd3fc">SINGLE CONDENSER</text>
+
+  <!-- Main Refrigerant Trunk Lines (Liquid & Gas) -->
+  <!-- Gas Line -->
+  <path d="M 155 145 L 240 145 L 240 100 L 490 100" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+  <!-- Liquid Line -->
+  <path d="M 155 175 L 225 175 L 225 125 L 490 125" stroke="#38bdf8" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+
+  <!-- Branch / Refnet Joint 1 -->
+  <circle cx="280" cy="100" r="4" fill="#ffffff"/>
+  <circle cx="280" cy="125" r="4" fill="#38bdf8"/>
+  <line x1="280" y1="100" x2="310" y2="155" stroke="#ffffff" stroke-width="2"/>
+  <line x1="280" y1="125" x2="310" y2="175" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Indoor Unit 1 (Concealed Duct) -->
+  <rect x="310" y="150" width="110" height="50" rx="3" fill="#0c4a6e" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="320" y="160" width="90" height="30" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="325" y="178" font-family="monospace" font-size="9" font-weight="bold" fill="#ffffff">INDOOR UNIT 1</text>
+  <text x="330" y="190" font-family="monospace" font-size="8" fill="#7dd3fc">LIVING ROOM</text>
+
+  <!-- Branch / Refnet Joint 2 -->
+  <circle cx="430" cy="100" r="4" fill="#ffffff"/>
+  <circle cx="430" cy="125" r="4" fill="#38bdf8"/>
+  <line x1="430" y1="100" x2="460" y2="235" stroke="#ffffff" stroke-width="2"/>
+  <line x1="430" y1="125" x2="460" y2="255" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Indoor Unit 2 (Bedroom Unit) -->
+  <rect x="460" y="230" width="110" height="50" rx="3" fill="#0c4a6e" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="470" y="240" width="90" height="30" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="475" y="258" font-family="monospace" font-size="9" font-weight="bold" fill="#ffffff">INDOOR UNIT 2</text>
+  <text x="480" y="270" font-family="monospace" font-size="8" fill="#7dd3fc">MASTER SUITE</text>
+
+  <!-- Technical Drafting Dimension Lines -->
+  <line x1="45" y1="340" x2="570" y2="340" stroke="#38bdf8" stroke-width="1"/>
+  <line x1="45" y1="335" x2="45" y2="345" stroke="#38bdf8" stroke-width="1"/>
+  <line x1="570" y1="335" x2="570" y2="345" stroke="#38bdf8" stroke-width="1"/>
+  <text x="240" y="336" font-family="monospace" font-size="10" fill="#38bdf8">TOTAL EQUIVALENT PIPING LENGTH: 100M MAX</text>
+
+  <!-- Technical Annotation Box -->
+  <rect x="25" y="355" width="550" height="15" fill="none"/>
+  <text x="35" y="366" font-family="monospace" font-size="8" fill="#94a3b8">© ARCHITECTURAL MEP DRAFTING — MULTI-SPLIT VRF INVERTER REFRIGERATION</text>
+</svg>

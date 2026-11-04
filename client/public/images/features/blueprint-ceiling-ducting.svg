@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0284c7" stroke-width="0.5" opacity="0.25"/>
+    </pattern>
+    <pattern id="subgrid2" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+    </pattern>
+    <!-- Concrete Hatch Pattern -->
+    <pattern id="concreteHatch" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.5" fill="#38bdf8" opacity="0.4"/>
+      <circle cx="20" cy="22" r="1" fill="#38bdf8" opacity="0.4"/>
+      <path d="M 12 10 L 16 15" stroke="#38bdf8" stroke-width="0.8" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Blue Blueprint Background -->
+  <rect width="600" height="380" rx="16" fill="#0b2447"/>
+  <rect width="600" height="380" fill="url(#grid2)"/>
+  <rect width="600" height="380" fill="url(#subgrid2)"/>
+
+  <!-- Title Block -->
+  <rect x="25" y="20" width="550" height="35" fill="#082f49" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+  <text x="40" y="42" font-family="monospace" font-size="12" font-weight="bold" fill="#38bdf8">DWG NO: ARCH-SEC-02 // IN-CEILING CONCEALED DUCT SECTION DETAIL</text>
+  <text x="485" y="42" font-family="monospace" font-size="11" fill="#7dd3fc">REV: 03</text>
+
+  <!-- Structural RCC Slab (Concrete Ceiling) -->
+  <rect x="35" y="70" width="530" height="30" fill="url(#concreteHatch)" stroke="#ffffff" stroke-width="2"/>
+  <text x="45" y="90" font-family="monospace" font-size="10" font-weight="bold" fill="#ffffff">STRUCTURAL RCC SLAB (TOP CEILING)</text>
+
+  <!-- False Ceiling Plasterboard Line -->
+  <line x1="35" y1="215" x2="565" y2="215" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="10,4"/>
+  <text x="45" y="235" font-family="monospace" font-size="10" font-weight="bold" fill="#38bdf8">GYPSUM FALSE CEILING LEVEL (200MM DROP)</text>
+
+  <!-- Dimension Indicator between Slab & False Ceiling -->
+  <line x1="535" y1="100" x2="535" y2="215" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="528" y1="100" x2="542" y2="100" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="528" y1="215" x2="542" y2="215" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="475" y="160" font-family="monospace" font-size="10" fill="#ffffff">200MM SLIM</text>
+
+  <!-- Concealed Slim VRF Ducted Indoor Unit -->
+  <rect x="90" y="115" width="230" height="75" rx="3" fill="#0c4a6e" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Internal Blower & Heat Exchanger symbols -->
+  <rect x="100" y="125" width="55" height="55" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="127" cy="152" r="20" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="127" y1="132" x2="127" y2="172" stroke="#38bdf8" stroke-width="1"/>
+  <line x1="107" y1="152" x2="147" y2="152" stroke="#38bdf8" stroke-width="1"/>
+
+  <text x="170" y="145" font-family="monospace" font-size="11" font-weight="bold" fill="#ffffff">SLIM DUCTED AC UNIT</text>
+  <text x="170" y="160" font-family="monospace" font-size="9" fill="#7dd3fc">LOW STATIC &lt;19 dB(A)</text>
+  <text x="170" y="175" font-family="monospace" font-size="9" fill="#94a3b8">INTEGRATED CONDENSATE LIFT</text>
+
+  <!-- Supply Air Duct Collar -->
+  <path d="M 320 135 L 430 135 L 430 215" stroke="#ffffff" stroke-width="2" fill="none"/>
+  <path d="M 320 170 L 400 170 L 400 215" stroke="#ffffff" stroke-width="2" fill="none"/>
+
+  <!-- Linear Slot Diffuser in False Ceiling -->
+  <rect x="395" y="213" width="40" height="10" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="365" y="248" font-family="monospace" font-size="9" font-weight="bold" fill="#ffffff">ARCHITECTURAL LINEAR DIFFUSER</text>
+
+  <!-- Airflow Throw Drafting Arrows -->
+  <path d="M 405 230 C 405 270, 360 290, 320 295" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <polygon points="320,295 328,290 328,300" fill="#38bdf8"/>
+
+  <path d="M 425 230 C 425 270, 470 290, 510 295" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <polygon points="510,295 502,290 502,300" fill="#38bdf8"/>
+  <text x="380" y="325" font-family="monospace" font-size="10" fill="#7dd3fc">LAMINAR WHISPER AIR THROW</text>
+
+  <!-- Technical drafting notes -->
+  <rect x="25" y="345" width="550" height="20" fill="none"/>
+  <text x="35" y="358" font-family="monospace" font-size="9" fill="#94a3b8">CROSS-SECTION DETAIL: COMPLETE IN-CEILING ARCHITECTURAL CONCEALMENT</text>
+</svg>
