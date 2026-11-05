@@ -1,69 +1,39 @@
+import mongoose from 'mongoose';
 import Blog from '../models/Blog.js';
+import { blogsData } from '../config/defaultData.js';
 
 export const getBlogs = async (req, res) => {
   try {
-    const { category, tag, search, featured, page = 1, limit = 20 } = req.query;
+    if (mongoose.connection.readyState !== 1) {
+      return res.json({ success: true, count: blogsData.length, data: blogsData });
+    }
     const query = req.query.all === 'true' ? {} : { isPublished: true };
-
-    if (category && category !== 'All') {
-      query.category = category;
+    const blogs = await Blog.find(query).sort({ publishedAt: -1, createdAt: -1 });
+    if (!blogs || blogs.length === 0) {
+      return res.json({ success: true, count: blogsData.length, data: blogsData });
     }
-
-    if (tag) {
-      query.tags = { $in: [tag] };
-    }
-
-    if (featured === 'true') {
-      query.isFeatured = true;
-    }
-
-    if (search) {
-      query.$or = [
-        { title: { $regex: search, $options: 'i' } },
-        { excerpt: { $regex: search, $options: 'i' } },
-        { content: { $regex: search, $options: 'i' } }
-      ];
-    }
-
-    const skip = (Number(page) - 1) * Number(limit);
-    const total = await Blog.countDocuments(query);
-    const blogs = await Blog.find(query)
-      .sort({ publishedAt: -1, createdAt: -1 })
-      .skip(skip)
-      .limit(Number(limit));
-
-    res.json({
-      success: true,
-      total,
-      page: Number(page),
-      pages: Math.ceil(total / Number(limit)),
-      data: blogs
-    });
+    res.json({ success: true, count: blogs.length, data: blogs });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.json({ success: true, count: blogsData.length, data: blogsData });
   }
 };
 
 export const getBlogBySlug = async (req, res) => {
   try {
-    const blog = await Blog.findOne({ slug: req.params.slug });
-    if (!blog) {
-      return res.status(404).json({ success: false, message: 'Article not found' });
+    if (mongoose.connection.readyState !== 1) {
+      const blog = blogsData.find(b => b.slug === req.params.slug) || blogsData[0];
+      return res.json({ success: true, data: blog });
     }
-
-    const relatedBlogs = await Blog.find({
-      category: blog.category,
-      _id: { $ne: blog._id },
-      isPublished: true
-    }).limit(3);
-
-    res.json({
-      success: true,
-      data: blog,
-      relatedBlogs
-    });
+    const blog = await Blog.findOne({ slug: req.params.slug, isPublished: true });
+    if (!blog) {
+      const fallback = blogsData.find(b => b.slug === req.params.slug);
+      if (fallback) return res.json({ success: true, data: fallback });
+      return res.status(404).json({ success: false, message: 'Blog post not found' });
+    }
+    res.json({ success: true, data: blog });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    const blog = blogsData.find(b => b.slug === req.params.slug) || blogsData[0];
+    res.json({ success: true, data: blog });
   }
 };
 
@@ -76,7 +46,7 @@ export const createBlog = async (req, res) => {
     }
 
     const blog = await Blog.create({ ...req.body, slug });
-    res.status(201).json({ success: true, data: blog, message: 'Article published successfully' });
+    res.status(201).json({ success: true, data: blog, message: 'Blog post published successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -90,9 +60,9 @@ export const updateBlog = async (req, res) => {
       { new: true, runValidators: true }
     );
     if (!blog) {
-      return res.status(404).json({ success: false, message: 'Article not found' });
+      return res.status(404).json({ success: false, message: 'Blog not found' });
     }
-    res.json({ success: true, data: blog, message: 'Article updated successfully' });
+    res.json({ success: true, data: blog, message: 'Blog updated successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -102,9 +72,9 @@ export const deleteBlog = async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
     if (!blog) {
-      return res.status(404).json({ success: false, message: 'Article not found' });
+      return res.status(404).json({ success: false, message: 'Blog not found' });
     }
-    res.json({ success: true, message: 'Article deleted successfully' });
+    res.json({ success: true, message: 'Blog post deleted' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

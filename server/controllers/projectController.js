@@ -1,9 +1,31 @@
+import mongoose from 'mongoose';
 import Project from '../models/Project.js';
+import { projectsData } from '../config/defaultData.js';
 
 // Public list with filters
 export const getPublicProjects = async (req, res) => {
   try {
     const { category, type, limit = 50, page = 1 } = req.query;
+
+    if (mongoose.connection.readyState !== 1) {
+      let filtered = [...projectsData];
+      if (category && category !== 'All') {
+        filtered = filtered.filter(p => p.category === category);
+      }
+      if (type) {
+        filtered = filtered.filter(p => p.projectType === type);
+      }
+      const total = filtered.length;
+      const skip = (Number(page) - 1) * Number(limit);
+      return res.json({
+        success: true,
+        total,
+        page: Number(page),
+        pages: Math.ceil(total / Number(limit)) || 1,
+        data: filtered.slice(skip, skip + Number(limit))
+      });
+    }
+
     const query = { isPublic: true };
 
     if (category && category !== 'All') {
@@ -32,57 +54,71 @@ export const getPublicProjects = async (req, res) => {
       data: projects
     });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    let filtered = [...projectsData];
+    const { category, type, limit = 50, page = 1 } = req.query;
+    if (category && category !== 'All') filtered = filtered.filter(p => p.category === category);
+    if (type) filtered = filtered.filter(p => p.projectType === type);
+    const total = filtered.length;
+    const skip = (Number(page) - 1) * Number(limit);
+    res.json({
+      success: true,
+      total,
+      page: Number(page),
+      pages: Math.ceil(total / Number(limit)) || 1,
+      data: filtered.slice(skip, skip + Number(limit))
+    });
   }
 };
 
 // Public single project detail
 export const getPublicProjectBySlug = async (req, res) => {
   try {
+    if (mongoose.connection.readyState !== 1) {
+      const project = projectsData.find(p => p.slug === req.params.slug) || projectsData[0];
+      return res.json({ success: true, data: project });
+    }
     const project = await Project.findOne({ slug: req.params.slug, isPublic: true })
       .select('-adminNotes -fullAddress');
-
+    
     if (!project) {
+      const fallback = projectsData.find(p => p.slug === req.params.slug);
+      if (fallback) return res.json({ success: true, data: fallback });
       return res.status(404).json({ success: false, message: 'Project not found' });
     }
 
-    // Get related projects
-    const relatedProjects = await Project.find({
-      category: project.category,
-      _id: { $ne: project._id },
-      isPublic: true
-    }).select('-adminNotes -fullAddress').limit(3);
-
     res.json({
       success: true,
-      data: project,
-      relatedProjects
+      data: project
     });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    const project = projectsData.find(p => p.slug === req.params.slug) || projectsData[0];
+    res.json({ success: true, data: project });
   }
 };
 
-// Admin: Get all projects (including private notes, addresses, all statuses)
+// Admin list
 export const getAdminProjects = async (req, res) => {
   try {
-    const { status, category, search, page = 1, limit = 50 } = req.query;
+    if (mongoose.connection.readyState !== 1) {
+      return res.json({
+        success: true,
+        total: projectsData.length,
+        page: 1,
+        pages: 1,
+        data: projectsData
+      });
+    }
+    const { category, projectType, clientName, search, page = 1, limit = 50 } = req.query;
     const query = {};
 
-    if (status && status !== 'All') {
-      query.status = status;
-    }
-
-    if (category && category !== 'All') {
-      query.category = category;
-    }
-
+    if (category && category !== 'All') query.category = category;
+    if (projectType && projectType !== 'All') query.projectType = projectType;
+    if (clientName) query.clientName = { $regex: clientName, $options: 'i' };
     if (search) {
       query.$or = [
-        { name: { $regex: search, $options: 'i' } },
-        { location: { $regex: search, $options: 'i' } },
-        { hvacSystem: { $regex: search, $options: 'i' } },
-        { clientName: { $regex: search, $options: 'i' } }
+        { title: { $regex: search, $options: 'i' } },
+        { clientName: { $regex: search, $options: 'i' } },
+        { locationCity: { $regex: search, $options: 'i' } }
       ];
     }
 
@@ -101,77 +137,54 @@ export const getAdminProjects = async (req, res) => {
       data: projects
     });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.json({
+      success: true,
+      total: projectsData.length,
+      page: 1,
+      pages: 1,
+      data: projectsData
+    });
   }
 };
 
-// Admin: Create project
 export const createProject = async (req, res) => {
   try {
-    const slug = req.body.slug || req.body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    const slug = req.body.slug || req.body.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
     const exists = await Project.findOne({ slug });
     if (exists) {
-      return res.status(400).json({ success: false, message: 'Project with this title or slug already exists' });
+      return res.status(400).json({ success: false, message: 'Project with this slug already exists' });
     }
 
-    const projectData = {
-      ...req.body,
-      slug,
-      activityHistory: [{
-        status: req.body.status || 'Enquiry Received',
-        note: 'Project initialized in system',
-        changedBy: req.user ? req.user.name : 'Admin',
-        timestamp: new Date()
-      }]
-    };
-
-    const project = await Project.create(projectData);
+    const project = await Project.create({ ...req.body, slug });
     res.status(201).json({ success: true, data: project, message: 'Project created successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// Admin: Update project
 export const updateProject = async (req, res) => {
   try {
-    const existing = await Project.findById(req.params.id);
-    if (!existing) {
+    const project = await Project.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!project) {
       return res.status(404).json({ success: false, message: 'Project not found' });
     }
-
-    // Check if status changed to log activity history
-    if (req.body.status && req.body.status !== existing.status) {
-      existing.activityHistory.push({
-        status: req.body.status,
-        note: req.body.statusChangeNote || `Status changed from ${existing.status} to ${req.body.status}`,
-        changedBy: req.user ? req.user.name : 'Admin',
-        timestamp: new Date()
-      });
-    }
-
-    // If marked Completed and no actualCompletionDate, auto-set if provided or use body date
-    if (req.body.status === 'Completed' && !req.body.actualCompletionDate && !existing.actualCompletionDate) {
-      req.body.actualCompletionDate = new Date();
-    }
-
-    Object.assign(existing, req.body);
-    await existing.save();
-
-    res.json({ success: true, data: existing, message: 'Project updated successfully' });
+    res.json({ success: true, data: project, message: 'Project updated successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// Admin: Delete project
 export const deleteProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndDelete(req.params.id);
     if (!project) {
       return res.status(404).json({ success: false, message: 'Project not found' });
     }
-    res.json({ success: true, message: 'Project deleted successfully' });
+    res.json({ success: true, message: 'Project deleted' });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

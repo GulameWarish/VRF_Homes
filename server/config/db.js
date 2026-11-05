@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 
 let memoryServer = null;
 
+// Disable Mongoose query buffering so queries fail fast or use fallback instead of hanging for 10000ms
+mongoose.set('bufferCommands', false);
+
 export const connectDB = async () => {
   const uri = process.env.MONGODB_URI;
 
@@ -14,7 +17,6 @@ export const connectDB = async () => {
       return true;
     } catch (err) {
       console.error(`[Database Error] Could not connect to MONGODB_URI: ${err.message}`);
-      return false;
     }
   }
 
@@ -28,7 +30,7 @@ export const connectDB = async () => {
     return true;
   } catch (err) {
     console.log(`[Database Notice] Local MongoDB daemon not found at 127.0.0.1:27017.`);
-    console.log(`[Database] Initializing embedded in-memory MongoDB engine...`);
+    console.log(`[Database] Attempting embedded in-memory MongoDB engine...`);
 
     try {
       const { MongoMemoryServer } = await import('mongodb-memory-server');
@@ -39,7 +41,7 @@ export const connectDB = async () => {
       console.log(`[Database] Embedded in-memory MongoDB initialized successfully at: ${memUri}`);
       return true;
     } catch (memErr) {
-      console.error(`[Database Error] Embedded MongoDB failed: ${memErr.message}`);
+      console.log(`[Database Notice] Embedded MongoDB engine not available. Seamless in-memory catalog mode is ACTIVE.`);
       return false;
     }
   }

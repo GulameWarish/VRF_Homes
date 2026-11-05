@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Package, Search, Filter, Sparkles, ArrowRight } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';
 import ProductCard from '../components/cards/ProductCard';
+import { FALLBACK_PRODUCTS, FALLBACK_BRANDS } from '../data/fallbackData';
 
 export default function ProductsCatalogPage({ onOpenQuote }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [brands, setBrands] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const selectedCategory = searchParams.get('category') || 'All';
@@ -30,9 +27,46 @@ export default function ProductsCatalogPage({ onOpenQuote }) {
     'Air Handling Units (AHU)'
   ];
 
+  const filteredFallback = useMemo(() => {
+    let list = [...FALLBACK_PRODUCTS];
+    if (selectedCategory && selectedCategory !== 'All') {
+      const catTrim = selectedCategory.toLowerCase().trim();
+      list = list.filter(p => {
+        if (!p.category) return false;
+        const c = p.category.toLowerCase();
+        if (catTrim.includes('duct') && c.includes('duct')) return true;
+        if (catTrim.includes('cassette') && c.includes('cassette')) return true;
+        if (catTrim.includes('split') && c.includes('split')) return true;
+        if (catTrim.includes('tower') && c.includes('tower')) return true;
+        if (catTrim.includes('conceal') && c.includes('conceal')) return true;
+        if (catTrim.includes('chiller') && c.includes('chiller')) return true;
+        if (catTrim.includes('vrf') && c.includes('vrf')) return true;
+        if (catTrim.includes('ahu') && (c.includes('ahu') || c.includes('handling'))) return true;
+        return c.includes(catTrim);
+      });
+    }
+    if (selectedBrand && selectedBrand !== 'All') {
+      const brandTrim = selectedBrand.toLowerCase().trim();
+      list = list.filter(p => p.relatedBrands && p.relatedBrands.some(b => b.toLowerCase().includes(brandTrim)));
+    }
+    if (searchTerm) {
+      const s = searchTerm.toLowerCase();
+      list = list.filter(p => 
+        (p.name && p.name.toLowerCase().includes(s)) ||
+        (p.description && p.description.toLowerCase().includes(s)) ||
+        (p.category && p.category.toLowerCase().includes(s))
+      );
+    }
+    return list;
+  }, [selectedCategory, selectedBrand, searchTerm]);
+
+  const [products, setProducts] = useState(filteredFallback);
+  const [brands, setBrands] = useState(FALLBACK_BRANDS);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    let isMounted = true;
     const fetchProducts = async () => {
-      setLoading(true);
       try {
         let url = `/products?limit=100`;
         if (selectedCategory && selectedCategory !== 'All') {
@@ -46,24 +80,33 @@ export default function ProductsCatalogPage({ onOpenQuote }) {
         }
 
         const [prodRes, brandRes] = await Promise.all([
-          api.get(url),
-          api.get('/brands')
+          api.get(url).catch(() => ({ data: { success: false } })),
+          api.get('/brands').catch(() => ({ data: { success: false } }))
         ]);
 
-        if (prodRes.data.success) {
-          setProducts(prodRes.data.data);
-        }
-        if (brandRes.data.success) {
-          setBrands(brandRes.data.data);
+        if (isMounted) {
+          if (prodRes.data?.success && Array.isArray(prodRes.data.data) && prodRes.data.data.length > 0) {
+            setProducts(prodRes.data.data);
+          } else {
+            setProducts(filteredFallback);
+          }
+          if (brandRes.data?.success && Array.isArray(brandRes.data.data) && brandRes.data.data.length > 0) {
+            setBrands(brandRes.data.data);
+          }
         }
       } catch (err) {
-        console.error('Products load error:', err.message);
+        if (isMounted) {
+          setProducts(filteredFallback);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
     fetchProducts();
-  }, [selectedCategory, selectedBrand, searchTerm]);
+    return () => { isMounted = false; };
+  }, [selectedCategory, selectedBrand, searchTerm, filteredFallback]);
 
   const handleCategorySelect = (cat) => {
     const params = new URLSearchParams(searchParams);
@@ -109,140 +152,160 @@ export default function ProductsCatalogPage({ onOpenQuote }) {
         </div>
       </section>
 
-      {/* Main Catalog with Sidebar Filters */}
-      <section className="py-12 bg-slate-50 min-h-[70vh]">
+      {/* Main Catalog Section */}
+      <section className="py-12 bg-slate-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Mobile Filter Toggle Button */}
-            <div className="lg:hidden flex items-center justify-between bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
-              <button
-                onClick={() => setShowMobileFilters(!showMobileFilters)}
-                className="flex items-center space-x-2 text-xs font-bold text-navy-950"
-              >
-                <Filter className="w-4 h-4 text-hvac-600" />
-                <span>Filters: {selectedCategory !== 'All' ? selectedCategory : 'All Categories'} {selectedBrand !== 'All' ? `• ${selectedBrand}` : ''}</span>
-              </button>
-              <button
-                onClick={() => setShowMobileFilters(!showMobileFilters)}
-                className="text-xs font-bold text-hvac-600"
-              >
-                {showMobileFilters ? 'Hide Filters' : 'Change Filter'}
-              </button>
-            </div>
-
-            {/* Sidebar Filter */}
-            <aside className={`w-full lg:w-72 shrink-0 space-y-6 ${showMobileFilters ? 'block' : 'hidden lg:block'}`}>
-              {/* Search Box */}
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs">
-                <label className="block text-xs font-bold text-navy-950 mb-2">Search Products</label>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            {/* Sidebar Filters */}
+            <aside className="lg:col-span-1 space-y-6">
+              
+              {/* Search */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+                  Search Products
+                </label>
                 <div className="relative">
-                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     value={searchTerm}
                     onChange={handleSearchChange}
                     placeholder="e.g. VRF, Chiller, Cassette..."
-                    className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-hvac-600"
+                    className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-hvac-600 focus:ring-1 focus:ring-hvac-600"
                   />
                 </div>
               </div>
 
-              {/* Category Filter */}
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-navy-950 mb-3 flex items-center">
-                  <Filter className="w-3.5 h-3.5 mr-1.5 text-hvac-600" />
-                  Equipment Categories
-                </h3>
-                <div className="space-y-1 max-h-96 overflow-y-auto pr-1">
-                  {allProductCategories.map((cat) => (
+              {/* Equipment Categories */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center space-x-2">
+                    <Filter className="w-3.5 h-3.5 text-hvac-600" />
+                    <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Equipment Categories</h3>
+                  </div>
+                  {selectedCategory !== 'All' && (
                     <button
-                      key={cat}
-                      onClick={() => handleCategorySelect(cat)}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors flex items-center justify-between ${
-                        selectedCategory === cat
-                          ? 'bg-hvac-600 text-white font-bold'
-                          : 'text-slate-700 hover:bg-slate-100'
-                      }`}
+                      onClick={() => handleCategorySelect('All')}
+                      className="text-[11px] font-semibold text-hvac-600 hover:text-hvac-700 underline"
                     >
-                      <span className="truncate">{cat}</span>
+                      Clear
                     </button>
-                  ))}
+                  )}
+                </div>
+                <div className="space-y-1 max-h-96 overflow-y-auto pr-1">
+                  {allProductCategories.map((cat) => {
+                    const isSelected = selectedCategory === cat || (cat === 'All' && !searchParams.get('category'));
+                    return (
+                      <button
+                        key={cat}
+                        onClick={() => handleCategorySelect(cat)}
+                        className={`w-full text-left px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                          isSelected
+                            ? 'bg-hvac-600 text-white font-bold shadow-xs'
+                            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Brand Filter */}
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-navy-950 mb-3">
-                  Manufacturer / Brand
-                </h3>
-                <div className="flex flex-wrap gap-1.5">
+              {/* Brands Filter */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Authorized Brand</h3>
+                  {selectedBrand !== 'All' && (
+                    <button
+                      onClick={() => handleBrandSelect('All')}
+                      className="text-[11px] font-semibold text-hvac-600 hover:text-hvac-700 underline"
+                    >
+                      Clear
+                    </button>
+                  )}
+                </div>
+                <div className="space-y-1 max-h-72 overflow-y-auto pr-1">
                   <button
                     onClick={() => handleBrandSelect('All')}
-                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors ${
-                      selectedBrand === 'All' ? 'bg-navy-950 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                      selectedBrand === 'All'
+                        ? 'bg-hvac-600 text-white font-bold shadow-xs'
+                        : 'text-slate-600 hover:bg-slate-100'
                     }`}
                   >
-                    All
+                    All Authorized Brands
                   </button>
-                  {brands.map((b) => (
-                    <button
-                      key={b._id}
-                      onClick={() => handleBrandSelect(b.name)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors ${
-                        selectedBrand === b.name ? 'bg-navy-950 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                      }`}
-                    >
-                      {b.name}
-                    </button>
-                  ))}
+                  {brands.map((b) => {
+                    const isSelected = selectedBrand.toLowerCase() === b.name.toLowerCase();
+                    return (
+                      <button
+                        key={b._id || b.name}
+                        onClick={() => handleBrandSelect(b.name)}
+                        className={`w-full text-left px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                          isSelected
+                            ? 'bg-hvac-600 text-white font-bold shadow-xs'
+                            : 'text-slate-600 hover:bg-slate-100'
+                        }`}
+                      >
+                        {b.name}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
+
             </aside>
 
             {/* Product Grid Area */}
-            <main className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <p className="text-xs font-bold text-slate-600">
-                  Showing <span className="text-navy-950 font-extrabold">{products.length}</span> systems in{' '}
-                  <span className="text-hvac-600 font-bold">{selectedCategory}</span>
-                </p>
+            <main className="lg:col-span-3">
+              
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2">
+                <div>
+                  <p className="text-xs text-slate-500 font-semibold">
+                    Showing <span className="font-bold text-slate-800">{products.length}</span> systems
+                    {selectedCategory !== 'All' && <span> in <span className="text-hvac-600 font-bold">{selectedCategory}</span></span>}
+                    {selectedBrand !== 'All' && <span> by <span className="text-hvac-600 font-bold">{selectedBrand}</span></span>}
+                  </p>
+                </div>
                 {(selectedCategory !== 'All' || selectedBrand !== 'All' || searchTerm) && (
                   <button
                     onClick={() => setSearchParams({})}
-                    className="text-xs font-bold text-rose-600 hover:underline"
+                    className="text-xs font-bold text-rose-600 hover:text-rose-700 self-start sm:self-auto"
                   >
                     Reset all filters
                   </button>
                 )}
               </div>
 
-              {loading ? (
-                <div className="py-24 text-center">
-                  <div className="w-8 h-8 border-3 border-hvac-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-                  <p className="text-xs text-slate-500">Querying product catalog from MongoDB...</p>
-                </div>
-              ) : products.length === 0 ? (
-                <div className="p-12 text-center bg-white rounded-3xl border border-slate-200">
+              {products.length === 0 ? (
+                <div className="bg-white rounded-3xl p-12 text-center border border-slate-200">
                   <Package className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-                  <h3 className="text-base font-bold text-navy-950">No systems matched your criteria</h3>
-                  <p className="text-xs text-slate-500 mt-1 mb-4">Try adjusting your equipment category or manufacturer filter.</p>
+                  <h3 className="text-base font-bold text-slate-800">No systems matched your criteria</h3>
+                  <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+                    Try adjusting your equipment category or manufacturer filter.
+                  </p>
                   <button
                     onClick={() => setSearchParams({})}
-                    className="px-4 py-2 bg-hvac-600 text-white rounded-xl text-xs font-bold"
+                    className="mt-4 px-5 py-2.5 bg-hvac-600 hover:bg-hvac-700 text-white text-xs font-bold rounded-xl shadow-xs transition-colors"
                   >
                     View All Products
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {products.map((p) => (
-                    <ProductCard key={p._id} product={p} onOpenQuote={onOpenQuote} />
+                    <ProductCard key={p._id || p.slug} product={p} onOpenQuote={onOpenQuote} />
                   ))}
                 </div>
               )}
+
             </main>
+
           </div>
+
         </div>
       </section>
     </>
