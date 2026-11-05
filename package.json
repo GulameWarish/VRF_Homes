@@ -3,13 +3,23 @@
   "version": "1.0.0",
   "description": "Premium HVAC and Air Conditioning Business Enterprise Platform",
   "private": true,
+  "main": "server/server.js",
   "scripts": {
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
+    "start": "node server/server.js",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "seed": "cd server && npm run seed"
   },
-  "keywords": ["hvac", "vrf", "vrv", "air-conditioning", "react", "nodejs", "mongodb"],
+  "keywords": [
+    "hvac",
+    "vrf",
+    "vrv",
+    "air-conditioning",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
   "author": "",
   "license": "ISC"
 }

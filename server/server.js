@@ -113,9 +113,23 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 404 Route Handler
-app.use('/api/*', (req, res) => {
+// Serve static client build (production & Render)
+const clientDistPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDistPath));
+
+// 404 Route Handler for unmatched /api requests
+app.all('/api/*', (req, res) => {
   res.status(404).json({ success: false, message: 'API route not found' });
+});
+
+// SPA catch-all fallback (serve React index.html for client-side routing)
+app.get('*', (req, res) => {
+  const indexPath = path.join(clientDistPath, 'index.html');
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      res.status(200).send('VRF Homes API Server is active.');
+    }
+  });
 });
 
 // Global Error Handler
