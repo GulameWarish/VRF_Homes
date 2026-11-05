@@ -1,7 +1,19 @@
 import axios from 'axios';
 
+// When running on localhost, use local proxy '/api'.
+// When running in production (e.g. on vrfhomes.com, BigRock, or Vercel), connect to the active Render backend API
+const isLocal = typeof window !== 'undefined' && (
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1' ||
+  window.location.hostname.endsWith('.local')
+);
+
+const API_BASE = isLocal
+  ? '/api'
+  : (import.meta.env.VITE_API_URL || 'https://vrf-homes-1.onrender.com/api');
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: API_BASE,
   headers: {
     'Content-Type': 'application/json',
   },

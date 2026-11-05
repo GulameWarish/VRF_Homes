@@ -27,12 +27,7 @@ export default function ProductsCatalogPage({ onOpenQuote }) {
     'Tower AC',
     'Concealed AC',
     'Chiller Systems',
-    'Air Handling Units (AHU)',
-    'Fan Coil Units (FCU)',
-    'Ventilation Systems',
-    'Fresh Air Systems',
-    'HVAC Accessories',
-    'Smart AC Control Systems'
+    'Air Handling Units (AHU)'
   ];
 
   useEffect(() => {
