@@ -23,6 +23,8 @@ import InsightsPage from './pages/InsightsPage';
 import InsightDetailPage from './pages/InsightDetailPage';
 import QuotePage from './pages/QuotePage';
 import SearchResultsPage from './pages/SearchResultsPage';
+import LocationsHubPage from './pages/LocationsHubPage';
+import CityLocationPage from './pages/CityLocationPage';
 import { 
   AboutPage, 
   ContactPage, 
@@ -150,6 +152,8 @@ export default function App() {
           {/* Static Pages */}
           <Route path="/about" element={<AboutPage onOpenQuote={handleOpenQuote} />} />
           <Route path="/contact" element={<ContactPage onOpenQuote={handleOpenQuote} />} />
+          <Route path="/locations" element={<LocationsHubPage onOpenQuote={handleOpenQuote} />} />
+          <Route path="/locations/:citySlug" element={<CityLocationPage onOpenQuote={handleOpenQuote} />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />

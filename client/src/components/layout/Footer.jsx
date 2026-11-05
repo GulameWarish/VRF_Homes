@@ -229,22 +229,26 @@ export default function Footer() {
               <Globe className="w-4 h-4 text-hvac-400" />
               <span>National Branch Presence ({branches.length} Locations)</span>
             </div>
-            <Link to="/contact" className="text-xs font-bold text-hvac-400 hover:underline flex items-center">
-              <span>View Branch Details</span>
+            <Link to="/locations" className="text-xs font-bold text-hvac-400 hover:underline flex items-center">
+              <span>View All 9 City Hubs</span>
               <ArrowRight className="w-3 h-3 ml-1" />
             </Link>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {branches.map((branch, i) => (
-              <span
-                key={i}
-                className="px-3 py-1.5 rounded-lg bg-slate-900 text-xs font-semibold text-slate-300 border border-slate-800 flex items-center space-x-1.5"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                <span>{branch}</span>
-              </span>
-            ))}
+            {branches.map((branch, i) => {
+              const slug = branch.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+              return (
+                <Link
+                  key={i}
+                  to={`/locations/${slug}`}
+                  className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-hvac-600/30 text-xs font-semibold text-slate-300 hover:text-white border border-slate-800 hover:border-hvac-500/50 transition-colors flex items-center space-x-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                  <span>{branch}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
