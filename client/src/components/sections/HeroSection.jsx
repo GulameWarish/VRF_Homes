@@ -67,7 +67,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
         <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Next-Gen VRF Home Climate Technology</span>
+          <span>VRF Home Climate Technology</span>
         </div>
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight">
           One Outdoor Unit Powers Your Entire Home

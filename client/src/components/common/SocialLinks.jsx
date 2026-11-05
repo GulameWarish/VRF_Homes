@@ -77,7 +77,7 @@ export const OFFICIAL_SOCIAL_LINKS = [
   },
   {
     name: 'X (Twitter)',
-    url: 'https://x.com/ShuklaEnterpri5',
+      url: 'https://x.com/ShuklaEnterpri5',
     handle: '@ShuklaEnterpri5',
     Icon: XIcon,
     bgColor: 'hover:bg-black/40',
