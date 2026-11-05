@@ -53,6 +53,9 @@ app.use(helmet({
 const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+  'https://vrhomes.com',
+  'https://www.vrhomes.com',
+  'https://vrf-homes.vercel.app',
   process.env.CLIENT_URL
 ].filter(Boolean);
 
