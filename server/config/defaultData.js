@@ -5,6 +5,7 @@ export const exactContactData = {
     heroHeadline: 'Advanced HVAC Solutions for Modern Living & Business',
     heroSubheading: 'From luxury residences to large-scale commercial projects, we deliver reliable, efficient and intelligent air conditioning solutions.',
     phone: '+91 88969 21318',
+    secondaryPhone: '+91 92206 01573',
     whatsapp: '+91 88969 21318',
     email: 'sales@shuklaenterprises.in',
     salesEmail: 'sales@shuklaenterprises.in',
@@ -26,6 +27,20 @@ export const exactContactData = {
       country: 'India',
       mapUrl: 'https://maps.google.com/?q=14A+Uttam+Vihar+Block+F+Mahavir+Enclave+Part+3+Bindapur+New+Delhi+110059'
     },
+    keralaOffice: {
+      title: 'Kerala State Headquarters & Regional Office',
+      buildingName: 'St Joseph Tower',
+      floorAndNo: 'First Floor, Building No. 18/143/08',
+      road: 'Mannuthy Nadathara Road',
+      locality: 'Pattalamkunnu',
+      city: 'Thrissur',
+      district: 'Thrissur',
+      state: 'Kerala',
+      pincode: '680655',
+      address: 'First Floor, Building No. 18/143/08, St. Joseph Tower, Mannuthy Nadathara Road, Pattalamkunnu, Thrissur, Kerala - 680655',
+      phone: '+91 88969 21318 / +91 92206 01573',
+      mapUrl: 'https://maps.google.com/?q=St+Joseph+Tower+Mannuthy+Nadathara+Road+Pattalamkunnu+Thrissur+Kerala+680655'
+    },
     branches: [
       'New Delhi',
       'Mumbai',
@@ -38,13 +53,15 @@ export const exactContactData = {
       'Lucknow'
     ],
     keralaLocations: [
+      'Thrissur (State Office)',
+      'Aluva (Branch Office)',
+      'Noornad (Alappuzha Hub)',
+      'Attingal & Trivandrum (Capital Hub)',
+      'Marine Drive Kochi',
       'Kottayam',
       'Kayamkulam',
       'Ernakulam',
-      'Noornad',
-      'Adoor',
-      'Poojapura Trivandrum',
-      'Marine Drive Kochi'
+      'Poojapura Trivandrum'
     ],
     socialLinks: {
       facebook: 'https://www.facebook.com/acsaleslko',

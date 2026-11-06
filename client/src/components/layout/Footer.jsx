@@ -53,6 +53,13 @@ export default function Footer() {
     mapUrl: 'https://maps.google.com/?q=14A+Uttam+Vihar+Block+F+Mahavir+Enclave+Part+3+Bindapur+New+Delhi+110059'
   };
 
+  const keralaOffice = settings?.keralaOffice || {
+    title: 'Kerala State Office',
+    address: 'First Floor, Building No. 18/143/08, St. Joseph Tower, Mannuthy Nadathara Road, Pattalamkunnu, Thrissur – 680655, Kerala, India',
+    phone: '+91 88969 21318 / +91 92206 01573',
+    mapUrl: 'https://maps.google.com/?q=St+Joseph+Tower+Mannuthy+Nadathara+Road+Pattalamkunnu+Thrissur+Kerala+680655'
+  };
+
   return (
     <footer className="bg-navy-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -208,6 +215,31 @@ export default function Footer() {
                 {delhiOffice.mapUrl && (
                   <a
                     href={delhiOffice.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[10px] font-bold text-hvac-400 hover:underline mt-1.5"
+                  >
+                    <MapPin className="w-3 h-3 mr-1" />
+                    <span>View on Google Maps</span>
+                    <ExternalLink className="w-2.5 h-2.5 ml-1" />
+                  </a>
+                )}
+              </div>
+
+              {/* Kerala State Office (Thrissur) */}
+              <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
+                <span className="text-[11px] font-bold text-cyan-300 block mb-1">
+                  {keralaOffice.title} (Thrissur)
+                </span>
+                <p className="leading-relaxed text-[11px] text-slate-400">
+                  {keralaOffice.address}
+                </p>
+                <div className="text-[10px] text-emerald-400 font-semibold mt-1">
+                  Tel: +91 88969 21318 / +91 92206 01573
+                </div>
+                {keralaOffice.mapUrl && (
+                  <a
+                    href={keralaOffice.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-[10px] font-bold text-hvac-400 hover:underline mt-1.5"

@@ -16,6 +16,7 @@ const websiteSettingsSchema = new mongoose.Schema({
   heroHeadline: { type: String, default: 'Advanced HVAC Solutions for Modern Living & Business' },
   heroSubheading: { type: String, default: 'From luxury residences to large-scale commercial projects, we deliver reliable, efficient and intelligent air conditioning solutions.' },
   phone: { type: String, default: '+91 88969 21318' },
+  secondaryPhone: { type: String, default: '+91 92206 01573' },
   whatsapp: { type: String, default: '+91 88969 21318' },
   email: { type: String, default: 'sales@shuklaenterprises.in' },
   salesEmail: { type: String, default: 'sales@shuklaenterprises.in' },
@@ -43,6 +44,19 @@ const websiteSettingsSchema = new mongoose.Schema({
       pincode: '110059',
       country: 'India',
       mapUrl: 'https://maps.google.com/?q=14A+Uttam+Vihar+Block+F+Mahavir+Enclave+Part+3+Bindapur+New+Delhi+110059'
+    })
+  },
+
+  keralaOffice: {
+    type: officeSchema,
+    default: () => ({
+      title: 'Kerala State Office',
+      address: 'First Floor, Building No. 18/143/08, St. Joseph Tower, Mannuthy Nadathara Road, Pattalamkunnu, Thrissur - 680655, Kerala, India',
+      city: 'Thrissur',
+      state: 'Kerala',
+      pincode: '680655',
+      country: 'India',
+      mapUrl: 'https://maps.google.com/?q=St+Joseph+Tower+Mannuthy+Nadathara+Road+Pattalamkunnu+Thrissur+Kerala+680655'
     })
   },
 

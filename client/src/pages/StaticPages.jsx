@@ -106,6 +106,21 @@ export function ContactPage({ onOpenQuote }) {
     mapUrl: 'https://maps.google.com/?q=14A+Uttam+Vihar+Block+F+Mahavir+Enclave+Part+3+Bindapur+New+Delhi+110059'
   };
 
+  const keralaOffice = settings?.keralaOffice || {
+    title: 'Kerala State Headquarters & Regional Office',
+    buildingName: 'St Joseph Tower',
+    floorAndNo: 'First Floor, Building No. 18/143/08',
+    road: 'Mannuthy Nadathara Road',
+    locality: 'Pattalamkunnu',
+    city: 'Thrissur',
+    district: 'Thrissur',
+    state: 'Kerala',
+    pincode: '680655',
+    address: 'First Floor, Building No. 18/143/08, St. Joseph Tower, Mannuthy Nadathara Road, Pattalamkunnu, Thrissur, Kerala - 680655',
+    phone: '+91 88969 21318 / +91 92206 01573',
+    mapUrl: 'https://maps.google.com/?q=St+Joseph+Tower+Mannuthy+Nadathara+Road+Pattalamkunnu+Thrissur+Kerala+680655'
+  };
+
   const branches = settings?.branches || [
     'New Delhi', 'Mumbai', 'Chennai', 'Noida', 'Kolkata', 
     'Bangalore', 'Chandigarh', 'Ahmedabad', 'Lucknow'
@@ -196,31 +211,32 @@ export function ContactPage({ onOpenQuote }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Registered Office Card */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-hvac-300 hover:shadow-premium transition-all duration-300 flex flex-col justify-between">
+            <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-hvac-300 hover:shadow-premium transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-hvac-50 text-hvac-600 flex items-center justify-center">
-                    <MapPin className="w-6 h-6" />
+                  <div className="w-11 h-11 rounded-2xl bg-hvac-50 text-hvac-600 flex items-center justify-center">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <span className="px-3 py-1 rounded-full bg-hvac-100 text-hvac-800 text-xs font-bold">
                     Official Registered Office
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-navy-950 mb-2">
+                <h3 className="text-lg font-bold text-navy-950 mb-2">
                   {registeredOffice.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                <p className="text-xs text-slate-600 leading-relaxed mb-4">
                   {registeredOffice.address}
                 </p>
 
                 <div className="space-y-1.5 text-xs text-slate-500 border-t border-slate-200/60 pt-3">
                   <div><strong>City / State:</strong> Lucknow, Uttar Pradesh</div>
                   <div><strong>PIN:</strong> 226018</div>
+                  <div><strong>Contact:</strong> +91 88969 21318</div>
                 </div>
               </div>
 
@@ -229,38 +245,39 @@ export function ContactPage({ onOpenQuote }) {
                   href={registeredOffice.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
+                  className="px-3.5 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
                 >
                   <MapPin className="w-3.5 h-3.5 text-cyan-300" />
-                  <span>Open in Google Maps</span>
+                  <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
               </div>
             </div>
 
             {/* Delhi Office Card */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-hvac-300 hover:shadow-premium transition-all duration-300 flex flex-col justify-between">
+            <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-hvac-300 hover:shadow-premium transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-hvac-50 text-hvac-600 flex items-center justify-center">
-                    <Building2 className="w-6 h-6" />
+                  <div className="w-11 h-11 rounded-2xl bg-hvac-50 text-hvac-600 flex items-center justify-center">
+                    <Building2 className="w-5 h-5" />
                   </div>
                   <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold">
                     National Capital Office
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-navy-950 mb-2">
+                <h3 className="text-lg font-bold text-navy-950 mb-2">
                   {delhiOffice.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                <p className="text-xs text-slate-600 leading-relaxed mb-4">
                   {delhiOffice.address}
                 </p>
 
                 <div className="space-y-1.5 text-xs text-slate-500 border-t border-slate-200/60 pt-3">
                   <div><strong>City / Region:</strong> Bindapur, New Delhi</div>
                   <div><strong>PIN:</strong> 110059</div>
+                  <div><strong>Contact:</strong> +91 88969 21318</div>
                 </div>
               </div>
 
@@ -269,14 +286,57 @@ export function ContactPage({ onOpenQuote }) {
                   href={delhiOffice.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
+                  className="px-3.5 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
                 >
                   <MapPin className="w-3.5 h-3.5 text-cyan-300" />
-                  <span>Open in Google Maps</span>
+                  <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
               </div>
             </div>
+
+            {/* Kerala State Office Card */}
+            <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-hvac-300 hover:shadow-premium transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+                    Kerala State Office
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-bold text-navy-950 mb-2">
+                  {keralaOffice.title}
+                </h3>
+
+                <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                  {keralaOffice.address}
+                </p>
+
+                <div className="space-y-1.5 text-xs text-slate-500 border-t border-slate-200/60 pt-3">
+                  <div><strong>Premises:</strong> St. Joseph Tower, First Floor (18/143/08)</div>
+                  <div><strong>Locality:</strong> Mannuthy Nadathara Road, Pattalamkunnu</div>
+                  <div><strong>City / PIN:</strong> Thrissur, Kerala - 680655</div>
+                  <div><strong>Contacts:</strong> +91 88969 21318 / +91 92206 01573</div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+                <a
+                  href={keralaOffice.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-2 bg-navy-950 hover:bg-emerald-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-emerald-300" />
+                  <span>Google Maps</span>
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -334,32 +394,35 @@ export function ContactPage({ onOpenQuote }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { city: 'Marine Drive, Kochi', desc: 'Commercial waterfront towers & heavy-duty twin-fan ducted AC cantilever installation', badge: 'Active Site Project' },
-              { city: 'Poojapura, Trivandrum', desc: 'Commercial complex twin-fan ductable AC & central inverter plant execution', badge: 'Active Commissioning' },
-              { city: 'Kottayam', desc: 'Retail showrooms & turnkey high-static air distribution with custom duct runs', badge: 'Field Operations' },
-              { city: 'Kayamkulam', desc: 'Inverter ducted AC installation with precision PCB diagnostics & amp calibration', badge: 'Site Project' },
-              { city: 'Ernakulam', desc: 'Multi-zone commercial duct AC engineering, concealed piping & balance testing', badge: 'Turnkey Execution' },
-              { city: 'Noornad', desc: 'High-efficiency ductable climate control & electronic expansion valve calibration', badge: 'Field Support' },
-              { city: 'Adoor', desc: 'Commercial ducted AC systems, vacuum hold to 250 microns & final handover', badge: 'Active Projects' }
+              { city: 'Thrissur (State Office)', desc: 'St. Joseph Tower, First Floor (18/143/08), Mannuthy Nadathara Road, Pattalamkunnu - 680655', badge: 'State Headquarters', phone: '+91 88969 21318' },
+              { city: 'Aluva Office', desc: 'Commercial HVAC, VRF system integration, ductable AC engineering & rapid technical service for Ernakulam/Aluva', badge: 'Branch Office', phone: '+91 88969 21318' },
+              { city: 'Noornad Office', desc: 'Central Travancore division: Ducted AC execution, electronic expansion valve calibration, and residential VRF', badge: 'Regional Hub', phone: '+91 88969 21318' },
+              { city: 'Attingal & Trivandrum', desc: 'Capital division operations: Commercial complex twin-fan ductable AC & central inverter plant commissioning', badge: 'Capital Hub', phone: '+91 88969 21318' },
+              { city: 'Marine Drive, Kochi', desc: 'Commercial waterfront towers & heavy-duty twin-fan ducted AC cantilever installation', badge: 'Active Site Project', phone: '+91 88969 21318' },
+              { city: 'Poojapura, Trivandrum', desc: 'Commercial complex twin-fan ductable AC & central inverter plant execution', badge: 'Active Commissioning', phone: '+91 88969 21318' },
+              { city: 'Kottayam', desc: 'Retail showrooms & turnkey high-static air distribution with custom duct runs', badge: 'Field Operations', phone: '+91 88969 21318' },
+              { city: 'Kayamkulam', desc: 'Inverter ducted AC installation with precision PCB diagnostics & amp calibration', badge: 'Site Project', phone: '+91 88969 21318' }
             ].map((loc, i) => (
               <div 
                 key={i}
-                className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 hover:border-cyan-400 hover:shadow-md transition-all group"
+                className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 hover:border-cyan-400 hover:shadow-md transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-sm group-hover:bg-[#009fe3] group-hover:text-white transition-colors">
-                    <MapPin className="w-4 h-4" />
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-sm group-hover:bg-[#009fe3] group-hover:text-white transition-colors">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      {loc.badge}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    {loc.badge}
-                  </span>
+                  <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors">{loc.city}</h4>
+                  <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">{loc.desc}</p>
                 </div>
-                <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors">{loc.city}</h4>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">{loc.desc}</p>
                 <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
                   <span className="text-slate-400 font-medium">By Shukla Enterprise</span>
-                  <a href={"tel:" + cleanPhone} className="text-cyan-600 font-bold hover:underline flex items-center">
-                    <Phone className="w-3 h-3 mr-1" /> Call Desk
+                  <a href={`tel:${loc.phone.replace(/[^0-9+]/g, '')}`} className="text-cyan-600 font-bold hover:underline flex items-center">
+                    <Phone className="w-3 h-3 mr-1" /> Call
                   </a>
                 </div>
               </div>
