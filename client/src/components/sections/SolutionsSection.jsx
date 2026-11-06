@@ -134,7 +134,7 @@ export default function SolutionsSection() {
                 </div>
                 <div className="flex items-center space-x-1.5">
                   <CheckCircle2 className="w-4 h-4 text-hvac-500 shrink-0" />
-                  <span>Whisper-Quiet 19 dB Sound</span>
+                  <span>Whisper-Quiet 20-38 dB Sound</span>
                 </div>
                 <div className="flex items-center space-x-1.5">
                   <CheckCircle2 className="w-4 h-4 text-hvac-500 shrink-0" />

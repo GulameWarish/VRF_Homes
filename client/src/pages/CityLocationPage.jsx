@@ -245,7 +245,7 @@ export default function CityLocationPage({ onOpenQuote }) {
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Energy Savings up to 50%</span>
+              <span>Energy Savings: 20-40%</span>
             </div>
           </div>
 
@@ -385,7 +385,7 @@ export default function CityLocationPage({ onOpenQuote }) {
                   VRF Solution & Central AC
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                  Say goodbye to multiple outdoor compressors cluttering balconies in {city.name}. Our central VRF solutions connect up to 64 indoor units to a single compact outdoor condenser, operating down to 19 dB whisper-silence.
+                  Say goodbye to multiple outdoor compressors cluttering balconies in {city.name}. Our central VRF solutions connect up to 64 indoor units to a single compact outdoor condenser, operating down to 20-38 dB quiet operation.
                 </p>
                 <ul className="text-[11px] text-slate-500 space-y-1.5 mb-4">
                   <li className="flex items-center space-x-1.5">
@@ -394,7 +394,7 @@ export default function CityLocationPage({ onOpenQuote }) {
                   </li>
                   <li className="flex items-center space-x-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                    <span>Up to 50% power savings</span>
+                    <span>20-40% power savings</span>
                   </li>
                   <li className="flex items-center space-x-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
@@ -505,7 +505,7 @@ export default function CityLocationPage({ onOpenQuote }) {
                 <span>Why choose a VRF Home system instead of normal split ACs?</span>
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed pl-6">
-                Traditional split ACs require one noisy outdoor unit for every single room, cluttering your balcony and facade. A VRF Home system replaces all of them with just 1 terrace-mounted outdoor unit, saves up to 50% power, and lets you hide sleek indoor units inside your false ceiling.
+                Traditional split ACs require one noisy outdoor unit for every single room, cluttering your balcony and facade. A VRF Home system replaces all of them with just 1 terrace-mounted outdoor unit, saves 20-40% power, and lets you hide sleek indoor units inside your false ceiling.
               </p>
             </div>
 

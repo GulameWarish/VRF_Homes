@@ -73,7 +73,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
           One Outdoor Unit Powers Your Entire Home
         </h1>
         <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-          Independent zone temperature control for every room, whisper-quiet operation down to 19 dB, and zero unsightly outdoor units cluttering your balconies.
+          Independent zone temperature control for every room, whisper-quiet operation down to 20-38 dB, and zero unsightly outdoor units cluttering your balconies.
         </p>
 
         {/* Quick Unit Selector Pills (Swipeable on Mobile) */}
@@ -291,7 +291,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
             <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
-            <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">Up to 50% Less Power</div>
+            <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">20-40% Less Power</div>
             <div className="text-[10px] sm:text-[11px] text-slate-500 truncate">Inverter DC Drive</div>
           </div>
         </div>
@@ -301,7 +301,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
             <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
-            <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">19 dB(A) Quiet</div>
+            <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">20-38 dB(A) Quiet</div>
             <div className="text-[10px] sm:text-[11px] text-slate-500 truncate">Quieter Than Whisper</div>
           </div>
         </div>

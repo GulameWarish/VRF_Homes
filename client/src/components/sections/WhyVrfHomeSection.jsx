@@ -36,20 +36,20 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
     },
     {
       number: '04',
-      title: 'Up to 50% Lower Electricity Bills',
+      title: '20-40% Lower Electricity Bills',
       tag: 'Smart Inverter Power',
       desc: 'Conventional split ACs continuously turn fully on and off, creating massive power surges. VRF Home dynamically modulates down to 10% capacity, consuming electricity only for the rooms currently in use.',
       icon: Zap,
-      stat: 'Up to 50% Savings',
+      stat: '20-40% Savings',
       highlight: 'Dynamic Inverter Capacity'
     },
     {
       number: '05',
-      title: '19 dB(A) Whisper-Quiet Deep Sleep',
+      title: '20-38 dB(A) Quiet Deep Sleep',
       tag: 'Silent Bedroom Comfort',
-      desc: 'Engineered specifically for luxury living. Indoor sound levels drop down to 19 dB(A) — quieter than rustling leaves. Zero compressor hum and zero mechanical vibration through bedroom walls.',
+      desc: 'Engineered specifically for luxury living. Indoor sound levels drop down to 20-38 dB(A) — quieter than rustling leaves. Zero compressor hum and zero mechanical vibration through bedroom walls.',
       icon: Volume2,
-      stat: '19 dB(A) Silent',
+      stat: '20-38 dB Quiet',
       highlight: 'Soundless Deep Sleep'
     },
     {
@@ -77,7 +77,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
     {
       feature: 'Electricity Consumption',
       split: 'Constant on/off power spikes consuming excessive energy',
-      vrf: 'Inverter modulates to active rooms only — saves up to 50%'
+      vrf: 'Inverter modulates to active rooms only — saves 20-40%'
     },
     {
       feature: 'Piping Reach & Distance',
@@ -131,7 +131,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
                 <div className="w-16 h-1 bg-white/40 my-5 rounded-full"></div>
 
                 <p className="text-sm sm:text-base text-cyan-50 font-medium leading-relaxed">
-                  An air-conditioning solution that packages engineering and luxury together. One single outdoor unit controls multiple indoor units, freeing your balconies while saving up to 50% power.
+                  An air-conditioning solution that packages engineering and luxury together. One single outdoor unit controls multiple indoor units, freeing your balconies while saving 20-40% power.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">

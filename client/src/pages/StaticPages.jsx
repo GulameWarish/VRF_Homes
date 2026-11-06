@@ -395,7 +395,7 @@ export function ContactPage({ onOpenQuote }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { city: 'Thrissur (State Office)', desc: 'St. Joseph Tower, First Floor (18/143/08), Mannuthy Nadathara Road, Pattalamkunnu - 680655', badge: 'State Headquarters', phone: '+91 88969 21318' },
-              { city: 'Aluva Office', desc: 'Commercial HVAC, VRF system integration, ductable AC engineering & rapid technical service for Ernakulam/Aluva', badge: 'Branch Office', phone: '+91 88969 21318' },
+              { city: 'Aluva Office (Kochi Hub)', desc: '16/557A, Konathedath Road, Kunnumpuram, PO, Desom, Aluva, Kochi, Kerala - 683102', badge: 'Branch Office', phone: '+91 88969 21318' },
               { city: 'Noornad Office', desc: 'Central Travancore division: Ducted AC execution, electronic expansion valve calibration, and residential VRF', badge: 'Regional Hub', phone: '+91 88969 21318' },
               { city: 'Attingal & Trivandrum', desc: 'Capital division operations: Commercial complex twin-fan ductable AC & central inverter plant commissioning', badge: 'Capital Hub', phone: '+91 88969 21318' },
               { city: 'Marine Drive, Kochi', desc: 'Commercial waterfront towers & heavy-duty twin-fan ducted AC cantilever installation', badge: 'Active Site Project', phone: '+91 88969 21318' },

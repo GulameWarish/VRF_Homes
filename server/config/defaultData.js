@@ -41,6 +41,12 @@ export const exactContactData = {
       phone: '+91 88969 21318 / +91 92206 01573',
       mapUrl: 'https://maps.google.com/?q=St+Joseph+Tower+Mannuthy+Nadathara+Road+Pattalamkunnu+Thrissur+Kerala+680655'
     },
+    aluvaOffice: {
+      title: 'Aluva Branch Office',
+      address: '16/557A, Konathedath Road, Kunnumpuram, PO, Desom, Aluva, Kochi, Kerala - 683102',
+      phone: '+91 88969 21318',
+      mapUrl: 'https://maps.google.com/?q=Konathedath+Road+Kunnumpuram+Desom+Aluva+Kochi+Kerala+683102'
+    },
     branches: [
       'New Delhi',
       'Mumbai',

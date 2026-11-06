@@ -113,12 +113,12 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
                 <div className="text-[11px] font-semibold text-slate-500 mt-0.5">Replaces 6-12 Splits</div>
               </div>
               <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
-                <div className="text-xl font-extrabold text-emerald-600">50%</div>
+                <div className="text-xl font-extrabold text-emerald-600">20-40%</div>
                 <div className="text-[11px] font-semibold text-slate-500 mt-0.5">Power Reduction</div>
               </div>
               <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
-                <div className="text-xl font-extrabold text-navy-950">19 dB(A)</div>
-                <div className="text-[11px] font-semibold text-slate-500 mt-0.5">Whisper Quiet</div>
+                <div className="text-xl font-extrabold text-navy-950">20-38 dB</div>
+                <div className="text-[11px] font-semibold text-slate-500 mt-0.5">Ultra Quiet</div>
               </div>
             </div>
           </div>

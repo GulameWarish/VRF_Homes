@@ -34,7 +34,7 @@ export default function FeaturesPage({ onOpenQuote }) {
     <>
       <SEO 
         title="Engineering Capabilities & Technology Features"
-        description="Discover how VRF technology delivers 50% energy savings, library-quiet 19 dB sound, precision room-by-room microclimates, and architectural concealment."
+        description="Discover how VRF technology delivers 20-40% energy savings, library-quiet 20-38 dB sound, precision room-by-room microclimates, and architectural concealment."
       />
 
       {/* Header */}

@@ -67,7 +67,7 @@ export default function ExitIntentModal({ onOpenQuote }) {
           {/* Exactly 15 Words Context about VRF Home */}
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 mb-6 shadow-inner">
             <p className="text-sm sm:text-base font-semibold text-navy-950 leading-relaxed">
-              "Upgrade your luxury space with whisper-quiet VRF air conditioning, single-outdoor-unit aesthetics, and 50% power savings."
+              "Upgrade your luxury space with whisper-quiet VRF air conditioning, single-outdoor-unit aesthetics, and 20-40% power savings."
             </p>
             <span className="text-[11px] text-slate-500 font-medium block mt-1">
               — Zero Balcony Clutter • Independent Room Comfort

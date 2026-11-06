@@ -232,7 +232,7 @@ export default function QuotePage() {
     <>
       <SEO 
         title="Get a Free Estimate & Engineering Consultation | VRF Homes"
-        description="VRF Home packages engineering and luxury together. Single outdoor unit controls multiple indoor units with up to 50% power savings. Request a free quote across Voltas, Carrier, Haier, Hitachi, Trane, O General and Mitsubishi Electric."
+        description="VRF Home packages engineering and luxury together. Single outdoor unit controls multiple indoor units with 20-40% power savings. Request a free quote across Voltas, Carrier, Haier, Hitachi, Trane, O General and Mitsubishi Electric."
       />
 
       {/* Main Container */}
@@ -263,7 +263,7 @@ export default function QuotePage() {
                 <strong>VRF Home</strong> is an air-conditioning solution which packages engineering and luxury together. It is an ideal solution to make your home a comfortable place according to your exact needs without covering much space.
               </p>
               <p className="text-slate-600">
-                Unlike any traditional split air conditioning solution, it does not need a dedicated outdoor unit with each indoor unit, but a <strong>single outdoor unit controls multiple indoor units</strong> instead. It does not only provide energy efficiency (slashing power consumption by up to 50%), but utilizes balcony and facade space efficiently too, giving zero hassle during installation and total peace of mind.
+                Unlike any traditional split air conditioning solution, it does not need a dedicated outdoor unit with each indoor unit, but a <strong>single outdoor unit controls multiple indoor units</strong> instead. It does not only provide energy efficiency (slashing power consumption by 20-40%), but utilizes balcony and facade space efficiently too, giving zero hassle during installation and total peace of mind.
               </p>
             </div>
 
@@ -284,7 +284,7 @@ export default function QuotePage() {
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">50% Power Savings</div>
+                  <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">20-40% Power Savings</div>
                   <div className="text-[10px] sm:text-[11px] text-slate-500 truncate">All-DC Inverter Drive</div>
                 </div>
               </div>
@@ -294,8 +294,8 @@ export default function QuotePage() {
                   <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">19 dB(A) Silence</div>
-                  <div className="text-[10px] sm:text-[11px] text-slate-500 truncate">Whisper-Quiet Sleep</div>
+                  <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">20-38 dB(A) Quiet</div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-500 truncate">Ultra-Quiet Sleep</div>
                 </div>
               </div>
 
