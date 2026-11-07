@@ -121,13 +121,37 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Commercial Solutions */}
+          {/* Commercial Solutions & Commercial Location */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4 flex items-center">
               <span className="w-1.5 h-1.5 rounded-full bg-hvac-500 mr-2"></span>
               Commercial
             </h4>
-            <ul className="space-y-2 text-xs">
+
+            {/* Commercial Office Location as requested */}
+            <div className="bg-slate-900/90 p-3 rounded-xl border border-cyan-500/40 mb-4 shadow-sm">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 block mb-1">
+                Commercial Division Office
+              </span>
+              <p className="leading-relaxed text-[11px] text-slate-300">
+                16/557A, Konathedath Road Kunnumpuram, PO, Desom, Aluva, Kochi, Kerala 683102
+              </p>
+              <div className="text-[10px] text-emerald-400 font-semibold mt-1">
+                Tel: +91 88969 21318 / +91 92206 01573
+              </div>
+              <a
+                href="https://maps.google.com/?q=Konathedath+Road+Kunnumpuram+Desom+Aluva+Kochi+Kerala+683102"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-[10px] font-bold text-cyan-400 hover:text-cyan-300 hover:underline mt-1.5"
+              >
+                <MapPin className="w-3 h-3 mr-1" />
+                <span>View on Google Maps</span>
+                <ExternalLink className="w-2.5 h-2.5 ml-1" />
+              </a>
+            </div>
+
+            <ul className="space-y-1.5 text-xs">
               {commercialLinks.map((cat) => (
                 <li key={cat._id || cat.slug}>
                   <Link to={`/commercial/${cat.slug}`} className="hover:text-hvac-400 transition-colors">
@@ -215,31 +239,6 @@ export default function Footer() {
                 {delhiOffice.mapUrl && (
                   <a
                     href={delhiOffice.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[10px] font-bold text-hvac-400 hover:underline mt-1.5"
-                  >
-                    <MapPin className="w-3 h-3 mr-1" />
-                    <span>View on Google Maps</span>
-                    <ExternalLink className="w-2.5 h-2.5 ml-1" />
-                  </a>
-                )}
-              </div>
-
-              {/* Kerala State Office (Thrissur) */}
-              <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
-                <span className="text-[11px] font-bold text-cyan-300 block mb-1">
-                  {keralaOffice.title} (Thrissur)
-                </span>
-                <p className="leading-relaxed text-[11px] text-slate-400">
-                  {keralaOffice.address}
-                </p>
-                <div className="text-[10px] text-emerald-400 font-semibold mt-1">
-                  Tel: +91 88969 21318 / +91 92206 01573
-                </div>
-                {keralaOffice.mapUrl && (
-                  <a
-                    href={keralaOffice.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-[10px] font-bold text-hvac-400 hover:underline mt-1.5"

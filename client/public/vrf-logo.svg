@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none">
+  <defs>
+    <!-- Cyan gradient for brand highlight -->
+    <linearGradient id="brandCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b4d8"/>
+      <stop offset="50%" stop-color="#009fe3"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+
+    <!-- Navy gradient for emblem badge -->
+    <linearGradient id="emblemBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Airflow Wave Gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#009fe3"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Emblem Mark -->
+  <g transform="translate(10, 10)">
+    <!-- Rounded Shield Background -->
+    <rect width="80" height="80" rx="18" fill="url(#emblemBg)" stroke="#009fe3" stroke-width="2.5"/>
+    
+    <!-- Architectural Roof Gable (HOME) -->
+    <path d="M 16 36 L 40 16 L 64 36" stroke="url(#waveGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Inner Accent & Chimney Airflow -->
+    <path d="M 51 22.5 V 17 H 56 V 27" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 24 35 L 40 22 L 56 35" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9"/>
+    
+    <!-- Bold Metallic 'V' HVAC Flow Ribbon -->
+    <path d="M 26 44 L 40 68 L 54 44" stroke="url(#waveGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="40" cy="50" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- Typography: VRF HOME -->
+  <g transform="translate(105, 0)">
+    <!-- Primary Wordmark: VRF (Bold Italic Cyan) -->
+    <text x="0" y="58" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="52" 
+          font-weight="900" 
+          font-style="italic" 
+          letter-spacing="-1" 
+          fill="url(#brandCyan)">VRF</text>
+
+    <!-- Primary Wordmark: HOME (Heavy Navy) -->
+    <text x="120" y="58" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="48" 
+          font-weight="800" 
+          letter-spacing="0" 
+          fill="#0b172a">HOME</text>
+
+    <!-- Cooling Wave Divider -->
+    <path d="M 2 70 C 40 67, 70 73, 110 70 C 150 67, 190 73, 230 70 C 260 67, 280 72, 285 70" 
+          stroke="url(#brandCyan)" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Tagline: Sub-brand Descriptor -->
+    <text x="2" y="86" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-size="10.5" 
+          font-weight="700" 
+          letter-spacing="2.8" 
+          fill="#475569">AIR CONDITIONING &amp; CLIMATE SOLUTIONS</text>
+  </g>
+</svg>
