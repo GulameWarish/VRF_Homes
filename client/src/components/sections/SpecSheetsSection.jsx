@@ -131,10 +131,10 @@ export default function SpecSheetsSection({ onOpenQuote }) {
           <div className="max-w-2xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
               <FileCheck className="w-3.5 h-3.5 text-cyan-700" />
-              <span>Architects &amp; MEP Consultants Portal</span>
+              <span>HVAC Engineering Services • Technical Specs &amp; CAD Portal</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
-              Downloadable Engineering Spec Sheets &amp; CAD Catalogs
+              HVAC Services: Engineering Spec Sheets &amp; CAD Catalogs
             </h2>
             <p className="mt-2 text-sm text-slate-600">
               Access official technical manuals, CAD cutaways, electrical wiring schematics, and sound power levels for Voltas, Haier, Carrier, Mitsubishi Electric, O General &amp; Trane.

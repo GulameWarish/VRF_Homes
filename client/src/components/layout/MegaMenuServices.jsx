@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Wrench, Compass, ShieldCheck, Activity, RefreshCw, 
-  Clock, ArrowRight, PhoneCall, Sparkles 
+  Clock, ArrowRight, PhoneCall, Sparkles, FileCheck 
 } from 'lucide-react';
 
 export default function MegaMenuServices({ onClose, onOpenQuote }) {
@@ -127,6 +127,31 @@ export default function MegaMenuServices({ onClose, onOpenQuote }) {
               </div>
             );
           })}
+        </div>
+
+        {/* Engineering Spec Sheets Integration in Services Section */}
+        <div className="mt-4 p-3 bg-gradient-to-r from-navy-950 via-slate-900 to-navy-950 text-white rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 border border-cyan-500/30">
+          <div className="flex items-center space-x-2.5">
+            <span className="p-1.5 rounded-lg bg-[#009fe3]/20 text-cyan-400 shrink-0">
+              <FileCheck className="w-4 h-4" />
+            </span>
+            <div>
+              <span className="text-xs font-bold text-white block">
+                Engineering Services Spec Sheets &amp; CAD Catalogs
+              </span>
+              <span className="text-[10px] text-slate-300">
+                Official OEM technical manuals for Voltas, Haier, Carrier, Mitsubishi Electric &amp; Trane.
+              </span>
+            </div>
+          </div>
+          <a
+            href="/#spec-sheets"
+            onClick={onClose}
+            className="px-3.5 py-1.5 bg-[#009fe3] hover:bg-[#0089c4] text-navy-950 hover:text-white font-black text-[11px] rounded-lg transition-colors flex items-center space-x-1 shrink-0"
+          >
+            <span>Download Spec Sheets</span>
+            <ArrowRight className="w-3 h-3" />
+          </a>
         </div>
 
         {/* Bottom CTA Banner */}

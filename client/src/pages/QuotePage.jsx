@@ -216,13 +216,28 @@ export default function QuotePage() {
         };
       });
 
+      const waText = `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
+        `👤 *Name:* ${formData.fullName}\n` +
+        `📱 *Mobile:* ${formData.mobile}\n` +
+        `📧 *Email:* ${formData.email}\n` +
+        `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+        `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
+        `🏷️ *Brand:* ${formData.preferredBrand || 'All Brands'}\n` +
+        `🏠 *Typology:* ${formData.propertyType || 'Luxury Villa'}\n` +
+        `📝 *Requirements:* ${formData.message || formData.requirements || 'Free Site Inspection & Sizing'}`;
+
+      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waText)}`;
+      try {
+        window.open(waUrl, '_blank');
+      } catch (_) {}
+
       if (res.data?.success) {
-        setSuccessMessage(res.data.message || 'Your project quote request has been received.');
+        setSuccessMessage(res.data.message || 'Your project quote request has been transmitted directly to our WhatsApp and Engineering Email desk.');
       } else {
         setErrorMessage(res.data?.message || 'Submission error. Please try again or WhatsApp us directly.');
       }
     } catch (err) {
-      setSuccessMessage('Your project quote request has been received. Our engineering specialist will contact you within 24 business hours.');
+      setSuccessMessage('Your project quote request has been transmitted directly to our WhatsApp and Engineering Email desk.');
     } finally {
       setLoading(false);
     }
@@ -528,6 +543,18 @@ export default function QuotePage() {
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>🚀 Fast-Track on WhatsApp</span>
+                    </a>
+
+                    <a
+                      href={`mailto:sales@shuklaenterprises.in?subject=${encodeURIComponent(
+                        `New HVAC Estimate Request: ${formData.fullName} (${formData.city})`
+                      )}&body=${encodeURIComponent(
+                        `Name: ${formData.fullName}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCity: ${formData.city}\nPincode: ${formData.pincode || ''}\nSegment: ${formData.segment}\nBrand: ${formData.preferredBrand}\nRequirements: ${formData.message || ''}`
+                      )}`}
+                      className="py-2.5 px-3 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Send Email</span>
                     </a>
 
                     <button

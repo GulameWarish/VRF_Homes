@@ -81,13 +81,29 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
         };
       });
 
+      const waText = `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
+        `👤 *Name:* ${formData.fullName}\n` +
+        `📱 *Mobile:* ${formData.mobile}\n` +
+        `📧 *Email:* ${formData.email}\n` +
+        `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+        `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
+        `🏠 *Typology:* ${formData.propertyType || 'Villa / Apartment'}\n` +
+        `📝 *Requirements:* ${formData.requirements || 'Free Estimate & Heat Load Sizing'}`;
+
+      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waText)}`;
+      
+      // Auto-open WhatsApp with pre-filled lead details
+      try {
+        window.open(waUrl, '_blank');
+      } catch (_) {}
+
       if (res.data?.success) {
-        setSuccessMessage(res.data.message || 'Thank you! Your HVAC enquiry has been received. Our engineering specialist will contact you within 24 business hours.');
+        setSuccessMessage(res.data.message || 'Your HVAC estimate request has been transmitted directly to our WhatsApp and Engineering Email desk.');
       } else {
         setErrorMessage(res.data?.message || 'Submission error. Please try again or WhatsApp us directly.');
       }
     } catch (err) {
-      setSuccessMessage('Thank you! Your HVAC enquiry has been received. Our engineering specialist will contact you within 24 business hours.');
+      setSuccessMessage('Your HVAC estimate request has been transmitted directly to our WhatsApp and Engineering Email desk.');
     } finally {
       setLoading(false);
     }
@@ -132,32 +148,51 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
                 Reference ID: VRF-LEAD-{Date.now().toString().slice(-6)} • Assigned to HVAC Engineering Desk
               </div>
 
-              {/* Instant WhatsApp Lead Action Button */}
-              <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center max-w-md mx-auto">
+              {/* Instant WhatsApp & Email Action Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center max-w-lg mx-auto">
                 <a
                   href={`https://wa.me/918896921318?text=${encodeURIComponent(
-                    `Hello VRF Homes Team, I am ${formData.fullName} from ${formData.city} (${formData.mobile}). Requirements: ${formData.requirements || 'HVAC Consultation & Heat Load Sizing'}`
+                    `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
+                    `👤 *Name:* ${formData.fullName}\n` +
+                    `📱 *Mobile:* ${formData.mobile}\n` +
+                    `📧 *Email:* ${formData.email}\n` +
+                    `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+                    `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
+                    `🏠 *Typology:* ${formData.propertyType || 'Villa / Apartment'}\n` +
+                    `📝 *Requirements:* ${formData.requirements || 'Free Estimate & Heat Load Sizing'}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-2 transition-all shadow-md"
+                  className="py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-all shadow-md"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>🚀 Fast-Track on WhatsApp</span>
+                  <span>Send via WhatsApp</span>
+                </a>
+
+                <a
+                  href={`mailto:sales@shuklaenterprises.in?subject=${encodeURIComponent(
+                    `New HVAC Estimate Request: ${formData.fullName} (${formData.city})`
+                  )}&body=${encodeURIComponent(
+                    `Name: ${formData.fullName}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCity: ${formData.city}\nPincode: ${formData.pincode || ''}\nSegment: ${formData.segment}\nProperty: ${formData.propertyType}\nRequirements: ${formData.requirements}`
+                  )}`}
+                  className="py-3 px-4 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-all shadow-md"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Send via Email</span>
                 </a>
 
                 <a
                   href="tel:+918896921318"
-                  className="py-3 px-4 bg-navy-950 hover:bg-[#009fe3] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
+                  className="py-3 px-3 bg-navy-950 hover:bg-slate-800 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1 transition-all"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Direct Call Engineer</span>
+                  <span>Call</span>
                 </a>
 
                 <button
                   type="button"
                   onClick={onClose}
-                  className="py-3 px-4 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl text-xs transition-colors"
+                  className="py-3 px-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl text-xs transition-colors"
                 >
                   Close
                 </button>

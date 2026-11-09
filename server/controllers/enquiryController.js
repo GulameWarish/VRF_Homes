@@ -1,10 +1,27 @@
 import mongoose from 'mongoose';
+import nodemailer from 'nodemailer';
 import Enquiry from '../models/Enquiry.js';
 
 // Standalone in-memory storage for enquiries when database is not connected
 const inMemoryEnquiries = [];
 
-// Instant Lead Webhook & Telegram Dispatcher
+// Transporter for Lead Notification Emails
+const getMailTransporter = () => {
+  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    return nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: Number(process.env.SMTP_PORT) === 465,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
+    });
+  }
+  return null;
+};
+
+// Instant Lead Webhook, Email & Telegram Dispatcher
 const sendLeadInstantAlerts = async (enquiryData) => {
   const alertText = `🚨 *NEW HVAC INQUIRY RECEIVED*\n` +
     `👤 *Name:* ${enquiryData.fullName}\n` +
@@ -16,7 +33,50 @@ const sendLeadInstantAlerts = async (enquiryData) => {
     `📝 *Requirements:* ${enquiryData.requirements || 'Consultation & Heat Load Sizing'}\n` +
     `⏰ *Time:* ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
 
-  // 1. Telegram Instant Webhook Alert if configured
+  // 1. Send Direct Lead Notification Email via Nodemailer
+  const recipientEmail = process.env.NOTIFICATION_EMAIL || 'sales@shuklaenterprises.in';
+  const transporter = getMailTransporter();
+  if (transporter) {
+    try {
+      await transporter.sendMail({
+        from: `"VRF Homes Lead Desk" <${process.env.SMTP_USER}>`,
+        to: recipientEmail,
+        replyTo: enquiryData.email,
+        subject: `New HVAC Estimate Request: ${enquiryData.fullName} (${enquiryData.city || 'India'})`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px;">
+            <div style="background-color: #0b132b; padding: 16px; border-radius: 8px; text-align: center;">
+              <h2 style="color: #009fe3; margin: 0;">VRF HOMES</h2>
+              <p style="color: #ffffff; margin: 4px 0 0 0; font-size: 13px;">New Client Estimate & Engineering Inquiry</p>
+            </div>
+            <div style="padding: 20px 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Name:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.fullName}</td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Mobile:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;"><a href="tel:${enquiryData.mobile}">${enquiryData.mobile}</a></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Email:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;"><a href="mailto:${enquiryData.email}">${enquiryData.email}</a></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>City:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.city || 'N/A'}</td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Segment:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.segment || 'Residential VRF'}</td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Typology / Brand:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.propertyType || enquiryData.selectedBrand || 'N/A'}</td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Requirements:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.requirements || 'Consultation & Heat Load Sizing'}</td></tr>
+              </table>
+              <div style="margin-top: 20px; text-align: center;">
+                <a href="https://wa.me/${(enquiryData.mobile || '').replace(/[^0-9]/g, '')}" style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px;">Reply on WhatsApp</a>
+                <a href="tel:${enquiryData.mobile}" style="display: inline-block; padding: 10px 20px; background-color: #0b132b; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Call Customer</a>
+              </div>
+            </div>
+            <p style="font-size: 11px; color: #94a3b8; text-align: center; margin-top: 20px;">Sent automatically by VRF Homes Platform • Shukla Enterprise</p>
+          </div>
+        `
+      });
+      console.log(`[Email Dispatched] Lead notification sent to: ${recipientEmail}`);
+    } catch (mailErr) {
+      console.log('[Email Dispatch Notice]:', mailErr.message);
+    }
+  } else {
+    console.log(`[Email Alert Ready] Lead captured for ${recipientEmail}: ${enquiryData.fullName} (${enquiryData.mobile})`);
+  }
+
+  // 2. Telegram Instant Webhook Alert if configured
   if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
     try {
       fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -31,7 +91,7 @@ const sendLeadInstantAlerts = async (enquiryData) => {
     } catch (_) {}
   }
 
-  // 2. Generic Webhook (e.g. Zapier, Make, Pabbly or WhatsApp Webhook)
+  // 3. Generic Webhook (e.g. Zapier, Make, Pabbly or WhatsApp Webhook)
   if (process.env.LEAD_WEBHOOK_URL) {
     try {
       fetch(process.env.LEAD_WEBHOOK_URL, {
