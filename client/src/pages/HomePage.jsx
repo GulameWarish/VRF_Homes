@@ -7,8 +7,6 @@ import HeroSection from '../components/sections/HeroSection';
 import HvacSizingCalculator from '../components/sections/HvacSizingCalculator';
 import VrfHomeIntroSection from '../components/sections/VrfHomeIntroSection';
 import VrfMainFeaturesSection from '../components/sections/VrfMainFeaturesSection';
-import RealProjectShowcaseSection from '../components/sections/RealProjectShowcaseSection';
-import SpecSheetsSection from '../components/sections/SpecSheetsSection';
 import CtaSection from '../components/sections/CtaSection';
 
 // Major Upgrade: Exit Intent Popup Modal
@@ -150,12 +148,6 @@ export default function HomePage({ onOpenQuote }) {
 
       {/* 4. Main Features with Technical Blueprint & CAD Drawing Style Graphics */}
       <VrfMainFeaturesSection onOpenQuote={onOpenQuote} />
-
-      {/* 5. Authentic Real Project Execution Gallery: Kerala, Delhi NCR & Lucknow */}
-      <RealProjectShowcaseSection onOpenQuote={onOpenQuote} />
-
-      {/* 6. Architects & Consultants Downloadable Engineering Spec Sheets (Services) */}
-      <SpecSheetsSection onOpenQuote={onOpenQuote} />
 
       {/* Final Conversion Action Banner */}
       <CtaSection onOpenQuote={onOpenQuote} settings={settings} />
