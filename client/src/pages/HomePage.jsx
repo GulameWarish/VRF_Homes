@@ -4,8 +4,12 @@ import SEO from '../components/common/SEO';
 
 // Streamlined Homepage Sections as requested
 import HeroSection from '../components/sections/HeroSection';
+import HvacSizingCalculator from '../components/sections/HvacSizingCalculator';
 import VrfHomeIntroSection from '../components/sections/VrfHomeIntroSection';
 import VrfMainFeaturesSection from '../components/sections/VrfMainFeaturesSection';
+import RealProjectShowcaseSection from '../components/sections/RealProjectShowcaseSection';
+import SpecSheetsSection from '../components/sections/SpecSheetsSection';
+import GoogleReviewsSection from '../components/sections/GoogleReviewsSection';
 import CtaSection from '../components/sections/CtaSection';
 
 // Major Upgrade: Exit Intent Popup Modal
@@ -139,11 +143,23 @@ export default function HomePage({ onOpenQuote }) {
         </div>
       </section>
 
-      {/* 2. VRF Home Introduction & Why Choose VRF Homes */}
+      {/* 2. Interactive HVAC Tonnage & Cost Sizing Calculator */}
+      <HvacSizingCalculator onOpenQuote={onOpenQuote} />
+
+      {/* 3. VRF Home Introduction & Why Choose VRF Homes */}
       <VrfHomeIntroSection onOpenQuote={onOpenQuote} />
 
-      {/* 3. Main Features with Technical Blueprint & CAD Drawing Style Graphics */}
+      {/* 4. Main Features with Technical Blueprint & CAD Drawing Style Graphics */}
       <VrfMainFeaturesSection onOpenQuote={onOpenQuote} />
+
+      {/* 5. Authentic Real Project Execution Gallery: Kerala, Delhi NCR & Lucknow */}
+      <RealProjectShowcaseSection onOpenQuote={onOpenQuote} />
+
+      {/* 6. Architects & Consultants Downloadable Engineering Spec Sheets */}
+      <SpecSheetsSection onOpenQuote={onOpenQuote} />
+
+      {/* 7. Google My Business Verified 4.9 Star Ratings & Reviews Widget */}
+      <GoogleReviewsSection />
 
       {/* Final Conversion Action Banner */}
       <CtaSection onOpenQuote={onOpenQuote} settings={settings} />

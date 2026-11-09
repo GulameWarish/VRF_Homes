@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Search, Phone, ChevronDown, Menu, X, ArrowRight, 
-  MessageCircle, Sparkles, Building2, Home, Layers, Wrench 
+  MessageCircle, Sparkles, Building2, Home, Layers, Wrench, Calculator, FileText 
 } from 'lucide-react';
 import api from '../../services/api';
 
@@ -383,6 +383,25 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                 {/* LEFT */}
                 <span className="absolute bottom-0 left-0 h-0 w-[2px] bg-white transition-all delay-300 duration-100 group-hover:h-full shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
               </Link>
+            </div>
+
+            {/* Quick Utility Links (Tonnage Calculator & Spec Sheets) */}
+            <div className="hidden xl:flex items-center space-x-2">
+              <a
+                href="/#hvac-calculator"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-navy-950/30 hover:bg-navy-950 text-[11px] font-black uppercase text-cyan-200 hover:text-white transition-all border border-white/15 shadow-sm"
+              >
+                <Calculator className="w-3.5 h-3.5 text-cyan-300" />
+                <span>HVAC Calculator</span>
+              </a>
+
+              <a
+                href="/#spec-sheets"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-navy-950/30 hover:bg-navy-950 text-[11px] font-black uppercase text-cyan-200 hover:text-white transition-all border border-white/15 shadow-sm"
+              >
+                <FileText className="w-3.5 h-3.5 text-cyan-300" />
+                <span>Spec Sheets</span>
+              </a>
             </div>
           </div>
         </div>

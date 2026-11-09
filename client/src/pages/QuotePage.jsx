@@ -513,29 +513,45 @@ export default function QuotePage() {
                     {successMessage}
                   </p>
                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-[11px] text-slate-500">
-                    Our Senior Mechanical HVAC Engineer will connect within 2 hours.
+                    Our Senior Mechanical HVAC Engineer will connect with your proposal within 2 hours.
                   </div>
-                  <button
-                    onClick={() => {
-                      setSuccessMessage('');
-                      setFormData({
-                        fullName: '',
-                        email: '',
-                        mobile: '',
-                        city: '',
-                        pincode: '',
-                        segment: 'Residential',
-                        propertyType: 'Luxury Villa',
-                        preferredBrand: 'All Brands (Unbiased Recommendation)',
-                        enquiryType: 'Free Site Inspection & Sizing',
-                        message: '',
-                        attachment: ''
-                      });
-                    }}
-                    className="px-4 py-2 bg-[#009fe3] text-white text-xs font-bold rounded-lg hover:bg-[#0089c4]"
-                  >
-                    Submit Another Enquiry
-                  </button>
+                  
+                  {/* Instant WhatsApp Lead Action */}
+                  <div className="flex flex-col sm:flex-row gap-2.5 justify-center max-w-sm mx-auto pt-1">
+                    <a
+                      href={`https://wa.me/918896921318?text=${encodeURIComponent(
+                        `Hello VRF Homes Team, I submitted an estimation request on vrfhomes.com:%0AName: ${formData.fullName}%0ACity: ${formData.city} (${formData.mobile})%0ABrand: ${formData.preferredBrand}%0ASegment: ${formData.segment}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      <span>🚀 Fast-Track on WhatsApp</span>
+                    </a>
+
+                    <button
+                      onClick={() => {
+                        setSuccessMessage('');
+                        setFormData({
+                          fullName: '',
+                          email: '',
+                          mobile: '',
+                          city: '',
+                          pincode: '',
+                          segment: 'Residential',
+                          propertyType: 'Luxury Villa',
+                          preferredBrand: 'All Brands (Unbiased Recommendation)',
+                          enquiryType: 'Free Site Inspection & Sizing',
+                          message: '',
+                          attachment: ''
+                        });
+                      }}
+                      className="px-4 py-2.5 bg-slate-200 text-slate-800 text-xs font-bold rounded-xl hover:bg-slate-300 transition-colors"
+                    >
+                      New Request
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">

@@ -83,19 +83,11 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
 
       if (res.data?.success) {
         setSuccessMessage(res.data.message || 'Thank you! Your HVAC enquiry has been received. Our engineering specialist will contact you within 24 business hours.');
-        setTimeout(() => {
-          setSuccessMessage('');
-          onClose();
-        }, 3500);
       } else {
         setErrorMessage(res.data?.message || 'Submission error. Please try again or WhatsApp us directly.');
       }
     } catch (err) {
       setSuccessMessage('Thank you! Your HVAC enquiry has been received. Our engineering specialist will contact you within 24 business hours.');
-      setTimeout(() => {
-        setSuccessMessage('');
-        onClose();
-      }, 3500);
     } finally {
       setLoading(false);
     }
@@ -129,14 +121,46 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
         {/* Content Body */}
         <div className="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
           {successMessage ? (
-            <div className="py-10 text-center space-y-4">
+            <div className="py-8 text-center space-y-4">
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h4 className="text-xl font-bold text-navy-900">Enquiry Successfully Transmitted</h4>
-              <p className="text-sm text-slate-600 max-w-md mx-auto">{successMessage}</p>
-              <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 max-w-md mx-auto">
-                Reference ID: VRF-LEAD-{Date.now().toString().slice(-6)} • Assigned to Technical Engineering Desk
+              <h4 className="text-xl font-black text-navy-900">Enquiry Successfully Transmitted</h4>
+              <p className="text-xs text-slate-600 max-w-md mx-auto">{successMessage}</p>
+              
+              <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 max-w-md mx-auto">
+                Reference ID: VRF-LEAD-{Date.now().toString().slice(-6)} • Assigned to HVAC Engineering Desk
+              </div>
+
+              {/* Instant WhatsApp Lead Action Button */}
+              <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center max-w-md mx-auto">
+                <a
+                  href={`https://wa.me/918896921318?text=${encodeURIComponent(
+                    `Hello VRF Homes Team, I am ${formData.fullName} from ${formData.city} (${formData.mobile}). Requirements: ${formData.requirements || 'HVAC Consultation & Heat Load Sizing'}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-2 transition-all shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>🚀 Fast-Track on WhatsApp</span>
+                </a>
+
+                <a
+                  href="tel:+918896921318"
+                  className="py-3 px-4 bg-navy-950 hover:bg-[#009fe3] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Direct Call Engineer</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="py-3 px-4 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-xl text-xs transition-colors"
+                >
+                  Close
+                </button>
               </div>
             </div>
           ) : (
