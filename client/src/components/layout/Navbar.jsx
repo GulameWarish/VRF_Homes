@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Search, Phone, ChevronDown, Menu, X, ArrowRight, 
-  MessageCircle, Sparkles, Building2, Home, Layers, Wrench, Calculator, FileText 
+  MessageCircle, Sparkles, Building2, Home, Layers, Wrench 
 } from 'lucide-react';
 import api from '../../services/api';
 
@@ -279,20 +279,10 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
             href={`https://wa.me/${(settings?.whatsapp || '918896921318').replace(/[^0-9]/g, '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 sm:px-3 py-1.5 rounded-md transition-colors shadow-sm shrink-0"
+            className="flex items-center space-x-1 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 sm:px-3.5 py-1.5 rounded-md transition-colors shadow-sm shrink-0"
           >
             <MessageCircle className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">WhatsApp</span>
-          </a>
-
-          {/* HVAC Calculator (Compact Button on Right Side of WhatsApp) */}
-          <a
-            href="/#hvac-calculator"
-            className="flex items-center space-x-1 text-xs font-bold text-navy-950 bg-cyan-100 hover:bg-cyan-200 border border-cyan-300 px-2 sm:px-2.5 py-1.5 rounded-md transition-colors shadow-sm shrink-0"
-            title="Instant HVAC Tonnage & Sizing Calculator"
-          >
-            <Calculator className="w-3.5 h-3.5 text-[#009fe3]" />
-            <span className="hidden sm:inline text-[11px] font-extrabold uppercase">HVAC Sizing</span>
           </a>
 
           {/* Mobile Search Icon */}

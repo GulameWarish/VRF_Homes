@@ -4,7 +4,6 @@ import SEO from '../components/common/SEO';
 
 // Streamlined Homepage Sections as requested
 import HeroSection from '../components/sections/HeroSection';
-import HvacSizingCalculator from '../components/sections/HvacSizingCalculator';
 import VrfHomeIntroSection from '../components/sections/VrfHomeIntroSection';
 import VrfMainFeaturesSection from '../components/sections/VrfMainFeaturesSection';
 import CtaSection from '../components/sections/CtaSection';
@@ -140,10 +139,7 @@ export default function HomePage({ onOpenQuote }) {
         </div>
       </section>
 
-      {/* 2. Interactive HVAC Tonnage & Cost Sizing Calculator */}
-      <HvacSizingCalculator onOpenQuote={onOpenQuote} />
-
-      {/* 3. VRF Home Introduction & Why Choose VRF Homes */}
+      {/* 2. VRF Home Introduction & Why Choose VRF Homes */}
       <VrfHomeIntroSection onOpenQuote={onOpenQuote} />
 
       {/* 4. Main Features with Technical Blueprint & CAD Drawing Style Graphics */}
