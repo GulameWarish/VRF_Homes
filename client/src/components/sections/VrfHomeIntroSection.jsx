@@ -15,13 +15,13 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
         
         {/* Section Tagline & Headline */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3">
             <span>Next-Generation Residential Engineering</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight leading-tight">
             Why Choose VRF Homes
           </h2>
-          <h3 className="text-lg sm:text-xl font-bold text-[#009fe3] mt-2.5 tracking-wide">
+          <h3 className="text-lg sm:text-xl font-bold text-[#059669] mt-2.5 tracking-wide">
             Introduction to VRF Home
           </h3>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
@@ -52,17 +52,17 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
                 <div className="flex items-center justify-between">
                   <div className="min-w-0">
                     <div className="flex items-center space-x-2">
-                      <span className="text-[9px] sm:text-[10px] bg-[#009fe3] text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider shrink-0">
+                      <span className="text-[9px] sm:text-[10px] bg-[#059669] text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider shrink-0">
                         Shukla Enterprise
                       </span>
-                      <span className="text-[10px] sm:text-[11px] text-cyan-300 font-medium truncate">Haier Inverter Series</span>
+                      <span className="text-[10px] sm:text-[11px] text-emerald-300 font-medium truncate">Haier Inverter Series</span>
                     </div>
                     <h4 className="text-xs sm:text-sm font-bold text-white mt-1 truncate">Outdoor Unit Central PCB & Inverter Drive</h4>
                     <p className="text-[10px] sm:text-[11px] text-slate-300 mt-0.5 line-clamp-2 sm:line-clamp-none">
                       High-precision electronic expansion valves deliver cooling across every zone from a single outdoor condenser.
                     </p>
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#009fe3]/20 text-[#009fe3] flex items-center justify-center shrink-0 ml-2.5 sm:ml-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#059669]/20 text-[#059669] flex items-center justify-center shrink-0 ml-2.5 sm:ml-3">
                     <Cpu className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
             {/* Quick Stats Strip */}
             <div className="grid grid-cols-3 gap-3 text-center">
               <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
-                <div className="text-xl font-extrabold text-[#009fe3]">1 Unit</div>
+                <div className="text-xl font-extrabold text-[#059669]">1 Unit</div>
                 <div className="text-[11px] font-semibold text-slate-500 mt-0.5">Replaces 6-12 Splits</div>
               </div>
               <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
@@ -125,7 +125,7 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
           {/* Right Column: In-Depth Context & Technology Pillars */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-black uppercase tracking-wider text-[#009fe3]">
+              <span className="text-xs font-black uppercase tracking-wider text-[#059669]">
                 How VRF Home Works
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-950">
@@ -142,7 +142,7 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
             {/* Key Advantages List */}
             <div className="space-y-3 pt-2">
               <div className="flex items-start space-x-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#009fe3] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
                   <Home className="w-4 h-4" />
                 </div>
                 <div>
@@ -182,7 +182,7 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
             <div className="pt-2 flex flex-wrap gap-4">
               <button
                 onClick={() => onOpenQuote && onOpenQuote({ propertyType: 'Luxury Villa VRF Home' })}
-                className="px-6 py-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold text-xs sm:text-sm shadow-md shadow-[#009fe3]/25 transition-all flex items-center space-x-2"
+                className="px-6 py-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-xs sm:text-sm shadow-md shadow-[#059669]/25 transition-all flex items-center space-x-2"
               >
                 <span>Get a Free Estimate for Your Home</span>
                 <ArrowRight className="w-4 h-4" />

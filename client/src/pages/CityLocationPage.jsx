@@ -178,20 +178,20 @@ export default function CityLocationPage({ onOpenQuote }) {
           
           {/* Breadcrumb */}
           <div className="flex items-center space-x-2 text-xs text-slate-400 mb-6">
-            <Link to="/" className="hover:text-cyan-300">Home</Link>
+            <Link to="/" className="hover:text-emerald-300">Home</Link>
             <span>/</span>
-            <Link to="/locations" className="hover:text-cyan-300">Locations</Link>
+            <Link to="/locations" className="hover:text-emerald-300">Locations</Link>
             <span>/</span>
-            <span className="text-cyan-300 font-semibold">{city.name}</span>
+            <span className="text-emerald-300 font-semibold">{city.name}</span>
           </div>
 
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 text-cyan-300 text-xs font-bold border border-white/15 mb-4">
-            <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 text-emerald-300 text-xs font-bold border border-white/15 mb-4">
+            <MapPin className="w-3.5 h-3.5 text-emerald-400" />
             <span>{city.name} Official HVAC & VRF Engineering Center</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight max-w-4xl">
-            VRF Solution, AC Repairing & New AC Install in <span className="text-cyan-400">{city.name}</span>
+            VRF Solution, AC Repairing & New AC Install in <span className="text-emerald-400">{city.name}</span>
           </h1>
 
           <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
@@ -213,7 +213,7 @@ export default function CityLocationPage({ onOpenQuote }) {
               href={`tel:${city.phone.replace(/[^0-9+]/g, '')}`}
               className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all flex items-center space-x-2"
             >
-              <Phone className="w-4 h-4 text-cyan-300" />
+              <Phone className="w-4 h-4 text-emerald-300" />
               <span>Call Engineer: {city.phone}</span>
             </a>
 
@@ -272,7 +272,7 @@ export default function CityLocationPage({ onOpenQuote }) {
             {/* Service 1: New AC Install */}
             <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-hvac-600 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-hvac-600 flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6" />
                 </div>
                 <h4 className="text-base font-bold text-navy-950 mb-2">

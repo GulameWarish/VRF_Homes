@@ -104,7 +104,7 @@ export default function AdminLayout() {
           <div className="p-4 border-t border-slate-800/80 bg-navy-900/60">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-2 overflow-hidden">
-                <div className="w-8 h-8 rounded-full bg-hvac-800 text-cyan-300 flex items-center justify-center font-bold text-xs uppercase shrink-0">
+                <div className="w-8 h-8 rounded-full bg-hvac-800 text-emerald-300 flex items-center justify-center font-bold text-xs uppercase shrink-0">
                   {user?.name?.[0] || 'A'}
                 </div>
                 <div className="overflow-hidden">

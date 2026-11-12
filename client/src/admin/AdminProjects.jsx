@@ -264,7 +264,7 @@ export default function AdminProjects() {
                     <td className="py-3.5 px-4">
                       <span className={`px-2 py-0.5 rounded text-[10px] font-extrabold ${
                         p.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :
-                        p.status === 'Work In Progress' ? 'bg-blue-100 text-blue-800' :
+                        p.status === 'Work In Progress' ? 'bg-emerald-100 text-blue-800' :
                         'bg-amber-100 text-amber-800'
                       }`}>
                         {p.status}

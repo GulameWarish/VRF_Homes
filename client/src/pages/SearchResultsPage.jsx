@@ -50,12 +50,12 @@ export default function SearchResultsPage({ onOpenQuote }) {
 
       <section className="bg-navy-950 text-white py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center space-x-2 text-xs text-cyan-300 uppercase tracking-wider font-bold mb-2">
+          <div className="flex items-center space-x-2 text-xs text-emerald-300 uppercase tracking-wider font-bold mb-2">
             <Search className="w-4 h-4" />
             <span>Search Results Database</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-            Results for <span className="text-cyan-300">"{query}"</span>
+            Results for <span className="text-emerald-300">"{query}"</span>
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-slate-300">
             Found <strong className="text-white">{totalHits}</strong> matching records across products, sectors, projects, and insights.

@@ -34,7 +34,7 @@ export default function CtaSection({ onOpenQuote, settings }) {
             href={`tel:${(settings?.phone || '+91 88969 21318').replace(/[^0-9+]/g, '')}`}
             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-sm transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2"
           >
-            <PhoneCall className="w-4 h-4 text-cyan-300" />
+            <PhoneCall className="w-4 h-4 text-emerald-300" />
             <span>Call Our Experts: {settings?.phone || '+91 88969 21318'}</span>
           </a>
         </div>

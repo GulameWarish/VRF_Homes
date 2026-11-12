@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Search, X, ArrowRight, Building2, Home, Package, 
-  FolderKanban, Sparkles, BookOpen, Layers, ExternalLink 
+  FolderKanban, BookOpen, Layers, ExternalLink 
 } from 'lucide-react';
 import api from '../../services/api';
 

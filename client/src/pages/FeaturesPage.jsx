@@ -41,7 +41,7 @@ export default function FeaturesPage({ onOpenQuote }) {
       <section className="bg-navy-950 text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 text-cyan-200 text-xs font-semibold mb-4 border border-white/15">
-            <Zap className="w-3.5 h-3.5 text-cyan-300" />
+            <Zap className="w-3.5 h-3.5 text-emerald-300" />
             <span>Advanced HVAC Engineering Standards</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
@@ -80,7 +80,7 @@ export default function FeaturesPage({ onOpenQuote }) {
                       <div className="absolute top-0 right-0 w-48 h-48 bg-hvac-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
                       <div className="flex items-center justify-between relative z-10">
-                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-cyan-300 border border-white/15">
+                        <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-emerald-300 border border-white/15">
                           <IconComponent className="w-6 h-6" />
                         </div>
                         {feat.badge && (

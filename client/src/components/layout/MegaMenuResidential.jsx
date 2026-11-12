@@ -65,7 +65,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-100 gap-2">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="w-2 h-2 rounded-full bg-[#009fe3]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#059669]"></span>
               <h3 className="text-base font-extrabold text-navy-950 uppercase tracking-wider">
                 Residential Air Conditioning & Villa Climate Engineering
               </h3>
@@ -77,7 +77,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
           <Link
             to="/residential"
             onClick={onClose}
-            className="inline-flex items-center text-xs font-bold text-[#009fe3] hover:text-[#0089c4] group whitespace-nowrap"
+            className="inline-flex items-center text-xs font-bold text-[#059669] hover:text-[#047857] group whitespace-nowrap"
           >
             <span>View All Residential Topologies</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -91,7 +91,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
               key={idx}
               to={item.slug}
               onClick={onClose}
-              className="group relative flex bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#009fe3]/50 p-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden"
+              className="group relative flex bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#059669]/50 p-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden"
             >
               {/* Thumbnail Image */}
               <div className="w-24 h-24 rounded-lg overflow-hidden bg-slate-200 shrink-0 relative mr-3.5 border border-slate-200/60">
@@ -106,17 +106,17 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
               {/* Text Info */}
               <div className="flex flex-col justify-between flex-1 min-w-0">
                 <div>
-                  <div className="inline-block text-[10px] font-bold text-[#009fe3] uppercase tracking-wider mb-1">
+                  <div className="inline-block text-[10px] font-bold text-[#059669] uppercase tracking-wider mb-1">
                     {item.badge}
                   </div>
-                  <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors leading-snug">
+                  <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#059669] transition-colors leading-snug">
                     {item.title}
                   </h4>
                   <p className="text-[11px] text-slate-500 line-clamp-2 mt-1 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="flex items-center text-[11px] font-bold text-slate-700 group-hover:text-[#009fe3] mt-2">
+                <div className="flex items-center text-[11px] font-bold text-slate-700 group-hover:text-[#059669] mt-2">
                   <span>Explore details</span>
                   <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -128,7 +128,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
         {/* Bottom CTA Banner */}
         <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-slate-50 to-blue-50/50 p-4 rounded-xl gap-3">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-lg bg-[#009fe3]/10 text-[#009fe3] flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-lg bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0">
               <Home className="w-5 h-5" />
             </div>
             <div>
@@ -154,7 +154,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
                 onClose();
                 if (onOpenQuote) onOpenQuote({ propertyType: 'Luxury Villa / Residential' });
               }}
-              className="px-4 py-2 rounded-lg bg-[#009fe3] hover:bg-[#0089c4] text-white text-xs font-bold transition-all shadow-md shadow-[#009fe3]/20 flex items-center space-x-1.5"
+              className="px-4 py-2 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold transition-all shadow-md shadow-[#059669]/20 flex items-center space-x-1.5"
             >
               <span>Get Free Villa Sizing</span>
               <ArrowRight className="w-3.5 h-3.5" />

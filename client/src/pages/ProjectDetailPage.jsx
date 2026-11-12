@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   FolderKanban, MapPin, Calendar, CheckCircle2, 
-  ArrowRight, Cpu, Building, ShieldCheck, Sparkles 
+  ArrowRight, Cpu, Building, ShieldCheck 
 } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';

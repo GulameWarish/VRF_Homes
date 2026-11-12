@@ -429,8 +429,6 @@ export const autoSeedData = async () => {
   const brandCount = await Brand.countDocuments();
   if (brandCount === 0) {
     console.log('[Seed] Seeding & syncing brands with authentic logos...');
-    // Ensure Blue Star is removed
-    await Brand.deleteOne({ slug: 'blue-star' });
 
     const brandsData = [
       {
@@ -502,6 +500,16 @@ export const autoSeedData = async () => {
         isPartner: true,
         authorizationNote: 'Authorized Product Partner',
         sortOrder: 7
+      },
+      {
+        name: 'Blue Star',
+        slug: 'blue-star',
+        logo: '/images/brands/blue-star.svg',
+        description: "India's premier air conditioning brand with over 80 years of engineering expertise, VRF V Plus technology, and 54°C high ambient resilience.",
+        categories: ['VRF', 'Residential', 'Commercial', 'Ductable AC'],
+        isPartner: true,
+        authorizationNote: 'Authorized Sales & Service Partner',
+        sortOrder: 8
       }
     ];
 
@@ -1281,6 +1289,62 @@ export const autoSeedData = async () => {
       isFeatured: true,
       isPublished: true,
       sortOrder: 28
+    },
+    {
+      name: 'Blue Star VRF V Plus 100% Inverter Outdoor Condenser',
+      slug: 'blue-star-vrf-v-plus-inverter-system',
+      category: 'VRF Air Conditioning Systems',
+      tagline: 'High Ambient Cooling up to 54°C with 100% Inverter Scroll Technology',
+      image: '/images/equipment/blue-star-outdoor.jpg',
+      description: "Blue Star VRF V Plus is India's leading 100% Inverter VRF system engineered to deliver unyielding comfort under extreme 54°C outdoor heat with 1,000m total piping length.",
+      applications: ['Villas & Farmhouses', 'Boutique Hotels', 'Corporate Offices', 'Multi-Floor Residences'],
+      keyFeatures: [
+        'All-DC Inverter scroll compressors for maximum seasonal energy efficiency',
+        'Operates effortlessly in punishing Indian ambient temperatures up to 54°C',
+        'Extended total piping capability up to 1,000 meters for luxury villas and towers',
+        'Intelligent AHU kit interface and BMS automation integration (Modbus/BACnet)'
+      ],
+      technicalSpecs: [
+        { label: 'Capacity Range', value: '8 HP to 112 HP Combination' },
+        { label: 'Compressor Type', value: 'DC Inverter Hermetic Scroll' },
+        { label: 'Operating Ambient Temp', value: '-5°C to 54°C' },
+        { label: 'Refrigerant', value: 'Eco-Friendly R410A' },
+        { label: 'Max Total Piping Length', value: '1,000 meters' },
+        { label: 'Power Supply', value: '415V / 3 Phase / 50 Hz' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '8 HP - 112 HP',
+      efficiencyRating: 'High Seasonal COP',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 29
+    },
+    {
+      name: 'Blue Star Inverter Concealed Ductable & Hi-Wall Indoor AC',
+      slug: 'blue-star-inverter-concealed-ductable-hi-wall',
+      category: 'Concealed AC',
+      tagline: 'Concealed Architecture Cooling for High-End Residences & Corporate Offices',
+      image: '/images/equipment/blue-star-indoor.jpg',
+      description: 'Blue Star concealed ductable and hi-wall inverter units designed for minimalist luxury interiors, fitting seamlessly inside false ceilings with ultra-low sound levels.',
+      applications: ['Living Rooms', 'Master Bedrooms', 'Boardrooms', 'Executive Cabins'],
+      keyFeatures: [
+        'Ultra-slim concealed chassis fits into tight false ceiling drops',
+        'Whisper-silent indoor blower for peaceful living rooms and bedrooms',
+        'Multi-stage filtration removing airborne dust and PM2.5 particles',
+        'Backlit cordless remote and smart smartphone WiFi thermostat support'
+      ],
+      technicalSpecs: [
+        { label: 'Tonnage Range', value: '1.5 TR to 5.5 TR' },
+        { label: 'Indoor Noise Level', value: 'Down to 26 dB(A)' },
+        { label: 'Blower Type', value: 'Centrifugal DIDW Aerodynamic Impeller' },
+        { label: 'Filtration Efficiency', value: 'High-Efficiency Washable Filter' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '1.5 TR - 5.5 TR',
+      efficiencyRating: '5 Star Inverter Grade',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 30
     }
   ];
 

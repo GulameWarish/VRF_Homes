@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   Check, X, Zap, Volume2, ShieldCheck, Home, 
-  Sparkles, ArrowRight, Award, Compass, Smartphone, 
+  ArrowRight, Award, Compass, Smartphone, 
   Sliders, Layers, Wind, CheckCircle2, ChevronRight
 } from 'lucide-react';
 
@@ -21,7 +21,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
       title: 'Completely Concealed Inside False Ceilings',
       tag: 'Zero Wall Clutter',
       desc: 'Say goodbye to bulky plastic boxes hanging on your expensive luxury wallpaper. VRF indoor units disappear completely inside false ceilings, leaving only sleek architectural linear slot diffusers visible.',
-      icon: Sparkles,
+      icon: Layers,
       stat: '100% Concealed',
       highlight: 'Luxury Hotel & Villa Aesthetic'
     },
@@ -111,7 +111,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
             </div>
 
             {/* Right Column: Signature Blue Block "WHY VRF HOME?" */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-[#009fe3] via-[#0089c4] to-[#0b2447] text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative overflow-hidden">
+            <div className="lg:col-span-5 bg-gradient-to-br from-[#059669] via-[#047857] to-[#0b2447] text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative overflow-hidden">
               {/* Subtle architectural background pattern overlay */}
               <div className="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
               <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-cyan-400/15 rounded-full blur-2xl pointer-events-none"></div>
@@ -140,7 +140,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
                     className="px-6 py-3 rounded-xl bg-white text-navy-950 font-extrabold text-xs sm:text-sm hover:bg-cyan-50 transition-all shadow-lg flex items-center space-x-2 group"
                   >
                     <span>Get a Free Estimate</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#009fe3]" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#059669]" />
                   </button>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
         {/* 2. CLIENT-FRIENDLY CONTEXT SECTION ("Client easily samjh sake") */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-navy-950 text-white text-xs font-bold uppercase tracking-wider mb-3 shadow-xs">
-            <Compass className="w-3.5 h-3.5 text-cyan-400" />
+            <Compass className="w-3.5 h-3.5 text-emerald-400" />
             <span>Understanding VRF Home Made Simple</span>
           </div>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 tracking-tight">
@@ -171,24 +171,24 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
             return (
               <div
                 key={idx}
-                className="group relative bg-white hover:bg-slate-50/80 rounded-2xl border border-slate-200/90 hover:border-[#009fe3]/50 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
+                className="group relative bg-white hover:bg-slate-50/80 rounded-2xl border border-slate-200/90 hover:border-[#059669]/50 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
               >
                 <div>
                   {/* Top Row: Icon + Number */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#009fe3] border border-blue-100 flex items-center justify-center group-hover:scale-108 group-hover:bg-[#009fe3] group-hover:text-white transition-all shadow-xs">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-50 text-[#059669] border border-emerald-100 flex items-center justify-center group-hover:scale-108 group-hover:bg-[#059669] group-hover:text-white transition-all shadow-xs">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-black text-slate-300 group-hover:text-cyan-500 transition-colors">
+                    <span className="text-xs font-black text-slate-300 group-hover:text-emerald-500 transition-colors">
                       {item.number}
                     </span>
                   </div>
 
-                  <span className="text-[11px] font-bold text-[#009fe3] uppercase tracking-wider block mb-1">
+                  <span className="text-[11px] font-bold text-[#059669] uppercase tracking-wider block mb-1">
                     {item.tag}
                   </span>
 
-                  <h4 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors leading-snug">
+                  <h4 className="text-base sm:text-lg font-bold text-navy-950 group-hover:text-[#059669] transition-colors leading-snug">
                     {item.title}
                   </h4>
 
@@ -213,7 +213,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-3">
             <div>
-              <span className="text-xs font-bold text-[#009fe3] uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-1">
                 Quick Reality Check
               </span>
               <h4 className="text-xl sm:text-2xl font-extrabold text-navy-950">
@@ -253,7 +253,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
           {/* Bottom Conversion Banner */}
           <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-slate-50 via-blue-50/40 to-slate-50 p-5 rounded-2xl gap-4">
             <div className="flex items-center space-x-3 text-center sm:text-left">
-              <div className="w-10 h-10 rounded-xl bg-[#009fe3]/10 text-[#009fe3] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0">
                 <Award className="w-5 h-5" />
               </div>
               <div>
@@ -268,7 +268,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
 
             <button
               onClick={() => onOpenQuote && onOpenQuote({ propertyType: 'Luxury Villa / Residential VRF' })}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md shadow-[#009fe3]/25 flex items-center justify-center space-x-2 shrink-0 group"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md shadow-[#059669]/25 flex items-center justify-center space-x-2 shrink-0 group"
             >
               <span>Get a Free Estimate</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

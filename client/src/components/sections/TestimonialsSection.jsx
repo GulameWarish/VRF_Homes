@@ -27,7 +27,7 @@ export default function TestimonialsSection({ testimonials }) {
               className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <Quote className="w-6 h-6 text-[#009fe3] mb-3 opacity-70" />
+                <Quote className="w-6 h-6 text-[#059669] mb-3 opacity-70" />
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
                   "{t.review}"
                 </p>

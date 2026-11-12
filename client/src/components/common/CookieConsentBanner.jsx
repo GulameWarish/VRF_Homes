@@ -39,14 +39,14 @@ export default function CookieConsentBanner() {
         {/* Top Header */}
         <div className="flex items-start justify-between gap-3 mb-2.5">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#009fe3]/20 border border-[#009fe3]/40 flex items-center justify-center text-cyan-400 shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#059669]/20 border border-[#059669]/40 flex items-center justify-center text-emerald-400 shrink-0">
               <Cookie className="w-4 h-4" />
             </div>
             <div>
               <h3 className="text-xs sm:text-sm font-extrabold text-white tracking-wide">
                 Cookie &amp; Privacy Notice
               </h3>
-              <span className="text-[10px] text-cyan-300 font-medium">
+              <span className="text-[10px] text-emerald-300 font-medium">
                 VRF Homes Engineering Platform
               </span>
             </div>
@@ -66,7 +66,7 @@ export default function CookieConsentBanner() {
         <p className="text-[11px] sm:text-xs text-slate-300 leading-relaxed mb-3.5">
           We use cookies and secure telemetry to optimize your browsing experience, remember your HVAC project sizing preferences, and analyze site performance.
           Learn more in our{' '}
-          <Link to="/privacy" className="text-[#009fe3] underline hover:text-cyan-300 font-semibold">
+          <Link to="/privacy" className="text-[#059669] underline hover:text-emerald-300 font-semibold">
             Privacy Policy
           </Link>.
         </p>
@@ -75,7 +75,7 @@ export default function CookieConsentBanner() {
         <div className="flex items-center space-x-2 pt-1 border-t border-white/10">
           <button
             onClick={handleAcceptAll}
-            className="flex-1 py-2 px-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold text-xs transition-all shadow-md shadow-[#009fe3]/30 text-center"
+            className="flex-1 py-2 px-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-xs transition-all shadow-md shadow-[#059669]/30 text-center"
           >
             Accept All Cookies
           </button>

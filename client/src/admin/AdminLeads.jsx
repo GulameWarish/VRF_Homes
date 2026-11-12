@@ -197,7 +197,7 @@ export default function AdminLeads() {
                     <td className="py-3.5 px-4">
                       <span className={`px-2 py-0.5 rounded text-[10px] font-extrabold ${
                         l.status === 'New' ? 'bg-emerald-100 text-emerald-800' :
-                        l.status === 'Contacted' ? 'bg-blue-100 text-blue-800' :
+                        l.status === 'Contacted' ? 'bg-emerald-100 text-blue-800' :
                         l.status === 'Follow-up' ? 'bg-amber-100 text-amber-800' :
                         l.status === 'Quotation Sent' ? 'bg-purple-100 text-purple-800' :
                         l.status === 'Converted' ? 'bg-teal-100 text-teal-800' :

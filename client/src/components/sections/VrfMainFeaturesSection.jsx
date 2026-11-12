@@ -80,7 +80,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3">
             <Compass className="w-3.5 h-3.5" />
             <span>Field Engineering & Equipment Execution</span>
           </div>
@@ -121,7 +121,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
                   alt={current.title}
                   className="w-full h-full min-h-[280px] max-h-[440px] object-cover transform group-hover:scale-102 transition-transform duration-500"
                 />
-                <div className="absolute bottom-3 left-3 bg-navy-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-[10px] font-mono text-cyan-300 border border-cyan-500/30 flex items-center space-x-1.5 shadow-md">
+                <div className="absolute bottom-3 left-3 bg-navy-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-[10px] font-mono text-emerald-300 border border-cyan-500/30 flex items-center space-x-1.5 shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
                   <span>{current.drawingType}</span>
                 </div>
@@ -131,7 +131,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
             {/* Right: Technical Explanation & Specifications */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <span className="inline-block text-xs font-bold text-cyan-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full mb-3">
+                <span className="inline-block text-xs font-bold text-emerald-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full mb-3">
                   {current.badge}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -146,7 +146,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
               <div className="space-y-3 pt-2">
                 {current.bullets.map((b, i) => (
                   <div key={i} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>{b}</span>
                   </div>
                 ))}
@@ -156,7 +156,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
               <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
                 <button
                   onClick={() => onOpenQuote && onOpenQuote({ productInterest: 'VRF Air Conditioning Systems' })}
-                  className="px-6 py-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center space-x-2"
+                  className="px-6 py-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center space-x-2"
                 >
                   <span>Get a Free Estimate</span>
                   <ArrowRight className="w-4 h-4" />
@@ -164,7 +164,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
 
                 <Link
                   to="/features"
-                  className="text-xs font-bold text-cyan-300 hover:text-white transition-colors flex items-center"
+                  className="text-xs font-bold text-emerald-300 hover:text-white transition-colors flex items-center"
                 >
                   <span>All 12 Features</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -182,7 +182,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
               onClick={() => setActiveTab(index)}
               className={`p-4 rounded-2xl border transition-all cursor-pointer ${
                 activeTab === index
-                  ? 'bg-slate-900 text-white border-[#009fe3] shadow-lg shadow-cyan-900/20'
+                  ? 'bg-slate-900 text-white border-[#059669] shadow-lg shadow-cyan-900/20'
                   : 'bg-white text-navy-950 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
               }`}
             >
@@ -196,7 +196,7 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
               <h5 className={`text-xs font-bold truncate ${activeTab === index ? 'text-white' : 'text-navy-950'}`}>
                 {item.title}
               </h5>
-              <p className={`text-[11px] truncate mt-0.5 ${activeTab === index ? 'text-cyan-300' : 'text-slate-500'}`}>
+              <p className={`text-[11px] truncate mt-0.5 ${activeTab === index ? 'text-emerald-300' : 'text-slate-500'}`}>
                 {item.badge}
               </p>
             </div>

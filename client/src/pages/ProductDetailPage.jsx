@@ -220,7 +220,7 @@ export default function ProductDetailPage({ onOpenQuote }) {
 
               {/* Peace of Mind Guarantee */}
               <div className="p-6 rounded-2xl bg-gradient-to-tr from-navy-950 to-navy-900 text-white space-y-2">
-                <div className="flex items-center space-x-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+                <div className="flex items-center space-x-2 text-emerald-300 font-bold text-xs uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4" />
                   <span>OEM Warranty & Commissioning Guarantee</span>
                 </div>

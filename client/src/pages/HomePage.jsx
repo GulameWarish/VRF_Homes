@@ -120,7 +120,7 @@ export default function HomePage({ onOpenQuote }) {
       {/* Google SEO Targeted City & Service Strip */}
       <section className="bg-navy-950 text-white border-y border-slate-800 py-3.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center space-x-2 text-cyan-300 font-bold uppercase tracking-wider shrink-0">
+          <div className="flex items-center space-x-2 text-emerald-300 font-bold uppercase tracking-wider shrink-0">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
             <span>Active Service Hubs & Certified Technicians:</span>
           </div>
@@ -129,7 +129,7 @@ export default function HomePage({ onOpenQuote }) {
               <a
                 key={c.slug}
                 href={`/locations/${c.slug}`}
-                className="px-2.5 py-1 rounded bg-slate-900 hover:bg-[#009fe3] text-slate-300 hover:text-white border border-slate-800 transition-colors text-[11px] font-semibold"
+                className="px-2.5 py-1 rounded bg-slate-900 hover:bg-[#059669] text-slate-300 hover:text-white border border-slate-800 transition-colors text-[11px] font-semibold"
                 title={`VRF Solution, AC Repairing & New AC Install in ${c.name}`}
               >
                 📍 {c.name}

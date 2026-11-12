@@ -108,7 +108,7 @@ export default function RealProjectShowcaseSection({ onOpenQuote }) {
         {/* Interactive Before vs After Comparison Card */}
         <div className="mb-16 bg-gradient-to-br from-navy-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl border border-slate-800 overflow-hidden">
           <div className="max-w-3xl mx-auto text-center mb-8">
-            <span className="text-cyan-400 text-xs font-bold uppercase tracking-wider block mb-1">
+            <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider block mb-1">
               Visual Transformation
             </span>
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
@@ -227,11 +227,11 @@ export default function RealProjectShowcaseSection({ onOpenQuote }) {
                 </span>
 
                 <div className="absolute bottom-3 left-4 right-4">
-                  <span className="text-[11px] font-bold text-cyan-300 block uppercase tracking-wider">
+                  <span className="text-[11px] font-bold text-emerald-300 block uppercase tracking-wider">
                     {p.category}
                   </span>
                   <div className="flex items-center text-xs text-white font-medium mt-0.5">
-                    <MapPin className="w-3.5 h-3.5 text-cyan-400 mr-1 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-emerald-400 mr-1 shrink-0" />
                     <span className="truncate">{p.city}</span>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function RealProjectShowcaseSection({ onOpenQuote }) {
 
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
-                  <h4 className="text-base font-bold text-navy-950 mb-3 group-hover:text-[#009fe3] transition-colors leading-snug">
+                  <h4 className="text-base font-bold text-navy-950 mb-3 group-hover:text-[#059669] transition-colors leading-snug">
                     {p.title}
                   </h4>
 
@@ -259,7 +259,7 @@ export default function RealProjectShowcaseSection({ onOpenQuote }) {
                 <button
                   type="button"
                   onClick={() => onOpenQuote && onOpenQuote({ propertyType: p.category, requirements: `Enquiring for project layout similar to: ${p.title} (${p.city})` })}
-                  className="w-full py-2.5 px-4 bg-white hover:bg-[#009fe3] text-navy-950 hover:text-white border border-slate-200 hover:border-[#009fe3] rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-1.5 shadow-xs"
+                  className="w-full py-2.5 px-4 bg-white hover:bg-[#059669] text-navy-950 hover:text-white border border-slate-200 hover:border-[#059669] rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-1.5 shadow-xs"
                 >
                   <span>Request Similar Site Estimation</span>
                   <ArrowRight className="w-3.5 h-3.5" />

@@ -97,7 +97,7 @@ export default function CommercialDetailPage({ onOpenQuote }) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 text-cyan-200 text-xs font-semibold mb-4 border border-white/15">
-              <Building2 className="w-3.5 h-3.5 text-cyan-300" />
+              <Building2 className="w-3.5 h-3.5 text-emerald-300" />
               <span>Commercial Sector Specialization</span>
             </div>
 

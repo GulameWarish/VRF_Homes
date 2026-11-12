@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { BookOpen, Clock, Calendar, User, ArrowRight, Share2, Sparkles } from 'lucide-react';
+import { BookOpen, Clock, Calendar, User, ArrowRight, Share2 } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';
 
@@ -83,7 +83,7 @@ export default function InsightDetailPage({ onOpenQuote }) {
             <span>/</span>
             <Link to="/insights" className="hover:text-white">Insights & Resources</Link>
             <span>/</span>
-            <span className="text-cyan-300 font-semibold truncate">{blog.title}</span>
+            <span className="text-emerald-300 font-semibold truncate">{blog.title}</span>
           </nav>
 
           <span className="inline-block bg-white/10 text-cyan-200 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-white/15 mb-4">

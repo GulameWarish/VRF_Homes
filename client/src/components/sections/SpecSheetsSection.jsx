@@ -57,6 +57,16 @@ const SPEC_SHEETS = [
     downloadUrl: '/images/equipment/ogeneral-outdoor.jpg'
   },
   {
+    id: 'blue-star-vrf',
+    brand: 'Blue Star India',
+    title: 'Blue Star VRF V Plus 100% Inverter Technical Data Book',
+    specs: 'Up to 112 HP system combination, 54°C high ambient rating, 1,000m total piping network, intelligent AHU kit compatibility',
+    pages: '48 Pages PDF',
+    size: '7.8 MB',
+    badge: 'Indian Engineering Leader',
+    downloadUrl: '/images/equipment/blue-star-outdoor.jpg'
+  },
+  {
     id: 'trane-chiller',
     brand: 'Trane Technologies',
     title: 'Trane Modular Air-Cooled Scroll Chillers & AHU Guide',
@@ -156,7 +166,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#009fe3] bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-100">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#059669] bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-100">
                     {sheet.badge}
                   </span>
                   <span className="text-xs text-slate-400 font-medium">
@@ -168,7 +178,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                   {sheet.brand}
                 </span>
 
-                <h3 className="text-base font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors leading-snug">
+                <h3 className="text-base font-bold text-navy-950 group-hover:text-[#059669] transition-colors leading-snug">
                   {sheet.title}
                 </h3>
 
@@ -186,7 +196,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                 <button
                   type="button"
                   onClick={() => handleOpenDownloadModal(sheet)}
-                  className="px-4 py-2 bg-navy-950 group-hover:bg-[#009fe3] text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors shadow-sm"
+                  className="px-4 py-2 bg-navy-950 group-hover:bg-[#059669] text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors shadow-sm"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download Spec Sheet</span>
@@ -234,7 +244,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                     placeholder="e.g. Ar. Rajesh Sharma"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#009fe3] focus:outline-none focus:ring-1 focus:ring-[#009fe3]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
                   />
                 </div>
 
@@ -249,7 +259,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                       placeholder="+91 98765 43210"
                       value={formData.mobile}
                       onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#009fe3] focus:outline-none focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
                     />
                   </div>
 
@@ -263,7 +273,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                       placeholder="office@studio.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#009fe3] focus:outline-none focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669]"
                     />
                   </div>
                 </div>
@@ -275,7 +285,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                   <select
                     value={formData.profession}
                     onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#009fe3] focus:outline-none focus:ring-1 focus:ring-[#009fe3] bg-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#059669] focus:outline-none focus:ring-1 focus:ring-[#059669] bg-white"
                   >
                     <option value="Architect / Interior Designer">Architect / Interior Designer</option>
                     <option value="MEP HVAC Consultant">MEP HVAC Consultant</option>
@@ -287,7 +297,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-3.5 bg-[#009fe3] hover:bg-[#0089c4] text-white font-black rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 text-sm mt-4"
+                  className="w-full py-3.5 bg-[#059669] hover:bg-[#047857] text-white font-black rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 text-sm mt-4"
                 >
                   {submitting ? (
                     <span>Verifying Access...</span>
@@ -320,7 +330,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Direct Engineer Line:</span>
-                    <span className="font-bold text-[#009fe3]">+91 88969 21318</span>
+                    <span className="font-bold text-[#059669]">+91 88969 21318</span>
                   </div>
                 </div>
 

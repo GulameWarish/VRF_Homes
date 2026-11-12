@@ -9,7 +9,7 @@
 
     <!-- Cyan Electric Gradient -->
     <linearGradient id="favCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#009fe3"/>
+      <stop offset="0%" stop-color="#059669"/>
       <stop offset="100%" stop-color="#00e5ff"/>
     </linearGradient>
 
@@ -17,7 +17,7 @@
     <linearGradient id="favText" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ffffff"/>
       <stop offset="50%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#009fe3"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
   </defs>
 
@@ -26,7 +26,7 @@
   <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" stroke="url(#favCyan)" stroke-width="2"/>
 
   <!-- Architectural House Roof Apex (HOME) -->
-  <path d="M 11 26 L 32 8 L 53 26" stroke="#009fe3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 11 26 L 32 8 L 53 26" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
   
   <!-- Ventilation / HVAC Chimney -->
   <path d="M 43 14 V 9.5 H 47 V 17.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

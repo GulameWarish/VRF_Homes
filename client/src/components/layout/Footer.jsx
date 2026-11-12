@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Brand & Introduction */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-baseline space-x-1.5 group">
-              <span className="text-2xl font-black italic tracking-tighter text-[#009fe3] uppercase drop-shadow-sm group-hover:scale-105 transition-transform">
+              <span className="text-2xl font-black italic tracking-tighter text-[#059669] uppercase drop-shadow-sm group-hover:scale-105 transition-transform">
                 VRF
               </span>
               <span className="text-xl font-extrabold tracking-tight text-white uppercase ml-1.5">
@@ -87,7 +87,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-2 pt-1">
               <a 
                 href={`tel:${cleanPhone}`}
-                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-hvac-600/20 hover:bg-hvac-600 text-cyan-300 hover:text-white border border-hvac-500/30 text-xs font-bold transition-colors"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-hvac-600/20 hover:bg-hvac-600 text-emerald-300 hover:text-white border border-hvac-500/30 text-xs font-bold transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>{phone}</span>
@@ -130,7 +130,7 @@ export default function Footer() {
 
             {/* Commercial Office Location as requested */}
             <div className="bg-slate-900/90 p-3 rounded-xl border border-cyan-500/40 mb-4 shadow-sm">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 block mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
                 Commercial Division Office
               </span>
               <p className="leading-relaxed text-[11px] text-slate-300">
@@ -143,7 +143,7 @@ export default function Footer() {
                 href="https://maps.google.com/?q=Konathedath+Road+Kunnumpuram+Desom+Aluva+Kochi+Kerala+683102"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-[10px] font-bold text-cyan-400 hover:text-cyan-300 hover:underline mt-1.5"
+                className="inline-flex items-center text-[10px] font-bold text-emerald-400 hover:text-emerald-300 hover:underline mt-1.5"
               >
                 <MapPin className="w-3 h-3 mr-1" />
                 <span>View on Google Maps</span>

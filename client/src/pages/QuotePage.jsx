@@ -150,6 +150,23 @@ export default function QuotePage() {
         'City Multi Dynamic Capacity Shifting',
         'Simultaneous Heating & Cooling (R2)'
       ]
+    },
+    {
+      id: 'blue-star',
+      name: 'Blue Star',
+      tagline: "India's Cooling Expert • VRF V Plus Inverter",
+      logo: '/images/brands/blue-star.svg',
+      image: '/images/equipment/blue-star-outdoor.jpg',
+      indoorImage: '/images/equipment/blue-star-indoor.jpg',
+      indoorName: 'Blue Star Inverter Split / VRF Indoor Unit',
+      category: 'VRF V Plus 100% Inverter',
+      context: "India's homegrown air conditioning pioneer with over 8 decades of specialized cooling engineering. Blue Star VRF V Plus systems are built for rugged 54°C Indian heat, high part-load efficiency, and flexible piping architectures.",
+      highlights: [
+        'Blue Star VRF V Plus 100% Inverter Outdoor Condenser',
+        'Blue Star Concealed Ducted & Inverter Hi-Wall Indoor',
+        'Continuous Cooling Reliability Up to 54°C Ambient',
+        'Extended Piping Network Up to 1,000m Total Length'
+      ]
     }
   ];
 
@@ -272,14 +289,14 @@ export default function QuotePage() {
           
           {/* Breadcrumbs */}
           <div className="flex items-center space-x-2 text-[11px] sm:text-xs font-semibold text-slate-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap">
-            <Link to="/" className="hover:text-[#009fe3] transition-colors">HOME</Link>
+            <Link to="/" className="hover:text-[#059669] transition-colors">HOME</Link>
             <span>/</span>
-            <span className="text-[#009fe3] uppercase">REQUEST A FREE ESTIMATE</span>
+            <span className="text-[#059669] uppercase">REQUEST A FREE ESTIMATE</span>
           </div>
 
           {/* Section 1: VRF Home Introduction (As seen in Reference) */}
           <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm mb-6 sm:mb-10">
-            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
               <span>Next-Gen Climate Engineering &amp; Architectural Luxury</span>
             </div>
 
@@ -300,7 +317,7 @@ export default function QuotePage() {
             {/* 4 Feature Badges (Fluid Responsive Grid: 2 cols on mobile, 4 on desktop) */}
             <div className="mt-6 sm:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-5 sm:pt-6 border-t border-slate-100">
               <div className="flex items-center space-x-2.5 sm:space-x-3 p-2 rounded-xl bg-slate-50/70">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-50 text-[#009fe3] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0">
                   <Wind className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div className="min-w-0">
@@ -350,7 +367,7 @@ export default function QuotePage() {
                 <div>
                   <h2 className="text-base sm:text-lg font-extrabold text-navy-950 uppercase tracking-wider flex items-center space-x-2">
                     <span>Authorized Equipment Portfolio</span>
-                    <span className="text-[10px] sm:text-xs bg-[#009fe3]/10 text-[#009fe3] px-2 py-0.5 rounded-full font-bold">
+                    <span className="text-[10px] sm:text-xs bg-[#059669]/10 text-[#059669] px-2 py-0.5 rounded-full font-bold">
                       7 Top Brands
                     </span>
                   </h2>
@@ -384,8 +401,8 @@ export default function QuotePage() {
                       onMouseLeave={() => setHoveredBrand(null)}
                       className={`group relative rounded-2xl overflow-hidden cursor-pointer border transition-all duration-500 h-64 sm:h-72 shadow-sm ${
                         isSelected 
-                          ? 'ring-3 ring-[#009fe3] border-transparent shadow-xl' 
-                          : 'border-slate-200 hover:border-[#009fe3] hover:shadow-xl'
+                          ? 'ring-3 ring-[#059669] border-transparent shadow-xl' 
+                          : 'border-slate-200 hover:border-[#059669] hover:shadow-xl'
                       }`}
                     >
                       {/* Background Equipment Image (Transforms and Dims on Hover/Tap) */}
@@ -414,7 +431,7 @@ export default function QuotePage() {
                           />
                         </div>
                         {isSelected && (
-                          <span className="bg-[#009fe3] text-white text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded-full flex items-center space-x-1 shadow-md">
+                          <span className="bg-[#059669] text-white text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded-full flex items-center space-x-1 shadow-md">
                             <Check className="w-3 h-3" />
                             <span>Selected</span>
                           </span>
@@ -427,7 +444,7 @@ export default function QuotePage() {
                           ? 'opacity-0 translate-y-4' 
                           : 'group-hover:opacity-0 group-hover:translate-y-4'
                       }`}>
-                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-cyan-300">
+                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-emerald-300">
                           {b.category}
                         </span>
                         <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">
@@ -449,7 +466,7 @@ export default function QuotePage() {
                       }`}>
                         <div className="pt-8 sm:pt-9">
                           <div className="flex items-center justify-between">
-                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#009fe3]">
+                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#059669]">
                               {b.category}
                             </span>
                             <span className="text-[9px] sm:text-[10px] text-slate-400 font-medium">
@@ -475,7 +492,7 @@ export default function QuotePage() {
                                 className="w-12 h-7 rounded object-cover bg-white shrink-0 border border-white/20"
                               />
                               <div className="min-w-0">
-                                <span className="text-[9px] uppercase font-bold text-cyan-300 block truncate">
+                                <span className="text-[9px] uppercase font-bold text-emerald-300 block truncate">
                                   Paired Indoor Unit
                                 </span>
                                 <span className="text-[10px] text-slate-200 truncate block font-medium">
@@ -489,7 +506,7 @@ export default function QuotePage() {
                           <div className="mt-2 sm:mt-2.5 space-y-1">
                             {b.highlights.slice(0, 3).map((hl, i) => (
                               <div key={i} className="flex items-center space-x-1.5 text-[10px] sm:text-[11px] text-cyan-200">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#009fe3] shrink-0"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#059669] shrink-0"></span>
                                 <span className="truncate">{hl}</span>
                               </div>
                             ))}
@@ -498,10 +515,10 @@ export default function QuotePage() {
 
                         {/* Card Selection Action Button */}
                         <div className="pt-2 sm:pt-3 border-t border-white/10 flex items-center justify-between">
-                          <span className="text-[10px] sm:text-[11px] font-bold text-cyan-300">
+                          <span className="text-[10px] sm:text-[11px] font-bold text-emerald-300">
                             {isSelected ? 'Selected for Estimate' : 'Selected Brand'}
                           </span>
-                          <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#009fe3] text-white flex items-center justify-center text-[10px] sm:text-xs font-bold">
+                          <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#059669] text-white flex items-center justify-center text-[10px] sm:text-xs font-bold">
                             {isSelected ? '✓' : '+'}
                           </span>
                         </div>
@@ -512,8 +529,8 @@ export default function QuotePage() {
               </div>
 
               {/* Consultation Note */}
-              <div className="p-3.5 sm:p-4 bg-blue-50/70 rounded-2xl border border-blue-200/80 flex items-start space-x-2.5 sm:space-x-3 text-xs text-slate-700">
-                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#009fe3] shrink-0 mt-0.5" />
+              <div className="p-3.5 sm:p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200/80 flex items-start space-x-2.5 sm:space-x-3 text-xs text-slate-700">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#059669] shrink-0 mt-0.5" />
                 <p className="text-[11px] sm:text-xs leading-relaxed">
                   <strong>Unbiased Multi-Brand Engineering:</strong> We analyze your architectural floor plans, ceiling clearances, and electrical loads to recommend the optimal equipment without manufacturer bias.
                 </p>
@@ -525,7 +542,7 @@ export default function QuotePage() {
               
               {/* Form Title (Matching Reference Screenshot) */}
               <div className="text-center pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-slate-100">
-                <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-[#009fe3] uppercase tracking-wider">
+                <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-[#059669] uppercase tracking-wider">
                   ENQUIRE FOR A PROJECT QUOTE
                 </h3>
                 <p className="text-[11px] sm:text-xs text-slate-500 mt-1">
@@ -593,7 +610,7 @@ export default function QuotePage() {
 `Sent via VRF Homes Web Portal (https://vrfhomes.com)\n` +
 `==============================================`
                       )}`}
-                      className="py-2.5 px-3 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
+                      className="py-2.5 px-3 bg-[#059669] hover:bg-[#047857] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
                     >
                       <Mail className="w-4 h-4" />
                       <span>Send Email</span>
@@ -641,7 +658,7 @@ export default function QuotePage() {
                       onChange={handleChange}
                       placeholder="Your Full Name"
                       required
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     />
                   </div>
 
@@ -655,7 +672,7 @@ export default function QuotePage() {
                       onChange={handleChange}
                       placeholder="name@example.com"
                       required
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     />
                   </div>
 
@@ -669,7 +686,7 @@ export default function QuotePage() {
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
                       required
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     />
                   </div>
 
@@ -684,7 +701,7 @@ export default function QuotePage() {
                         onChange={handleChange}
                         placeholder="e.g. Lucknow / Kochi"
                         required
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                       />
                     </div>
                     <div>
@@ -695,7 +712,7 @@ export default function QuotePage() {
                         value={formData.pincode}
                         onChange={handleChange}
                         placeholder="e.g. 226018"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                       />
                     </div>
                   </div>
@@ -709,9 +726,10 @@ export default function QuotePage() {
                       name="preferredBrand"
                       value={formData.preferredBrand}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     >
                       <option value="All Brands (Unbiased Recommendation)">All Brands (Unbiased Recommendation)</option>
+                      <option value="Blue Star">Blue Star VRF V Plus</option>
                       <option value="Voltas">Voltas Inverter VRF</option>
                       <option value="Carrier">Carrier XPower VRF</option>
                       <option value="Haier">Haier MRV & Duct AC</option>
@@ -729,7 +747,7 @@ export default function QuotePage() {
                       name="propertyType"
                       value={formData.propertyType}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     >
                       <option value="Luxury Villa">Luxury Villa / Independent House</option>
                       <option value="Modern Apartment">Modern Apartment / Penthouse</option>
@@ -750,7 +768,7 @@ export default function QuotePage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Number of rooms, floor area, or cooling preferences..."
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#009fe3] focus:ring-1 focus:ring-[#009fe3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     ></textarea>
                   </div>
 
@@ -759,7 +777,7 @@ export default function QuotePage() {
                     <label className="block text-xs font-semibold text-slate-600 mb-1">
                       Upload Floor Plan / BOQ (Optional)
                     </label>
-                    <label className="flex items-center justify-center p-3 border-2 border-dashed border-slate-300 hover:border-[#009fe3] rounded-xl cursor-pointer bg-slate-50 transition-colors">
+                    <label className="flex items-center justify-center p-3 border-2 border-dashed border-slate-300 hover:border-[#059669] rounded-xl cursor-pointer bg-slate-50 transition-colors">
                       <Upload className="w-4 h-4 text-slate-400 mr-2 shrink-0" />
                       <span className="text-[11px] sm:text-xs text-slate-600 truncate">
                         {uploading ? 'Uploading...' : formData.attachment ? 'File Attached Successfully ✓' : 'Attach PDF, DWG, or JPG'}
@@ -777,7 +795,7 @@ export default function QuotePage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3 px-6 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md shadow-[#009fe3]/30 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
+                    className="w-full py-3 px-6 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md shadow-[#059669]/30 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
                   >
                     {loading ? (
                       <span>Sending Request...</span>
@@ -791,12 +809,12 @@ export default function QuotePage() {
 
                   {/* Direct Contact Phone & Email */}
                   <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
-                    <a href="tel:+918896921318" className="hover:text-[#009fe3] flex items-center space-x-1">
-                      <PhoneCall className="w-3 h-3 text-[#009fe3]" />
+                    <a href="tel:+918896921318" className="hover:text-[#059669] flex items-center space-x-1">
+                      <PhoneCall className="w-3 h-3 text-[#059669]" />
                       <span>+91 88969 21318</span>
                     </a>
-                    <a href="mailto:sales@shuklaenterprises.in" className="hover:text-[#009fe3] flex items-center space-x-1 truncate max-w-[220px]">
-                      <Mail className="w-3 h-3 text-[#009fe3]" />
+                    <a href="mailto:sales@shuklaenterprises.in" className="hover:text-[#059669] flex items-center space-x-1 truncate max-w-[220px]">
+                      <Mail className="w-3 h-3 text-[#059669]" />
                       <span className="truncate">sales@shuklaenterprises.in</span>
                     </a>
                   </div>

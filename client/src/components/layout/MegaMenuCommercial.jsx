@@ -85,7 +85,7 @@ export default function MegaMenuCommercial({ onClose, onOpenQuote }) {
           <Link
             to="/commercial"
             onClick={onClose}
-            className="inline-flex items-center text-xs font-bold text-[#009fe3] hover:text-[#0089c4] group whitespace-nowrap"
+            className="inline-flex items-center text-xs font-bold text-[#059669] hover:text-[#047857] group whitespace-nowrap"
           >
             <span>All Commercial Sectors</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -99,7 +99,7 @@ export default function MegaMenuCommercial({ onClose, onOpenQuote }) {
               key={idx}
               to={item.slug}
               onClick={onClose}
-              className="group relative flex flex-col bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#009fe3]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="group relative flex flex-col bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#059669]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               {/* Image banner */}
               <div className="w-full h-28 overflow-hidden bg-slate-200 relative">
@@ -112,7 +112,7 @@ export default function MegaMenuCommercial({ onClose, onOpenQuote }) {
                 <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-md text-[9px] font-extrabold uppercase px-2 py-0.5 rounded text-navy-950 shadow-xs">
                   {item.badge}
                 </span>
-                <span className="absolute bottom-2 left-2 text-xs font-bold text-white group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+                <span className="absolute bottom-2 left-2 text-xs font-bold text-white group-hover:text-emerald-300 transition-colors drop-shadow-sm">
                   {item.title}
                 </span>
               </div>
@@ -122,7 +122,7 @@ export default function MegaMenuCommercial({ onClose, onOpenQuote }) {
                 <p className="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
                   {item.desc}
                 </p>
-                <div className="flex items-center text-[11px] font-bold text-[#009fe3] mt-2.5 pt-2 border-t border-slate-100">
+                <div className="flex items-center text-[11px] font-bold text-[#059669] mt-2.5 pt-2 border-t border-slate-100">
                   <span>Explore Sector</span>
                   <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>

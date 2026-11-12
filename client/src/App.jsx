@@ -62,7 +62,7 @@ function PublicLayout({ onOpenQuote, onOpenSearch }) {
 function NotFoundPage({ onOpenQuote }) {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20">
-      <span className="text-6xl font-black text-[#009fe3] mb-2">404</span>
+      <span className="text-6xl font-black text-[#059669] mb-2">404</span>
       <h1 className="text-2xl sm:text-3xl font-extrabold text-navy-950 mb-3">Page Not Found</h1>
       <p className="text-slate-600 max-w-md mb-8">
         The air conditioning specification or resource you are looking for has been relocated or is temporarily unavailable.
@@ -70,7 +70,7 @@ function NotFoundPage({ onOpenQuote }) {
       <div className="flex flex-wrap gap-4 justify-center">
         <Link 
           to="/" 
-          className="px-6 py-3 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-lg transition-all shadow-md"
+          className="px-6 py-3 bg-[#059669] hover:bg-[#047857] text-white font-bold rounded-lg transition-all shadow-md"
         >
           Return to Homepage
         </Link>

@@ -66,6 +66,15 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
       category: 'Twin-Fan Inverter VRF & Duct AC',
       desc: 'Advanced MRV multi-split technology with gold-fin anti-corrosion coils proven in coastal projects.',
       link: '/products?brand=Haier'
+    },
+    {
+      name: 'Blue Star',
+      slug: 'blue-star',
+      logo: '/images/brands/blue-star.svg',
+      productImage: '/images/equipment/blue-star-outdoor.jpg',
+      category: 'VRF V Plus 100% Inverter',
+      desc: "India's leading cooling specialist with 8+ decades of engineering, 54°C high-ambient VRF V Plus, and 1,000m piping flexibility.",
+      link: '/products?brand=Blue+Star'
     }
   ];
 
@@ -89,7 +98,7 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
           <Link
             to="/products"
             onClick={onClose}
-            className="inline-flex items-center text-xs font-bold text-[#009fe3] hover:text-[#0089c4] group whitespace-nowrap"
+            className="inline-flex items-center text-xs font-bold text-[#059669] hover:text-[#047857] group whitespace-nowrap"
           >
             <span>Explore All Brands & Products</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -103,7 +112,7 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
               key={idx}
               to={b.link}
               onClick={onClose}
-              className="group relative flex flex-col bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#009fe3]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative flex flex-col bg-slate-50 hover:bg-white rounded-xl border border-slate-200/80 hover:border-[#059669]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               {/* Product preview image */}
               <div className="w-full h-24 overflow-hidden bg-slate-200 relative">
@@ -130,9 +139,9 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
                     />
                   </div>
 
-                  <h4 className="text-xs font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors flex items-center justify-between">
+                  <h4 className="text-xs font-bold text-navy-950 group-hover:text-[#059669] transition-colors flex items-center justify-between">
                     <span>{b.name}</span>
-                    <ArrowRight className="w-3 h-3 text-[#009fe3] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                    <ArrowRight className="w-3 h-3 text-[#059669] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                   </h4>
                   
                   <p className="text-[11px] text-slate-500 line-clamp-2 mt-1 leading-relaxed">
@@ -140,9 +149,9 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
                   </p>
                 </div>
 
-                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#009fe3]">
+                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#059669]">
                   <span>View Equipment Range</span>
-                  <span className="text-slate-400 group-hover:text-[#009fe3]">→</span>
+                  <span className="text-slate-400 group-hover:text-[#059669]">→</span>
                 </div>
               </div>
             </Link>

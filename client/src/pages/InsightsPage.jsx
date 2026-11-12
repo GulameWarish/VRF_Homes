@@ -66,7 +66,7 @@ export default function InsightsPage() {
       <section className="bg-navy-950 text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 text-cyan-200 text-xs font-semibold mb-4 border border-white/15">
-            <BookOpen className="w-3.5 h-3.5 text-cyan-300" />
+            <BookOpen className="w-3.5 h-3.5 text-emerald-300" />
             <span>Technical Knowledge & Thought Leadership</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">

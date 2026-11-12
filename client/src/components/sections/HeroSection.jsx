@@ -61,11 +61,11 @@ export default function HeroSection({ settings, onOpenQuote }) {
   const currentUnit = indoorUnits.find(u => u.id === selectedUnit) || indoorUnits[0];
 
   return (
-    <section className="relative bg-gradient-to-b from-[#009fe3]/10 via-slate-50 to-white overflow-hidden pb-12 pt-6 sm:pt-10">
+    <section className="relative bg-gradient-to-b from-[#059669]/10 via-slate-50 to-white overflow-hidden pb-12 pt-6 sm:pt-10">
       
       {/* Top Banner Tagline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
-        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
+        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3">
           <span>VRF Home Climate Technology</span>
         </div>
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight">
@@ -83,7 +83,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
               onClick={() => setSelectedUnit(unit.id)}
               className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
                 selectedUnit === unit.id
-                  ? 'bg-[#009fe3] text-white shadow-md shadow-[#009fe3]/30 scale-105'
+                  ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105'
                   : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
               }`}
             >
@@ -111,7 +111,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="coolPipe" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#009fe3" stopOpacity="0.9" />
+                  <stop offset="0%" stopColor="#059669" stopOpacity="0.9" />
                   <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
@@ -149,7 +149,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
               <path 
                 d="M 22 56 Q 36 48 52 38 T 72 44" 
                 fill="none" 
-                stroke="#009fe3" 
+                stroke="#059669" 
                 strokeWidth="2.5" 
                 strokeDasharray="4,4" 
                 opacity="0.75" 
@@ -167,10 +167,10 @@ export default function HeroSection({ settings, onOpenQuote }) {
               >
                 <span className="relative flex h-7 w-7 items-center justify-center">
                   <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                    selectedUnit === unit.id ? 'bg-[#009fe3]' : 'bg-white'
+                    selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
                   }`}></span>
                   <span className={`relative inline-flex rounded-full h-5 w-5 border-2 border-navy-900 shadow-md ${
-                    selectedUnit === unit.id ? 'bg-[#009fe3]' : 'bg-white'
+                    selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
                   }`}></span>
                 </span>
               </button>
@@ -179,7 +179,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
             {/* Active Unit Mini Card Overlay on Mobile Phones (< sm) */}
             <div className="sm:hidden absolute top-2.5 left-2.5 z-30 max-w-[210px] bg-white/95 backdrop-blur-md rounded-xl p-2 border border-slate-200/90 shadow-xl">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-black tracking-wider text-[#009fe3] uppercase">
+                <span className="text-[10px] font-black tracking-wider text-[#059669] uppercase">
                   {currentUnit.title}
                 </span>
                 <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
@@ -210,12 +210,12 @@ export default function HeroSection({ settings, onOpenQuote }) {
                   onClick={() => setSelectedUnit(unit.id)}
                   className={`absolute z-30 transition-all duration-300 cursor-pointer hidden sm:block ${unit.calloutPos} ${
                     isActive 
-                      ? 'scale-105 ring-2 ring-[#009fe3] shadow-2xl' 
+                      ? 'scale-105 ring-2 ring-[#059669] shadow-2xl' 
                       : 'hover:scale-102 opacity-90'
                   }`}
                 >
                   <div className="bg-white/95 backdrop-blur-md rounded-lg p-2.5 sm:p-3 border border-slate-200/90 shadow-xl max-w-[180px] sm:max-w-[220px]">
-                    <div className="text-[10px] sm:text-xs font-black tracking-wider text-[#009fe3] uppercase mb-1">
+                    <div className="text-[10px] sm:text-xs font-black tracking-wider text-[#059669] uppercase mb-1">
                       {unit.title}
                     </div>
                     <div className="w-full h-12 sm:h-16 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200">
@@ -240,12 +240,12 @@ export default function HeroSection({ settings, onOpenQuote }) {
           {/* Bottom Interactive Spec Bar (Responsive Layout) */}
           <div className="bg-navy-950 text-white p-3.5 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between border-t border-slate-800 gap-3.5 sm:gap-4">
             <div className="flex items-start sm:items-center space-x-3 sm:space-x-4">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#009fe3]/20 border border-[#009fe3]/40 flex items-center justify-center text-[#009fe3] shrink-0 mt-0.5 sm:mt-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#059669]/20 border border-[#059669]/40 flex items-center justify-center text-[#059669] shrink-0 mt-0.5 sm:mt-0">
                 <Wind className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-[11px] sm:text-xs font-bold text-[#009fe3] uppercase tracking-wider">
+                  <span className="text-[11px] sm:text-xs font-bold text-[#059669] uppercase tracking-wider">
                     {currentUnit.title}
                   </span>
                   <span className="text-xs text-slate-400">•</span>
@@ -267,7 +267,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 w-full md:w-auto justify-end shrink-0">
               <Link
                 to="/quote"
-                className="px-4 sm:px-5 py-2.5 rounded-lg bg-[#009fe3] hover:bg-[#0089c4] text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#009fe3]/30 flex items-center justify-center space-x-1.5 text-center"
+                className="px-4 sm:px-5 py-2.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#059669]/30 flex items-center justify-center space-x-1.5 text-center"
               >
                 <span>Get Free Estimate for This Setup</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -286,7 +286,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
       {/* Feature Highlights Grid Below Hero (Responsive) */}
       <div className="max-w-6xl mx-auto px-3 sm:px-6 mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
         <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-50 text-[#009fe3] flex items-center justify-center shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0">
             <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">

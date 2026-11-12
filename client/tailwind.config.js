@@ -16,16 +16,16 @@ export default {
     extend: {
       colors: {
         hvac: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7', // Primary HVAC Blue
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669', // Luxury Emerald Green
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         },
         navy: {
           800: '#132238',
@@ -37,8 +37,8 @@ export default {
         sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'premium': '0 10px 40px -10px rgba(2, 132, 199, 0.08), 0 4px 12px rgba(0,0,0,0.04)',
-        'premium-hover': '0 20px 50px -12px rgba(2, 132, 199, 0.16), 0 8px 20px rgba(0,0,0,0.06)',
+        'premium': '0 10px 40px -10px rgba(5, 150, 105, 0.12), 0 4px 12px rgba(0,0,0,0.04)',
+        'premium-hover': '0 20px 50px -12px rgba(5, 150, 105, 0.22), 0 8px 20px rgba(0,0,0,0.06)',
       }
     },
   },

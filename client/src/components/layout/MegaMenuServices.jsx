@@ -73,7 +73,7 @@ export default function MegaMenuServices({ onClose, onOpenQuote }) {
               onClose();
               if (onOpenQuote) onOpenQuote({ enquiryType: 'Technical Consultation' });
             }}
-            className="inline-flex items-center text-xs font-bold text-[#009fe3] hover:text-[#0089c4] group whitespace-nowrap"
+            className="inline-flex items-center text-xs font-bold text-[#059669] hover:text-[#047857] group whitespace-nowrap"
           >
             <span>Book Certified Technician</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -132,7 +132,7 @@ export default function MegaMenuServices({ onClose, onOpenQuote }) {
         {/* Engineering Spec Sheets Integration in Services Section */}
         <div className="mt-4 p-3 bg-gradient-to-r from-navy-950 via-slate-900 to-navy-950 text-white rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 border border-cyan-500/30">
           <div className="flex items-center space-x-2.5">
-            <span className="p-1.5 rounded-lg bg-[#009fe3]/20 text-cyan-400 shrink-0">
+            <span className="p-1.5 rounded-lg bg-[#059669]/20 text-emerald-400 shrink-0">
               <FileCheck className="w-4 h-4" />
             </span>
             <div>
@@ -147,7 +147,7 @@ export default function MegaMenuServices({ onClose, onOpenQuote }) {
           <a
             href="/#spec-sheets"
             onClick={onClose}
-            className="px-3.5 py-1.5 bg-[#009fe3] hover:bg-[#0089c4] text-navy-950 hover:text-white font-black text-[11px] rounded-lg transition-colors flex items-center space-x-1 shrink-0"
+            className="px-3.5 py-1.5 bg-[#059669] hover:bg-[#047857] text-navy-950 hover:text-white font-black text-[11px] rounded-lg transition-colors flex items-center space-x-1 shrink-0"
           >
             <span>Download Spec Sheets</span>
             <ArrowRight className="w-3 h-3" />
@@ -175,7 +175,7 @@ export default function MegaMenuServices({ onClose, onOpenQuote }) {
               href="tel:+918896921318"
               className="px-4 py-2 rounded-lg bg-white border border-slate-300 text-xs font-bold text-navy-950 hover:bg-slate-100 transition-colors flex items-center space-x-1"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-[#009fe3]" />
+              <PhoneCall className="w-3.5 h-3.5 text-[#059669]" />
               <span>Call Helpline: +91 88969 21318</span>
             </a>
             <button

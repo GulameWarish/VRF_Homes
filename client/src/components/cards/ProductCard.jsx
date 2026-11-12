@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Check, Download } from 'lucide-react';
+import { ArrowRight, Check, Download } from 'lucide-react';
 
 export default function ProductCard({ product, onOpenQuote }) {
   return (

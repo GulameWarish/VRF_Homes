@@ -19,7 +19,7 @@ export function DrawOutlineButton({ children, onClick, className = "", lineColor
     <button
       onClick={onClick}
       {...rest}
-      className={`group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden shrink-0 ${className}`}
+      className={`group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-emerald-200 hover:bg-black/15 overflow-hidden shrink-0 ${className}`}
     >
       <span className="relative z-10 flex items-center space-x-1.5">{children}</span>
 
@@ -44,7 +44,7 @@ export function DrawOutlineNavLink({ to, children, className = "", lineColor = "
     <NavLink
       to={to}
       {...rest}
-      className={({ isActive }) => `group relative px-3.5 xl:px-4 py-3 font-bold uppercase text-xs xl:text-sm tracking-wide text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden flex items-center space-x-1 shrink-0 ${
+      className={({ isActive }) => `group relative px-3.5 xl:px-4 py-3 font-bold uppercase text-xs xl:text-sm tracking-wide text-white transition-all duration-[300ms] hover:text-emerald-200 hover:bg-black/15 overflow-hidden flex items-center space-x-1 shrink-0 ${
         isActive ? 'bg-black/20 text-white' : ''
       } ${className}`}
     >
@@ -87,13 +87,13 @@ export function DrawOutlineMenuTrigger({
         onClick={onClick}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={`group relative px-3.5 xl:px-4 py-3 font-bold uppercase text-xs xl:text-sm tracking-wide text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden flex items-center space-x-1 ${
-          isOpen ? 'bg-black/25 text-cyan-200' : ''
+        className={`group relative px-3.5 xl:px-4 py-3 font-bold uppercase text-xs xl:text-sm tracking-wide text-white transition-all duration-[300ms] hover:text-emerald-200 hover:bg-black/15 overflow-hidden flex items-center space-x-1 ${
+          isOpen ? 'bg-black/25 text-emerald-300' : ''
         } ${className}`}
       >
         <span className="relative z-10 flex items-center space-x-1">
           <span>{label}</span>
-          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-cyan-300' : ''}`} />
+          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-400' : ''}`} />
         </span>
 
         {/* TOP */}
@@ -113,12 +113,12 @@ export function DrawOutlineMenuTrigger({
 }
 
 // Draw Outline Link for Header Top Row (Call Button)
-export function DrawOutlineLink({ children, href, className = "", lineColor = "bg-[#009fe3]", ...rest }) {
+export function DrawOutlineLink({ children, href, className = "", lineColor = "bg-[#059669]", ...rest }) {
   return (
     <a
       href={href}
       {...rest}
-      className={`group relative px-3 py-1.5 text-xs font-bold text-navy-950 transition-colors duration-[300ms] hover:text-[#009fe3] bg-slate-50 overflow-hidden rounded-md border border-slate-200 ${className}`}
+      className={`group relative px-3 py-1.5 text-xs font-bold text-navy-950 transition-colors duration-[300ms] hover:text-[#059669] bg-slate-50 overflow-hidden rounded-md border border-slate-200 ${className}`}
     >
       <span className="relative z-10 flex items-center space-x-1.5">{children}</span>
 
@@ -242,7 +242,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
         {/* VRF HOME Logo (Fluid Responsive Scaling) */}
         <Link to="/" className="flex items-center space-x-1.5 sm:space-x-2 group shrink-0">
           <div className="flex items-baseline">
-            <span className="text-2xl xs:text-3xl sm:text-4xl font-black italic tracking-tighter text-[#009fe3] uppercase drop-shadow-sm group-hover:scale-105 transition-transform">
+            <span className="text-2xl xs:text-3xl sm:text-4xl font-black italic tracking-tighter text-[#059669] uppercase drop-shadow-sm group-hover:scale-105 transition-transform">
               VRF
             </span>
             <span className="text-xl xs:text-2xl sm:text-3xl font-extrabold tracking-tight text-navy-950 uppercase ml-1.5 sm:ml-2">
@@ -263,12 +263,12 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-3.5 pr-9 py-1.5 text-xs sm:text-sm bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-[#009fe3] rounded-md focus:outline-none focus:ring-1 focus:ring-[#009fe3] text-slate-800 placeholder-slate-400 transition-all shadow-inner"
+              className="w-full pl-3.5 pr-9 py-1.5 text-xs sm:text-sm bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-[#059669] rounded-md focus:outline-none focus:ring-1 focus:ring-[#059669] text-slate-800 placeholder-slate-400 transition-all shadow-inner"
             />
             <button
               type="submit"
               title="Search"
-              className="absolute right-1 top-1 bottom-1 px-2.5 text-slate-500 hover:text-[#009fe3] flex items-center justify-center transition-colors"
+              className="absolute right-1 top-1 bottom-1 px-2.5 text-slate-500 hover:text-[#059669] flex items-center justify-center transition-colors"
             >
               <Search className="w-4 h-4" />
             </button>
@@ -288,7 +288,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
           {/* Mobile Search Icon */}
           <button
             onClick={() => onOpenSearch && onOpenSearch()}
-            className="sm:hidden p-1.5 text-slate-600 hover:text-[#009fe3]"
+            className="sm:hidden p-1.5 text-slate-600 hover:text-[#059669]"
             title="Search"
           >
             <Search className="w-5 h-5" />
@@ -297,7 +297,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 text-slate-700 hover:text-[#009fe3]"
+            className="lg:hidden p-1.5 text-slate-700 hover:text-[#059669]"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -306,7 +306,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
       </div>
 
       {/* Solid Cyan/Blue Navigation Bar */}
-      <nav className="relative bg-[#009fe3] text-white select-none">
+      <nav className="relative bg-[#059669] text-white select-none">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="hidden lg:flex items-center justify-between">
             
@@ -366,7 +366,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               {/* 7. GET A FREE ESTIMATE */}
               <Link
                 to="/quote"
-                className="group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden shrink-0 flex items-center justify-center"
+                className="group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-emerald-200 hover:bg-black/15 overflow-hidden shrink-0 flex items-center justify-center"
               >
                 <span>GET A FREE ESTIMATE</span>
 
@@ -431,7 +431,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                   placeholder="Search products, brands & articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-3 pr-10 py-2.5 text-xs bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#009fe3]"
+                  className="w-full pl-3 pr-10 py-2.5 text-xs bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#059669]"
                 />
                 <button type="submit" className="absolute right-3 top-3 text-slate-400">
                   <Search className="w-4 h-4" />
@@ -455,7 +455,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                 className="w-full flex items-center justify-between px-3 py-2 rounded-lg font-bold hover:bg-white/10 text-sm tracking-wide"
               >
                 <span>RESIDENTIAL</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileAccordion === 'residential' ? 'rotate-180 text-[#009fe3]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileAccordion === 'residential' ? 'rotate-180 text-[#059669]' : ''}`} />
               </button>
 
               {mobileAccordion === 'residential' && (
@@ -466,7 +466,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Home & Villa AC Solutions</div>
+                      <div className="font-bold text-emerald-300">Home & Villa AC Solutions</div>
                       <div className="text-[10px] text-slate-400">Central VRF for villas & bungalows</div>
                     </Link>
                     <Link
@@ -474,7 +474,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Apartment HVAC Solutions</div>
+                      <div className="font-bold text-emerald-300">Apartment HVAC Solutions</div>
                       <div className="text-[10px] text-slate-400">Compact balcony-friendly units</div>
                     </Link>
                     <Link
@@ -482,7 +482,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Ductable & Cassette AC</div>
+                      <div className="font-bold text-emerald-300">Ductable & Cassette AC</div>
                       <div className="text-[10px] text-slate-400">Concealed false ceiling cooling</div>
                     </Link>
                     <Link
@@ -490,7 +490,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Split & Tower AC</div>
+                      <div className="font-bold text-emerald-300">Split & Tower AC</div>
                       <div className="text-[10px] text-slate-400">Inverter hi-wall split systems</div>
                     </Link>
                     <Link
@@ -498,7 +498,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Smart Home Climate Control</div>
+                      <div className="font-bold text-emerald-300">Smart Home Climate Control</div>
                       <div className="text-[10px] text-slate-400">Touch BMS & mobile WiFi controls</div>
                     </Link>
                     <Link
@@ -506,7 +506,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block p-2 rounded-lg hover:bg-white/10"
                     >
-                      <div className="font-bold text-cyan-200">Installation & AMC</div>
+                      <div className="font-bold text-emerald-300">Installation & AMC</div>
                       <div className="text-[10px] text-slate-400">Nitrogen holding tests & service care</div>
                     </Link>
                   </div>
@@ -514,7 +514,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                     <Link
                       to="/residential"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-center py-2 px-3 rounded-lg bg-[#009fe3] text-white font-bold text-xs"
+                      className="block text-center py-2 px-3 rounded-lg bg-[#059669] text-white font-bold text-xs"
                     >
                       Explore Residential Solutions →
                     </Link>
@@ -628,6 +628,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                 <div className="mt-2 pl-3 pr-2 space-y-2 bg-white/5 rounded-xl p-3 border border-white/10 text-xs">
                   <div className="grid grid-cols-2 gap-2">
                     {[
+                      { name: 'Blue Star', slug: 'Blue+Star', logo: '/images/brands/blue-star.svg' },
                       { name: 'Mitsubishi Electric', slug: 'Mitsubishi+Electric', logo: '/images/brands/mitsubishi-electric.svg' },
                       { name: 'O General', slug: 'O+General', logo: '/images/brands/o-general.svg' },
                       { name: 'Carrier', slug: 'Carrier', logo: '/images/brands/carrier.svg' },
@@ -725,7 +726,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               <Link
                 to="/quote"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-[#009fe3] hover:bg-[#0089c4] text-white py-2.5 px-4 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center shadow-md"
+                className="w-full text-center bg-[#059669] hover:bg-[#047857] text-white py-2.5 px-4 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center shadow-md"
               >
                 <span>GET A FREE ESTIMATE</span>
               </Link>
@@ -737,7 +738,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                 href={`tel:${(settings?.phone || '+91 88969 21318').replace(/[^0-9+]/g, '')}`}
                 className="flex items-center text-slate-300 font-semibold"
               >
-                <Phone className="w-3.5 h-3.5 mr-2 text-[#009fe3]" />
+                <Phone className="w-3.5 h-3.5 mr-2 text-[#059669]" />
                 {settings?.phone || '+91 88969 21318'}
               </a>
               <div className="text-[11px] text-slate-400 leading-relaxed">

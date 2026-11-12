@@ -940,7 +940,7 @@ export const FALLBACK_COMMERCIAL = [
         ],
         solutions: [
           { title: 'HEPA & Laminar Flow AHUs', description: 'H14 Grade filtration with 99.995% particulate capture efficiency for sterile surgical zones.', icon: 'CheckCircle2' },
-          { title: 'Medical VRF with UVGI Sterilization', description: 'Variable Refrigerant Flow systems paired with Ultraviolet Germicidal Irradiation coils.', icon: 'Sparkles' },
+          { title: 'Medical VRF with UVGI Sterilization', description: 'Variable Refrigerant Flow systems paired with Ultraviolet Germicidal Irradiation coils.', icon: 'ShieldCheck' },
           { title: 'BMS Environmental Monitoring', description: 'Real-time differential pressure, relative humidity (RH 45-55%), and precision temperature logging.', icon: 'Cpu' }
         ],
         suitableProducts: ['Air Handling Units (AHU)', 'VRF Air Conditioning Systems', 'Chiller Systems', 'Fresh Air Systems'],

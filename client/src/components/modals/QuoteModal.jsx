@@ -140,7 +140,7 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
             <X className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center text-cyan-300 text-xs font-bold tracking-wider uppercase mb-1">
+          <div className="flex items-center text-emerald-300 text-xs font-bold tracking-wider uppercase mb-1">
             <span>Consulting &amp; Estimation</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold text-white">
@@ -212,7 +212,7 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
 `Sent via VRF Homes Web Portal (https://vrfhomes.com)\n` +
 `==============================================`
                   )}`}
-                  className="py-3 px-4 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-all shadow-md"
+                  className="py-3 px-4 bg-[#059669] hover:bg-[#047857] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-all shadow-md"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Send via Email</span>

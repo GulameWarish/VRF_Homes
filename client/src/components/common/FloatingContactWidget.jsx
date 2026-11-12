@@ -49,7 +49,7 @@ export default function FloatingContactWidget({ onOpenQuote }) {
               href={`tel:+${cleanPhone}`}
               className="flex items-center justify-center space-x-2 w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-950 text-xs font-bold transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#009fe3]" />
+              <Phone className="w-4 h-4 text-[#059669]" />
               <span>Call: {phoneNumber}</span>
             </a>
 
@@ -59,7 +59,7 @@ export default function FloatingContactWidget({ onOpenQuote }) {
                 setIsOpen(false);
                 if (onOpenQuote) onOpenQuote();
               }}
-              className="flex items-center justify-center space-x-2 w-full py-2.5 px-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white text-xs font-bold transition-colors shadow-sm"
+              className="flex items-center justify-center space-x-2 w-full py-2.5 px-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold transition-colors shadow-sm"
             >
               <span>Get a Free Estimate</span>
             </button>
@@ -70,14 +70,14 @@ export default function FloatingContactWidget({ onOpenQuote }) {
       {/* Floating Trigger Pill inspired by reference image */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 bg-navy-950 hover:bg-black text-white px-4 py-3 rounded-full shadow-2xl hover:shadow-cyan-500/20 border-2 border-white/20 transition-all transform hover:scale-105 group"
+        className="flex items-center space-x-2 bg-navy-950 hover:bg-black text-white px-4 py-3 rounded-full shadow-2xl hover:shadow-emerald-500/20 border-2 border-white/20 transition-all transform hover:scale-105 group"
         title="Chat with VRF Homes Engineering Support"
       >
         <span className="relative flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
         </span>
-        <MessageCircle className="w-4 h-4 text-[#009fe3] group-hover:rotate-12 transition-transform" />
+        <MessageCircle className="w-4 h-4 text-[#059669] group-hover:rotate-12 transition-transform" />
         <span className="text-xs font-bold tracking-wider uppercase">
           {isOpen ? 'Close' : 'Chat With Us'}
         </span>

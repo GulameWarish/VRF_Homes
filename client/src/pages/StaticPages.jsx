@@ -19,7 +19,7 @@ export function AboutPage({ onOpenQuote }) {
 
       <section className="bg-navy-950 text-white py-16 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="text-xs font-bold text-cyan-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full">
             Engineering Legacy & Corporate Overview
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mt-4">
@@ -150,7 +150,7 @@ export function ContactPage({ onOpenQuote }) {
 
       <section className="bg-navy-950 text-white py-16 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="text-xs font-bold text-cyan-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full">
             Direct Contact & National Office Locations
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mt-4">
@@ -247,7 +247,7 @@ export function ContactPage({ onOpenQuote }) {
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
                 >
-                  <MapPin className="w-3.5 h-3.5 text-cyan-300" />
+                  <MapPin className="w-3.5 h-3.5 text-emerald-300" />
                   <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
@@ -288,7 +288,7 @@ export function ContactPage({ onOpenQuote }) {
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 bg-navy-950 hover:bg-hvac-600 text-white rounded-xl text-xs font-bold inline-flex items-center space-x-1.5 transition-colors"
                 >
-                  <MapPin className="w-3.5 h-3.5 text-cyan-300" />
+                  <MapPin className="w-3.5 h-3.5 text-emerald-300" />
                   <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
@@ -408,14 +408,14 @@ export function ContactPage({ onOpenQuote }) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-sm group-hover:bg-[#009fe3] group-hover:text-white transition-colors">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-black text-sm group-hover:bg-[#059669] group-hover:text-white transition-colors">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {loc.badge}
                     </span>
                   </div>
-                  <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#009fe3] transition-colors">{loc.city}</h4>
+                  <h4 className="text-sm font-bold text-navy-950 group-hover:text-[#059669] transition-colors">{loc.city}</h4>
                   <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">{loc.desc}</p>
                 </div>
                 <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">

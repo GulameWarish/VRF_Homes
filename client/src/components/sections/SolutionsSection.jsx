@@ -34,7 +34,7 @@ export default function SolutionsSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
               
               <div className="absolute top-4 left-4 bg-navy-900/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg border border-white/10 flex items-center space-x-1.5">
-                <Building2 className="w-4 h-4 text-cyan-300" />
+                <Building2 className="w-4 h-4 text-emerald-300" />
                 <span>Commercial & Industrial</span>
               </div>
 
@@ -100,7 +100,7 @@ export default function SolutionsSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
               
               <div className="absolute top-4 left-4 bg-navy-900/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg border border-white/10 flex items-center space-x-1.5">
-                <Home className="w-4 h-4 text-cyan-300" />
+                <Home className="w-4 h-4 text-emerald-300" />
                 <span>Luxury Residences</span>
               </div>
 
