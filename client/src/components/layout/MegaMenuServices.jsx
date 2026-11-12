@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Wrench, Compass, ShieldCheck, Activity, RefreshCw, 
-  Clock, ArrowRight, PhoneCall, Sparkles, FileCheck 
+  Clock, ArrowRight, PhoneCall, FileCheck 
 } from 'lucide-react';
 
 export default function MegaMenuServices({ onClose, onOpenQuote }) {

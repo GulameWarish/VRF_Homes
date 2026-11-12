@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, AlertCircle, Upload, Send, Sparkles, Building2, Home } from 'lucide-react';
+import { X, CheckCircle, AlertCircle, Upload, Send, Building2, Home, MessageCircle, Mail, Phone } from 'lucide-react';
 import api from '../../services/api';
 
 export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
@@ -81,16 +81,34 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
         };
       });
 
-      const waText = `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
-        `👤 *Name:* ${formData.fullName}\n` +
-        `📱 *Mobile:* ${formData.mobile}\n` +
-        `📧 *Email:* ${formData.email}\n` +
-        `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
-        `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
-        `🏠 *Typology:* ${formData.propertyType || 'Villa / Apartment'}\n` +
-        `📝 *Requirements:* ${formData.requirements || 'Free Estimate & Heat Load Sizing'}`;
+      const leadRef = `VRF-${Date.now().toString().slice(-6)}`;
+      const waCard = 
+`╔══════════════════════════════════════╗\n` +
+`║    🏛️ VRF HOMES • ESTIMATE CARD     ║\n` +
+`╚══════════════════════════════════════╝\n` +
+`🆔 *REF ID:* ${leadRef}\n` +
+`📅 *DATE:* ${new Date().toLocaleDateString('en-IN')}\n` +
+`────────────────────────────────────────\n` +
+`👤 *CLIENT PROFILE:*\n` +
+`• *Name:* ${formData.fullName}\n` +
+`• *Contact:* ${formData.mobile}\n` +
+`• *Email:* ${formData.email}\n` +
+`• *Location:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+`────────────────────────────────────────\n` +
+`🏗️ *PROJECT DETAILS:*\n` +
+`• *Segment:* ${formData.segment || 'Residential VRF'}\n` +
+`• *Property:* ${formData.propertyType || 'Luxury Villa / Penthouse'}\n` +
+`• *Service:* ${formData.serviceRequired || 'HVAC Consulting & Estimation'}\n` +
+(formData.productInterest ? `• *Equipment:* ${formData.productInterest}\n` : '') +
+(formData.projectSize ? `• *Area / Tonnage:* ${formData.projectSize}\n` : '') +
+`────────────────────────────────────────\n` +
+`📝 *REQUIREMENTS & SCOPE:*\n` +
+`${formData.message || formData.requirements || 'Requested Free Site Sizing & Itemized BOQ'}\n` +
+`────────────────────────────────────────\n` +
+`⚡ *Source:* Official Platform • https://vrfhomes.com\n` +
+`════════════════════════════════════════`;
 
-      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waText)}`;
+      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waCard)}`;
       
       // Auto-open WhatsApp with pre-filled lead details
       try {
@@ -122,12 +140,11 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
             <X className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center space-x-2 text-cyan-300 text-xs font-bold tracking-wider uppercase mb-1">
-            <Sparkles className="w-4 h-4" />
-            <span>Consulting & Estimation</span>
+          <div className="flex items-center text-cyan-300 text-xs font-bold tracking-wider uppercase mb-1">
+            <span>Consulting &amp; Estimation</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-            Get a Free Estimate & HVAC Consultation
+            Get a Free Estimate &amp; HVAC Consultation
           </h3>
           <p className="text-xs text-slate-300 mt-1 max-w-lg">
             Receive personalized heat-load sizing, duct schematics, and equipment quotations from factory-certified engineers.
@@ -152,14 +169,18 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
               <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center max-w-lg mx-auto">
                 <a
                   href={`https://wa.me/918896921318?text=${encodeURIComponent(
-                    `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
-                    `👤 *Name:* ${formData.fullName}\n` +
-                    `📱 *Mobile:* ${formData.mobile}\n` +
-                    `📧 *Email:* ${formData.email}\n` +
-                    `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
-                    `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
-                    `🏠 *Typology:* ${formData.propertyType || 'Villa / Apartment'}\n` +
-                    `📝 *Requirements:* ${formData.requirements || 'Free Estimate & Heat Load Sizing'}`
+`╔══════════════════════════════════════╗\n` +
+`║    🏛️ VRF HOMES • ESTIMATE CARD     ║\n` +
+`╚══════════════════════════════════════╝\n` +
+`🆔 *REF ID:* VRF-${Date.now().toString().slice(-6)}\n` +
+`👤 *CLIENT:* ${formData.fullName}\n` +
+`📱 *MOBILE:* ${formData.mobile}\n` +
+`📧 *EMAIL:* ${formData.email}\n` +
+`📍 *LOCATION:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+`🏢 *SEGMENT:* ${formData.segment || 'Residential VRF'}\n` +
+`🏠 *PROPERTY:* ${formData.propertyType || 'Luxury Villa'}\n` +
+`📝 *REQUIREMENT:* ${formData.message || formData.requirements || 'Free Heat Load Estimate'}\n` +
+`🌐 *PORTAL:* https://vrfhomes.com`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -171,9 +192,25 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
 
                 <a
                   href={`mailto:sales@shuklaenterprises.in?subject=${encodeURIComponent(
-                    `New HVAC Estimate Request: ${formData.fullName} (${formData.city})`
+                    `[HVAC ESTIMATE CARD] ${formData.fullName} - ${formData.city}`
                   )}&body=${encodeURIComponent(
-                    `Name: ${formData.fullName}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCity: ${formData.city}\nPincode: ${formData.pincode || ''}\nSegment: ${formData.segment}\nProperty: ${formData.propertyType}\nRequirements: ${formData.requirements}`
+`==============================================\n` +
+`         VRF HOMES • ESTIMATE CARD DOCUMENT   \n` +
+`==============================================\n` +
+`CLIENT DETAILS:\n` +
+`- Name    : ${formData.fullName}\n` +
+`- Mobile  : ${formData.mobile}\n` +
+`- Email   : ${formData.email}\n` +
+`- City    : ${formData.city} ${formData.pincode || ''}\n\n` +
+`PROJECT SPECIFICATIONS:\n` +
+`- Segment     : ${formData.segment || 'Residential'}\n` +
+`- Typology    : ${formData.propertyType || 'Villa / Apartment'}\n` +
+`- Service Req : ${formData.serviceRequired || 'Engineering Estimate'}\n\n` +
+`REQUIREMENTS & SCOPE:\n` +
+`${formData.message || formData.requirements || 'Requested Free Site Sizing & Itemized BOQ'}\n\n` +
+`----------------------------------------------\n` +
+`Sent via VRF Homes Web Portal (https://vrfhomes.com)\n` +
+`==============================================`
                   )}`}
                   className="py-3 px-4 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-all shadow-md"
                 >

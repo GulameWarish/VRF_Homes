@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, Phone, X, Sparkles, Send } from 'lucide-react';
+import { MessageCircle, Phone, X, Send } from 'lucide-react';
 
 export default function FloatingContactWidget({ onOpenQuote }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,6 @@ export default function FloatingContactWidget({ onOpenQuote }) {
               }}
               className="flex items-center justify-center space-x-2 w-full py-2.5 px-3 rounded-xl bg-[#009fe3] hover:bg-[#0089c4] text-white text-xs font-bold transition-colors shadow-sm"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Get a Free Estimate</span>
             </button>
           </div>

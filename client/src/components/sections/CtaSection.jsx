@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, PhoneCall, ArrowRight } from 'lucide-react';
+import { PhoneCall, ArrowRight } from 'lucide-react';
 
 export default function CtaSection({ onOpenQuote, settings }) {
   return (
@@ -9,8 +9,7 @@ export default function CtaSection({ onOpenQuote, settings }) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-hvac-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-cyan-200 mb-6 border border-white/15">
-          <Sparkles className="w-4 h-4 text-cyan-300" />
+        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-cyan-200 mb-6 border border-white/15">
           <span>Turnkey Mechanical MEP & VRF Contracting</span>
         </div>
 

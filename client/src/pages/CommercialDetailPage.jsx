@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Building2, ShieldAlert, CheckCircle2, ChevronDown, 
-  ArrowRight, Sparkles, Package, MapPin, Calendar, HelpCircle 
+  ArrowRight, Package, MapPin, Calendar, HelpCircle 
 } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';
@@ -118,7 +118,6 @@ export default function CommercialDetailPage({ onOpenQuote }) {
                 onClick={() => onOpenQuote({ segment: 'Commercial', propertyType: category.name })}
                 className="px-6 py-3 rounded-xl bg-hvac-600 hover:bg-hvac-500 text-white font-bold text-xs shadow-lg shadow-hvac-600/30 flex items-center space-x-2"
               >
-                <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>Request {category.name} HVAC Proposal</span>
               </button>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquareQuote, Plus, Edit3, Trash2, X, Star } from 'lucide-react';
+import { MessageSquareQuote, Plus, Edit3, Trash2, X } from 'lucide-react';
 import api from '../services/api';
 
 export default function AdminTestimonials() {
@@ -98,11 +98,9 @@ export default function AdminTestimonials() {
         {testimonials.map((t) => (
           <div key={t._id} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
             <div>
-              <div className="flex items-center space-x-1 text-amber-400 mb-3">
-                {[...Array(t.rating || 5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-              </div>
+              <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full mb-3 inline-block">
+                Client Rating: {t.rating || 5}/5
+              </span>
               <p className="text-xs text-slate-700 italic leading-relaxed">"{t.review}"</p>
             </div>
 

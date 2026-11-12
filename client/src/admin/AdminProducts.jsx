@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Package, Plus, Search, Edit3, Trash2, CheckCircle2, X, Star, Upload } from 'lucide-react';
+import { Package, Plus, Search, Edit3, Trash2, CheckCircle2, X, Upload } from 'lucide-react';
 import api from '../services/api';
 
 export default function AdminProducts() {
@@ -263,7 +263,7 @@ export default function AdminProducts() {
                     <td className="py-3.5 px-4">
                       {p.isFeatured ? (
                         <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded flex items-center w-fit">
-                          <Star className="w-3 h-3 mr-1 fill-amber-500 text-amber-500" /> Featured
+                          <CheckCircle2 className="w-3 h-3 mr-1 text-amber-500" /> Featured
                         </span>
                       ) : (
                         <span className="text-[10px] text-slate-400">Regular</span>

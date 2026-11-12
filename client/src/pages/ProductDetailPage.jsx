@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  Package, Check, ArrowRight, Download, Sparkles, 
+  Package, Check, ArrowRight, Download, 
   ShieldCheck, Cpu, Zap, FileText 
 } from 'lucide-react';
 import api from '../services/api';
@@ -152,8 +152,7 @@ export default function ProductDetailPage({ onOpenQuote }) {
                   onClick={() => onOpenQuote({ productInterest: product.category, message: `Inquiring about specifications and quotation for ${product.name}.` })}
                   className="px-6 py-3.5 rounded-xl bg-hvac-600 hover:bg-hvac-500 text-white font-bold text-xs shadow-md shadow-hvac-600/30 flex items-center space-x-2"
                 >
-                  <Sparkles className="w-4 h-4 text-cyan-200" />
-                  <span>Request System Quotation & Sizing</span>
+                  <span>Request System Quotation &amp; Sizing</span>
                 </button>
 
                 {product.brochureUrl ? (

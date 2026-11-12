@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { 
   MapPin, Phone, MessageCircle, Wrench, ShieldCheck, 
-  Sparkles, CheckCircle2, ArrowRight, Zap, Building2, 
-  Home, Award, Clock, HelpCircle, Star
+  CheckCircle2, ArrowRight, Zap, Building2, 
+  Home, Award, Clock, HelpCircle
 } from 'lucide-react';
 import SEO from '../components/common/SEO';
 
@@ -206,7 +206,6 @@ export default function CityLocationPage({ onOpenQuote }) {
               onClick={() => onOpenQuote?.({ city: city.name, requirements: `Enquiry for ${city.name} AC/VRF Services` })}
               className="px-6 py-3.5 rounded-xl bg-hvac-600 hover:bg-hvac-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-hvac-600/30 transition-all flex items-center space-x-2"
             >
-              <Sparkles className="w-4 h-4 text-cyan-300" />
               <span>Get Free Quote in {city.name}</span>
             </button>
 
@@ -379,7 +378,7 @@ export default function CityLocationPage({ onOpenQuote }) {
             <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center mb-4">
-                  <Sparkles className="w-6 h-6" />
+                  <Building2 className="w-6 h-6" />
                 </div>
                 <h4 className="text-base font-bold text-navy-950 mb-2">
                   VRF Solution & Central AC

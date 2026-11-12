@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Sparkles, Layers, Wind, Cpu, ShieldCheck, 
+  Layers, Wind, Cpu, ShieldCheck, 
   ArrowRight, Maximize2, Compass, CheckCircle2 
 } from 'lucide-react';
 

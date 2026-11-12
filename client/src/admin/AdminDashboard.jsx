@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   Users, FolderKanban, Package, Wrench, BookOpen, 
   ArrowUpRight, Building2, Home, CheckCircle2, Clock, 
-  AlertCircle, ArrowRight, TrendingUp, Sparkles 
+  AlertCircle, ArrowRight, TrendingUp 
 } from 'lucide-react';
 import api from '../services/api';
 
@@ -45,8 +45,7 @@ export default function AdminDashboard() {
       <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-hvac-900 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg shadow-navy-950/10">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center space-x-2 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-1">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="flex items-center text-cyan-300 text-xs font-bold uppercase tracking-wider mb-1">
               <span>Executive Operations Console</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">

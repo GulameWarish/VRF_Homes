@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, Sparkles, Volume2, Wind, Zap, ShieldCheck 
+  ArrowRight, Sliders, Volume2, Wind, Zap, ShieldCheck 
 } from 'lucide-react';
 
 export default function HeroSection({ settings, onOpenQuote }) {
@@ -65,8 +65,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
       
       {/* Top Banner Tagline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
           <span>VRF Home Climate Technology</span>
         </div>
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight">
@@ -318,7 +317,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
 
         <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Sliders className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
             <div className="text-xs sm:text-sm font-bold text-navy-950 truncate">Individual Control</div>

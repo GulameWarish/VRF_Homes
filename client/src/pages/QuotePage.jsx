@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Sparkles, CheckCircle, AlertCircle, Building2, 
+  CheckCircle, AlertCircle, Building2, 
   Home, Upload, Send, ShieldCheck, PhoneCall, Mail, 
-  ArrowRight, Wind, Zap, Volume2, Layers, Check, Info 
+  ArrowRight, Wind, Zap, Volume2, Layers, Check, Info, MessageSquare 
 } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';
@@ -216,17 +216,33 @@ export default function QuotePage() {
         };
       });
 
-      const waText = `*NEW HVAC ESTIMATE REQUEST (vrfhomes.com)*\n` +
-        `👤 *Name:* ${formData.fullName}\n` +
-        `📱 *Mobile:* ${formData.mobile}\n` +
-        `📧 *Email:* ${formData.email}\n` +
-        `📍 *City:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
-        `🏢 *Segment:* ${formData.segment || 'Residential'}\n` +
-        `🏷️ *Brand:* ${formData.preferredBrand || 'All Brands'}\n` +
-        `🏠 *Typology:* ${formData.propertyType || 'Luxury Villa'}\n` +
-        `📝 *Requirements:* ${formData.message || formData.requirements || 'Free Site Inspection & Sizing'}`;
+      const leadRef = `VRF-${Date.now().toString().slice(-6)}`;
+      const waCard = 
+`╔══════════════════════════════════════╗\n` +
+`║    🏛️ VRF HOMES • ESTIMATE CARD     ║\n` +
+`╚══════════════════════════════════════╝\n` +
+`🆔 *REF ID:* ${leadRef}\n` +
+`📅 *DATE:* ${new Date().toLocaleDateString('en-IN')}\n` +
+`────────────────────────────────────────\n` +
+`👤 *CLIENT PROFILE:*\n` +
+`• *Name:* ${formData.fullName}\n` +
+`• *Contact:* ${formData.mobile}\n` +
+`• *Email:* ${formData.email}\n` +
+`• *Location:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+`────────────────────────────────────────\n` +
+`🏗️ *PROJECT DETAILS:*\n` +
+`• *Segment:* ${formData.segment || 'Residential VRF'}\n` +
+`• *Brand:* ${formData.preferredBrand || 'All Authorized Brands'}\n` +
+`• *Property:* ${formData.propertyType || 'Luxury Villa / House'}\n` +
+`• *Service:* ${formData.enquiryType || 'Free Site Inspection & Sizing'}\n` +
+`────────────────────────────────────────\n` +
+`📝 *REQUIREMENTS & SCOPE:*\n` +
+`${formData.message || formData.requirements || 'Requested Itemized BOQ & Sizing Consultation'}\n` +
+`────────────────────────────────────────\n` +
+`⚡ *Source:* Official Platform • https://vrfhomes.com\n` +
+`════════════════════════════════════════`;
 
-      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waText)}`;
+      const waUrl = `https://wa.me/918896921318?text=${encodeURIComponent(waCard)}`;
       try {
         window.open(waUrl, '_blank');
       } catch (_) {}
@@ -263,9 +279,8 @@ export default function QuotePage() {
 
           {/* Section 1: VRF Home Introduction (As seen in Reference) */}
           <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm mb-6 sm:mb-10">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Next-Gen Climate Engineering & Architectural Luxury</span>
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+              <span>Next-Gen Climate Engineering &amp; Architectural Luxury</span>
             </div>
 
             <h1 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 tracking-tight leading-tight">
@@ -535,21 +550,48 @@ export default function QuotePage() {
                   <div className="flex flex-col sm:flex-row gap-2.5 justify-center max-w-sm mx-auto pt-1">
                     <a
                       href={`https://wa.me/918896921318?text=${encodeURIComponent(
-                        `Hello VRF Homes Team, I submitted an estimation request on vrfhomes.com:%0AName: ${formData.fullName}%0ACity: ${formData.city} (${formData.mobile})%0ABrand: ${formData.preferredBrand}%0ASegment: ${formData.segment}`
+`╔══════════════════════════════════════╗\n` +
+`║    🏛️ VRF HOMES • ESTIMATE CARD     ║\n` +
+`╚══════════════════════════════════════╝\n` +
+`👤 *CLIENT:* ${formData.fullName}\n` +
+`📱 *CONTACT:* ${formData.mobile}\n` +
+`📧 *EMAIL:* ${formData.email}\n` +
+`📍 *CITY:* ${formData.city}${formData.pincode ? ` (${formData.pincode})` : ''}\n` +
+`🏷️ *BRAND:* ${formData.preferredBrand}\n` +
+`🏢 *SEGMENT:* ${formData.segment}\n` +
+`🏠 *PROPERTY:* ${formData.propertyType}\n` +
+`📝 *REQUIREMENT:* ${formData.message || 'Free Project Estimate'}\n` +
+`🌐 *PORTAL:* https://vrfhomes.com`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
                     >
                       <MessageSquare className="w-4 h-4" />
-                      <span>🚀 Fast-Track on WhatsApp</span>
+                      <span>Send on WhatsApp</span>
                     </a>
 
                     <a
                       href={`mailto:sales@shuklaenterprises.in?subject=${encodeURIComponent(
-                        `New HVAC Estimate Request: ${formData.fullName} (${formData.city})`
+                        `[HVAC ESTIMATE CARD] ${formData.fullName} - ${formData.city}`
                       )}&body=${encodeURIComponent(
-                        `Name: ${formData.fullName}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCity: ${formData.city}\nPincode: ${formData.pincode || ''}\nSegment: ${formData.segment}\nBrand: ${formData.preferredBrand}\nRequirements: ${formData.message || ''}`
+`==============================================\n` +
+`         VRF HOMES • ESTIMATE CARD DOCUMENT   \n` +
+`==============================================\n` +
+`CLIENT DETAILS:\n` +
+`- Name    : ${formData.fullName}\n` +
+`- Mobile  : ${formData.mobile}\n` +
+`- Email   : ${formData.email}\n` +
+`- City    : ${formData.city} ${formData.pincode || ''}\n\n` +
+`PROJECT SPECIFICATIONS:\n` +
+`- Preferred Brand : ${formData.preferredBrand}\n` +
+`- Segment         : ${formData.segment}\n` +
+`- Property Type   : ${formData.propertyType}\n\n` +
+`REQUIREMENTS & SCOPE:\n` +
+`${formData.message || 'Requested Itemized BOQ & Sizing Consultation'}\n\n` +
+`----------------------------------------------\n` +
+`Sent via VRF Homes Web Portal (https://vrfhomes.com)\n` +
+`==============================================`
                       )}`}
                       className="py-2.5 px-3 bg-[#009fe3] hover:bg-[#0089c4] text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-md"
                     >

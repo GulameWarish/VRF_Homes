@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Search, Phone, ChevronDown, Menu, X, ArrowRight, 
-  MessageCircle, Sparkles, Building2, Home, Layers, Wrench 
+  MessageCircle, Building2, Home, Layers, Wrench 
 } from 'lucide-react';
 import api from '../../services/api';
 
@@ -366,9 +366,8 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               {/* 7. GET A FREE ESTIMATE */}
               <Link
                 to="/quote"
-                className="group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden shrink-0 flex items-center space-x-1.5"
+                className="group relative px-4 xl:px-5 py-2.5 font-extrabold uppercase text-xs tracking-wider text-white transition-all duration-[300ms] hover:text-cyan-100 hover:bg-black/15 overflow-hidden shrink-0 flex items-center justify-center"
               >
-                <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>GET A FREE ESTIMATE</span>
 
                 {/* TOP */}
@@ -726,9 +725,8 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               <Link
                 to="/quote"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-[#009fe3] hover:bg-[#0089c4] text-white py-2.5 px-4 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md"
+                className="w-full text-center bg-[#009fe3] hover:bg-[#0089c4] text-white py-2.5 px-4 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center shadow-md"
               >
-                <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>GET A FREE ESTIMATE</span>
               </Link>
             </div>

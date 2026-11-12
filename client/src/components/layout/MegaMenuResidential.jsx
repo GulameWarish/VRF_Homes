@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Home, Building2, Wind, ShieldCheck, Cpu, Wrench, 
-  ArrowRight, Sparkles, CheckCircle2 
+  ArrowRight, CheckCircle2 
 } from 'lucide-react';
 
 export default function MegaMenuResidential({ onClose, onOpenQuote }) {
@@ -129,7 +129,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
         <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-slate-50 to-blue-50/50 p-4 rounded-xl gap-3">
           <div className="flex items-center space-x-3">
             <div className="w-9 h-9 rounded-lg bg-[#009fe3]/10 text-[#009fe3] flex items-center justify-center shrink-0">
-              <Sparkles className="w-5 h-5" />
+              <Home className="w-5 h-5" />
             </div>
             <div>
               <div className="text-xs font-bold text-navy-950">

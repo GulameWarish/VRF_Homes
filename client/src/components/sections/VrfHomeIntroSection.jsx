@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Building2, Home, CheckCircle2, ArrowRight, ShieldCheck, 
-  Sparkles, Layers, Wind, Cpu, Zap 
+  Layers, Wind, Cpu, Zap 
 } from 'lucide-react';
 
 export default function VrfHomeIntroSection({ onOpenQuote }) {
@@ -15,8 +15,7 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
         
         {/* Section Tagline & Headline */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#009fe3]/10 text-[#009fe3] text-xs font-bold uppercase tracking-wider mb-3">
             <span>Next-Generation Residential Engineering</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight leading-tight">

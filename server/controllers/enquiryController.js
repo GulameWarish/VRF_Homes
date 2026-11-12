@@ -22,58 +22,223 @@ const getMailTransporter = () => {
 };
 
 // Instant Lead Webhook, Email & Telegram Dispatcher
+// Instant Lead Webhook, Email & Telegram Dispatcher
 const sendLeadInstantAlerts = async (enquiryData) => {
-  const alertText = `🚨 *NEW HVAC INQUIRY RECEIVED*\n` +
-    `👤 *Name:* ${enquiryData.fullName}\n` +
-    `📱 *Mobile:* ${enquiryData.mobile}\n` +
-    `📧 *Email:* ${enquiryData.email}\n` +
-    `📍 *City:* ${enquiryData.city || 'N/A'}\n` +
-    `🏢 *Segment:* ${enquiryData.segment || 'Residential VRF'}\n` +
-    `🏷️ *Typology/Brand:* ${enquiryData.propertyType || enquiryData.selectedBrand || 'N/A'}\n` +
-    `📝 *Requirements:* ${enquiryData.requirements || 'Consultation & Heat Load Sizing'}\n` +
-    `⏰ *Time:* ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
+  const leadRef = `VRF-${Date.now().toString().slice(-6)}`;
+  const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+  const alertText = 
+`╔══════════════════════════════════════╗\n` +
+`║    🏛️ VRF HOMES • ESTIMATE CARD     ║\n` +
+`╚══════════════════════════════════════╝\n` +
+`🆔 *REF ID:* ${leadRef}\n` +
+`📅 *DATE:* ${dateStr}\n` +
+`────────────────────────────────────────\n` +
+`👤 *CLIENT PROFILE:*\n` +
+`• *Name:* ${enquiryData.fullName}\n` +
+`• *Mobile:* ${enquiryData.mobile}\n` +
+`• *Email:* ${enquiryData.email}\n` +
+`• *Location:* ${enquiryData.city || 'N/A'}${enquiryData.pincode ? ` (${enquiryData.pincode})` : ''}\n` +
+`────────────────────────────────────────\n` +
+`🏗️ *PROJECT DETAILS:*\n` +
+`• *Segment:* ${enquiryData.segment || 'Residential VRF'}\n` +
+`• *Typology/Brand:* ${enquiryData.propertyType || enquiryData.preferredBrand || enquiryData.selectedBrand || 'N/A'}\n` +
+`• *Service:* ${enquiryData.serviceRequired || enquiryData.enquiryType || 'HVAC Consulting & Estimation'}\n` +
+`────────────────────────────────────────\n` +
+`📝 *REQUIREMENTS & SCOPE:*\n` +
+`${enquiryData.message || enquiryData.requirements || 'Requested Free Site Sizing & Itemized BOQ'}\n` +
+`────────────────────────────────────────\n` +
+`🌐 *PORTAL:* https://vrfhomes.com\n` +
+`════════════════════════════════════════`;
 
   // 1. Send Direct Lead Notification Email via Nodemailer
   const recipientEmail = process.env.NOTIFICATION_EMAIL || 'sales@shuklaenterprises.in';
   const transporter = getMailTransporter();
   if (transporter) {
     try {
+      // 1A. Email Card Document to Sales / Admin Desk
       await transporter.sendMail({
-        from: `"VRF Homes Lead Desk" <${process.env.SMTP_USER}>`,
+        from: `"VRF Homes Desk" <${process.env.SMTP_USER}>`,
         to: recipientEmail,
         replyTo: enquiryData.email,
-        subject: `New HVAC Estimate Request: ${enquiryData.fullName} (${enquiryData.city || 'India'})`,
+        subject: `[HVAC ESTIMATE CARD] ${enquiryData.fullName} - ${enquiryData.city || 'India'} (${leadRef})`,
         html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px;">
-            <div style="background-color: #0b132b; padding: 16px; border-radius: 8px; text-align: center;">
-              <h2 style="color: #009fe3; margin: 0;">VRF HOMES</h2>
-              <p style="color: #ffffff; margin: 4px 0 0 0; font-size: 13px;">New Client Estimate & Engineering Inquiry</p>
-            </div>
-            <div style="padding: 20px 0;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Name:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.fullName}</td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Mobile:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;"><a href="tel:${enquiryData.mobile}">${enquiryData.mobile}</a></td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Email:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;"><a href="mailto:${enquiryData.email}">${enquiryData.email}</a></td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>City:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.city || 'N/A'}</td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Segment:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.segment || 'Residential VRF'}</td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Typology / Brand:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.propertyType || enquiryData.selectedBrand || 'N/A'}</td></tr>
-                <tr><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #64748b;"><strong>Requirements:</strong></td><td style="padding: 8px; border-bottom: 1px solid #f1f5f9; color: #0f172a;">${enquiryData.requirements || 'Consultation & Heat Load Sizing'}</td></tr>
-              </table>
-              <div style="margin-top: 20px; text-align: center;">
-                <a href="https://wa.me/${(enquiryData.mobile || '').replace(/[^0-9]/g, '')}" style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px;">Reply on WhatsApp</a>
-                <a href="tel:${enquiryData.mobile}" style="display: inline-block; padding: 10px 20px; background-color: #0b132b; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Call Customer</a>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 650px; margin: 0 auto; background-color: #f8fafc; padding: 24px;">
+            <!-- Outer Card Container -->
+            <div style="background-color: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);">
+              
+              <!-- Luxury Brand Header -->
+              <div style="background: linear-gradient(135deg, #071120 0%, #0b172a 60%, #009fe3 100%); padding: 28px 24px; text-align: center; color: #ffffff;">
+                <div style="display: inline-block; background-color: rgba(0, 159, 227, 0.2); border: 1px solid rgba(0, 159, 227, 0.5); padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #38bdf8; margin-bottom: 8px;">
+                  Official Estimate Card Document
+                </div>
+                <h1 style="margin: 0; font-size: 26px; font-weight: 900; letter-spacing: 1px; color: #ffffff;">VRF HOMES</h1>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #cbd5e1; font-weight: 500;">
+                  Turnkey HVAC &amp; Central Air Conditioning Engineering
+                </p>
+                <div style="margin-top: 14px; display: inline-block; background-color: rgba(255, 255, 255, 0.12); padding: 5px 16px; border-radius: 8px; font-size: 12px; font-family: monospace; color: #e0f2fe;">
+                  REF ID: <strong>${leadRef}</strong> • ${dateStr}
+                </div>
               </div>
+
+              <!-- Card Body Content -->
+              <div style="padding: 24px;">
+
+                <!-- Section 1: Client Profile -->
+                <div style="margin-bottom: 20px;">
+                  <div style="font-size: 11px; font-weight: 800; color: #009fe3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                    👤 Client Profile
+                  </div>
+                  <table style="width: 100%; border-collapse: collapse; background-color: #f8fafc; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13px;">
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; width: 35%; font-weight: 600;">Full Name:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 700;">${enquiryData.fullName}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-weight: 600;">Contact Phone:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #009fe3; font-weight: 700;">
+                        <a href="tel:${enquiryData.mobile}" style="color: #009fe3; text-decoration: none;">${enquiryData.mobile}</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-weight: 600;">Email Address:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #0f172a;">
+                        <a href="mailto:${enquiryData.email}" style="color: #0f172a; text-decoration: none;">${enquiryData.email}</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; color: #64748b; font-weight: 600;">City / Region:</td>
+                      <td style="padding: 10px 14px; color: #0f172a; font-weight: 600;">
+                        ${enquiryData.city || 'N/A'}${enquiryData.pincode ? ` (${enquiryData.pincode})` : ''}
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Section 2: Project Specifications -->
+                <div style="margin-bottom: 20px;">
+                  <div style="font-size: 11px; font-weight: 800; color: #009fe3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                    🏗️ Project Specifications
+                  </div>
+                  <table style="width: 100%; border-collapse: collapse; background-color: #f8fafc; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13px;">
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; width: 35%; font-weight: 600;">Segment:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">
+                        <span style="background-color: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+                          ${enquiryData.segment || 'Residential'}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-weight: 600;">Property Typology:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">
+                        ${enquiryData.propertyType || 'Luxury Villa / Apartment'}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-weight: 600;">Preferred Brand:</td>
+                      <td style="padding: 10px 14px; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">
+                        ${enquiryData.preferredBrand || enquiryData.selectedBrand || 'All Authorized Brands'}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; color: #64748b; font-weight: 600;">Service Required:</td>
+                      <td style="padding: 10px 14px; color: #0f172a; font-weight: 600;">
+                        ${enquiryData.serviceRequired || enquiryData.enquiryType || 'Free Site Inspection & Sizing'}
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Section 3: Requirements & Message -->
+                <div style="margin-bottom: 24px;">
+                  <div style="font-size: 11px; font-weight: 800; color: #009fe3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                    📝 Client Requirements / Project Notes
+                  </div>
+                  <div style="background-color: #eff6ff; border-left: 4px solid #009fe3; padding: 14px 16px; border-radius: 0 10px 10px 0; color: #1e3a8a; font-size: 13px; line-height: 1.6;">
+                    ${enquiryData.message || enquiryData.requirements || 'Client requested comprehensive heat-load sizing and itemized HVAC quotation.'}
+                  </div>
+                </div>
+
+                <!-- Section 4: Quick Action Desk Buttons -->
+                <div style="text-align: center; padding-top: 10px; border-top: 1px solid #e2e8f0;">
+                  <a href="https://wa.me/${(enquiryData.mobile || '').replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hello ${enquiryData.fullName}, this is VRF Homes Engineering Support regarding your HVAC project inquiry.`)}" 
+                     style="display: inline-block; padding: 12px 22px; background-color: #10b981; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 13px; margin: 4px 6px;">
+                    📲 Reply on WhatsApp
+                  </a>
+                  <a href="tel:${enquiryData.mobile}" 
+                     style="display: inline-block; padding: 12px 22px; background-color: #009fe3; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 13px; margin: 4px 6px;">
+                    📞 Call Client Directly
+                  </a>
+                  <a href="mailto:${enquiryData.email}?subject=${encodeURIComponent(`VRF Homes HVAC Proposal - ${enquiryData.fullName}`)}" 
+                     style="display: inline-block; padding: 12px 22px; background-color: #071120; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 13px; margin: 4px 6px;">
+                    📧 Send Email Proposal
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Footer -->
+              <div style="background-color: #f1f5f9; padding: 16px 20px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 11px; color: #64748b;">
+                <p style="margin: 0; font-weight: 600;">VRF Homes • Shukla Enterprise Turnkey Mechanical HVAC</p>
+                <p style="margin: 4px 0 0 0;">Lucknow Registered Office | Delhi NCR | Kerala Project Network</p>
+                <p style="margin: 4px 0 0 0;"><a href="https://vrfhomes.com" style="color: #009fe3; text-decoration: none; font-weight: 700;">www.vrfhomes.com</a></p>
+              </div>
+
             </div>
-            <p style="font-size: 11px; color: #94a3b8; text-align: center; margin-top: 20px;">Sent automatically by VRF Homes Platform • Shukla Enterprise</p>
           </div>
         `
       });
-      console.log(`[Email Dispatched] Lead notification sent to: ${recipientEmail}`);
+      console.log(`[Email Card Dispatched] Lead notification card sent to: ${recipientEmail}`);
+
+      // 1B. Send Confirmation Acknowledgment Card to the Client
+      if (enquiryData.email && enquiryData.email.includes('@')) {
+        try {
+          await transporter.sendMail({
+            from: `"VRF Homes" <${process.env.SMTP_USER}>`,
+            to: enquiryData.email,
+            subject: `Estimate Request Received - VRF Homes (${leadRef})`,
+            html: `
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8fafc; padding: 20px;">
+                <div style="background-color: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                  <div style="background: linear-gradient(135deg, #071120 0%, #009fe3 100%); padding: 24px; text-align: center; color: #ffffff;">
+                    <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 1px;">VRF HOMES</h2>
+                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #cbd5e1;">Your HVAC Estimate Request is Confirmed</p>
+                  </div>
+                  <div style="padding: 24px; font-size: 14px; color: #334155; line-height: 1.6;">
+                    <p>Dear <strong>${enquiryData.fullName}</strong>,</p>
+                    <p>Thank you for reaching out to <strong>VRF Homes</strong>. We have successfully registered your request for an HVAC &amp; Central Air Conditioning estimation.</p>
+                    
+                    <div style="background-color: #f1f5f9; padding: 14px 18px; border-radius: 10px; margin: 16px 0; font-size: 13px;">
+                      <div><strong>Reference Number:</strong> <span style="font-family: monospace; color: #009fe3; font-weight: 700;">${leadRef}</span></div>
+                      <div><strong>City / Location:</strong> ${enquiryData.city || 'India'}</div>
+                      <div><strong>Project Typology:</strong> ${enquiryData.propertyType || 'Villa / Residential'}</div>
+                    </div>
+
+                    <p>Our senior mechanical HVAC engineer will review your site specifications and contact you shortly with a personalized heat-load recommendation and itemized BOQ.</p>
+
+                    <p style="margin-top: 20px; font-size: 13px; color: #64748b;">
+                      Need immediate assistance? Feel free to call or WhatsApp our engineering helpline at <a href="tel:+918896921318" style="color: #009fe3; font-weight: 700; text-decoration: none;">+91 88969 21318</a>.
+                    </p>
+                  </div>
+                  <div style="background-color: #f8fafc; padding: 14px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8;">
+                    VRF Homes • Authorized HVAC Partner for Voltas, Haier, Carrier, Mitsubishi Electric, O General &amp; Hitachi
+                  </div>
+                </div>
+              </div>
+            `
+          });
+          console.log(`[Client Confirmation Sent] Acknowledgment email sent to: ${enquiryData.email}`);
+        } catch (clientMailErr) {
+          console.log('[Client Confirmation Note]:', clientMailErr.message);
+        }
+      }
+
     } catch (mailErr) {
       console.log('[Email Dispatch Notice]:', mailErr.message);
     }
   } else {
-    console.log(`[Email Alert Ready] Lead captured for ${recipientEmail}: ${enquiryData.fullName} (${enquiryData.mobile})`);
+    console.log(`[Email Alert Ready] Lead card prepared for ${recipientEmail}: ${enquiryData.fullName} (${enquiryData.mobile})`);
   }
 
   // 2. Telegram Instant Webhook Alert if configured

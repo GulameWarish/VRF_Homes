@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { Quote, CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialsSection({ testimonials }) {
   if (!testimonials || testimonials.length === 0) return null;
@@ -27,13 +27,7 @@ export default function TestimonialsSection({ testimonials }) {
               className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Rating Stars */}
-                <div className="flex items-center space-x-1 text-amber-400 mb-4">
-                  {[...Array(t.rating || 5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400" />
-                  ))}
-                </div>
-
+                <Quote className="w-6 h-6 text-[#009fe3] mb-3 opacity-70" />
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
                   "{t.review}"
                 </p>

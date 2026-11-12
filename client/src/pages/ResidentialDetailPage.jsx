@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Home, CheckCircle2, ChevronDown, ArrowRight, 
-  Sparkles, Layers, ShieldCheck, MapPin, Calendar, HelpCircle 
+  Layers, ShieldCheck, MapPin, Calendar, HelpCircle 
 } from 'lucide-react';
 import api from '../services/api';
 import SEO from '../components/common/SEO';
@@ -109,7 +109,6 @@ export default function ResidentialDetailPage({ onOpenQuote }) {
                 onClick={() => onOpenQuote({ segment: 'Residential', propertyType: category.name })}
                 className="px-6 py-3 rounded-xl bg-hvac-600 hover:bg-hvac-500 text-white font-bold text-xs shadow-lg shadow-hvac-600/30 flex items-center space-x-2"
               >
-                <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>Request {category.name} VRF Estimation</span>
               </button>
             </div>

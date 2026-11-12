@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Layers, CheckCircle2 } from 'lucide-react';
 
 export default function MegaMenuProducts({ onClose, onOpenQuote }) {
   const brands = [

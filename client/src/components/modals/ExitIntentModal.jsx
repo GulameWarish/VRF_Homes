@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Sparkles, Phone, ShieldCheck, ArrowRight, Home, CheckCircle2 } from 'lucide-react';
+import { X, Phone, ShieldCheck, ArrowRight, Home, CheckCircle2 } from 'lucide-react';
 
 export default function ExitIntentModal({ onOpenQuote }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,8 +48,7 @@ export default function ExitIntentModal({ onOpenQuote }) {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/15 text-cyan-200 text-xs font-bold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/15 text-cyan-200 text-xs font-bold uppercase tracking-wider mb-2">
             <span>Special Invitation</span>
           </div>
 
@@ -91,7 +90,6 @@ export default function ExitIntentModal({ onOpenQuote }) {
             onClick={handleAction}
             className="w-full py-4 rounded-xl bg-gradient-to-r from-[#009fe3] to-sky-600 hover:from-[#0089c4] hover:to-sky-700 text-white font-extrabold text-sm sm:text-base tracking-wide transition-all shadow-xl shadow-[#009fe3]/30 flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 active:translate-y-0"
           >
-            <Sparkles className="w-5 h-5 text-cyan-200" />
             <span>Get a Free Inspection</span>
             <ArrowRight className="w-5 h-5" />
           </button>
