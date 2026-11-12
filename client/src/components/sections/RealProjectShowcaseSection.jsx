@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Building2, MapPin, CheckCircle2, Sparkles, ArrowRight, 
+  Building2, MapPin, CheckCircle2, ArrowRight, 
   ShieldCheck, Wrench, Eye, Layers, Compass 
 } from 'lucide-react';
 
@@ -14,7 +14,7 @@ const REAL_PROJECTS = [
     equipment: 'Haier MRV-S All-DC Inverter 14 HP',
     units: '5 Slim Concealed Ducted + 3 Round-Flow Cassettes',
     scope: 'Structural cantilever outdoor mounting, acoustic vibration isolators, zero balcony clutter',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/real/outdoor-units-cantilever-row.jpg',
     badge: 'Kerala Field Execution'
   },
   {
@@ -26,7 +26,7 @@ const REAL_PROJECTS = [
     equipment: 'Voltas & Haier Twin-Fan High-Static Ducted 22 TR',
     units: 'Custom GI ducting, linear slot supply diffusers, return plenum filters',
     scope: 'Turnkey duct fabrication, 550 PSI nitrogen decay test, precision airflow balancing',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/real/outdoor-units-installation-rack.jpg',
     badge: 'Commercial Handover'
   },
   {
@@ -38,7 +38,7 @@ const REAL_PROJECTS = [
     equipment: 'Mitsubishi Electric City Multi 12 HP VRF',
     units: '100% Concealed Hi-Wall & Ducted units with touch thermostats',
     scope: 'Replaced 7 aging split ACs with 1 rooftop condenser. 20-40% monthly electricity savings.',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/real/outdoor-unit-testing-gauges.jpg',
     badge: 'Turnkey Retrofit'
   },
   {
@@ -50,7 +50,7 @@ const REAL_PROJECTS = [
     equipment: 'Carrier XPower VRF Modular 28 HP System',
     units: '8-Way Cassette units with individual zone scheduling & BMS integration',
     scope: 'Continuous fresh air modulation, PM2.5 filtration, automated energy monitoring',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/commercial/supermarket-suspended-ductable-ac.jpg',
     badge: 'Corporate Standard'
   },
   {
@@ -62,7 +62,7 @@ const REAL_PROJECTS = [
     equipment: 'Voltas VRF Smart Series 16 HP',
     units: 'Ceiling flush cassettes + HEPA filter integration for operation theatre & waiting suites',
     scope: 'Independent room temperature control down to ±0.5°C with zero acoustic compressor hum',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/real/outdoor-unit-control-pcb.jpg',
     badge: 'Healthcare Division'
   },
   {
@@ -74,7 +74,7 @@ const REAL_PROJECTS = [
     equipment: 'O General Tropical Inverter VRF 10 HP',
     units: 'Anti-corrosion marine grade hydrophilic coated condenser coils',
     scope: 'Resistant to saline coastal humidity, extreme whisper-quiet sleep operation down to 21 dB',
-    image: '/images/real/vrf-home-cutaway-hero.png',
+    image: '/images/real/luxury-villa-hero.webp',
     badge: 'Coastal Architecture'
   }
 ];

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  FileText, Download, CheckCircle2, ShieldCheck, Sparkles, 
+  FileText, Download, CheckCircle2, ShieldCheck, 
   ArrowRight, X, Lock, Building, FileCheck, Phone, Mail 
 } from 'lucide-react';
 import api from '../../services/api';
@@ -14,7 +14,7 @@ const SPEC_SHEETS = [
     pages: '28 Pages PDF',
     size: '4.8 MB',
     badge: 'Popular for Villas',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/equipment/haier-outdoor-dual-fan.jpg'
   },
   {
     id: 'voltas-vrf',
@@ -24,7 +24,7 @@ const SPEC_SHEETS = [
     pages: '36 Pages PDF',
     size: '6.2 MB',
     badge: 'Tata Authorized',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/equipment/voltas-outdoor.jpg'
   },
   {
     id: 'carrier-vrf',
@@ -34,7 +34,7 @@ const SPEC_SHEETS = [
     pages: '44 Pages PDF',
     size: '7.1 MB',
     badge: 'Enterprise Choice',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/equipment/carrier-outdoor.jpg'
   },
   {
     id: 'mitsubishi-vrf',
@@ -44,7 +44,7 @@ const SPEC_SHEETS = [
     pages: '52 Pages PDF',
     size: '8.4 MB',
     badge: 'Ultra-Quiet Luxury',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/equipment/mitsubishi-outdoor.jpg'
   },
   {
     id: 'ogeneral-vrf',
@@ -54,7 +54,7 @@ const SPEC_SHEETS = [
     pages: '32 Pages PDF',
     size: '5.5 MB',
     badge: 'Tropical Performance',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/equipment/ogeneral-outdoor.jpg'
   },
   {
     id: 'trane-chiller',
@@ -64,7 +64,7 @@ const SPEC_SHEETS = [
     pages: '40 Pages PDF',
     size: '6.9 MB',
     badge: 'Industrial / Commercial',
-    downloadUrl: '/images/real/vrf-home-cutaway-hero.png'
+    downloadUrl: '/images/commercial/supermarket-suspended-ductable-ac.jpg'
   }
 ];
 

@@ -37,7 +37,7 @@ export default function HomePage({ onOpenQuote }) {
     alternateName: 'VRF Homes - VRF Solution, AC Solution, AC Repairing & Installation',
     url: 'https://vrfhomes.com/',
     logo: 'https://vrfhomes.com/vrf-logo.svg',
-    image: 'https://vrfhomes.com/images/real/vrf-home-cutaway-hero.png',
+    image: 'https://vrfhomes.com/images/real/outdoor-units-cantilever-row.jpg',
     description: 'Certified VRF solution, AC solution, 24/7 emergency AC repairing, preventive AC maintenance AMC, and turnkey new AC installation across New Delhi, Mumbai, Chennai, Noida, Kolkata, Bangalore, Chandigarh, Ahmedabad & Lucknow.',
     telephone: settings?.phone || '+91 88969 21318',
     email: settings?.email || 'sales@shuklaenterprises.in',
