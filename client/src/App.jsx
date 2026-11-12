@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 import LiveSearchModal from './components/modals/LiveSearchModal';
 import QuoteModal from './components/modals/QuoteModal';
 import FloatingContactWidget from './components/common/FloatingContactWidget';
+import CookieConsentBanner from './components/common/CookieConsentBanner';
 
 // Public Pages
 import HomePage from './pages/HomePage';
@@ -52,6 +53,7 @@ function PublicLayout({ onOpenQuote, onOpenSearch }) {
       </main>
       <Footer />
       <FloatingContactWidget onOpenQuote={onOpenQuote} />
+      <CookieConsentBanner />
     </div>
   );
 }
