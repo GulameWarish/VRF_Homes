@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, Sliders, Volume2, Wind, Zap, ShieldCheck 
+  ArrowRight, Sliders, Volume2, VolumeX, Wind, Zap, ShieldCheck, Play, Pause, Film, LayoutGrid
 } from 'lucide-react';
 
 export default function HeroSection({ settings, onOpenQuote }) {
   const [selectedUnit, setSelectedUnit] = useState(4); // default active unit
+  const [viewMode, setViewMode] = useState('video'); // 'video' | 'interactive'
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
 
   const indoorUnits = [
     {
@@ -78,14 +99,45 @@ export default function HeroSection({ settings, onOpenQuote }) {
           Independent zone temperature control for every room, whisper-quiet operation down to 20-38 dB, and zero unsightly outdoor units cluttering your balconies.
         </p>
 
+        {/* View Mode Toggle Switcher: 3D Video Simulation vs Interactive Floor Plan */}
+        <div className="flex items-center justify-center gap-2 mt-4 mb-2">
+          <button
+            type="button"
+            onClick={() => setViewMode('video')}
+            className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-xs ${
+              viewMode === 'video'
+                ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105'
+                : 'bg-white/80 text-slate-700 hover:bg-white border border-slate-200/80'
+            }`}
+          >
+            <Film className="w-3.5 h-3.5" />
+            <span>3D Multi-Room Video Simulation</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('interactive')}
+            className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-xs ${
+              viewMode === 'interactive'
+                ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105'
+                : 'bg-white/80 text-slate-700 hover:bg-white border border-slate-200/80'
+            }`}
+          >
+            <LayoutGrid className="w-3.5 h-3.5" />
+            <span>Interactive Room Plan</span>
+          </button>
+        </div>
+
         {/* Quick Unit Selector Pills (Swipeable on Mobile) */}
-        <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 mt-4 overflow-x-auto no-scrollbar py-1 px-1 sm:px-0">
+        <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 mt-2 overflow-x-auto no-scrollbar py-1 px-1 sm:px-0">
           {indoorUnits.map((unit) => (
             <button
               key={unit.id}
-              onClick={() => setSelectedUnit(unit.id)}
+              onClick={() => {
+                setSelectedUnit(unit.id);
+                setViewMode('interactive');
+              }}
               className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap shrink-0 backdrop-blur-md ${
-                selectedUnit === unit.id
+                selectedUnit === unit.id && viewMode === 'interactive'
                   ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105 border border-white/20'
                   : 'bg-white/80 text-slate-700 hover:bg-white border border-white/80 shadow-xs'
               }`}
@@ -96,149 +148,209 @@ export default function HeroSection({ settings, onOpenQuote }) {
         </div>
       </div>
 
-      {/* Interactive 3D Architectural Villa Floor Plan Cutaway */}
+      {/* 3D Visualizer & Video Demonstration Container */}
       <div className="max-w-6xl mx-auto px-3 sm:px-6 relative">
         <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-900 group">
           
-          {/* High-Resolution 3D Villa Cutaway Background (Auto-adjusts aspect ratio across phones & laptops) */}
-          <div className="relative min-h-[260px] xs:min-h-[300px] sm:min-h-[360px] md:aspect-[16/9] w-full overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
-              alt="3D Architectural VRF Home Floor Plan Cutaway"
-              className="w-full h-full object-cover object-center brightness-90 contrast-105"
-            />
-            {/* Ambient Lighting Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-900/40 pointer-events-none"></div>
-
-            {/* Dotted Refrigerant Piping Network Overlay */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="coolPipe" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#059669" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
-                </linearGradient>
-              </defs>
-
-              {/* Dotted lines connecting units to room nodes */}
-              {/* Unit 3 to Patio/Lounge node */}
-              <line 
-                x1="18%" y1="36%" x2="22%" y2="56%" 
-                stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
-                className="animate-pulse" 
-              />
-              
-              {/* Unit 4 to Central Foyer node */}
-              <line 
-                x1="38%" y1="20%" x2="52%" y2="38%" 
-                stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
-                className="animate-pulse" 
-              />
-              
-              {/* Unit 5 to Master Bed node */}
-              <line 
-                x1="76%" y1="20%" x2="72%" y2="44%" 
-                stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
-                className="animate-pulse" 
-              />
-
-              {/* Unit 1 to Living Room node */}
-              <line 
-                x1="16%" y1="84%" x2="26%" y2="78%" 
-                stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
-                className="animate-pulse" 
-              />
-
-              {/* Central Trunk refrigerant line running between rooms */}
-              <path 
-                d="M 22 56 Q 36 48 52 38 T 72 44" 
-                fill="none" 
-                stroke="#059669" 
-                strokeWidth="2.5" 
-                strokeDasharray="4,4" 
-                opacity="0.75" 
-              />
-            </svg>
-
-            {/* Pulsing White Circular Nodes on the Rooms */}
-            {indoorUnits.map((unit) => (
-              <button
-                key={unit.id}
-                onClick={() => setSelectedUnit(unit.id)}
-                style={{ top: unit.pinPos.top, left: unit.pinPos.left }}
-                className="absolute z-20 -translate-x-1/2 -translate-y-1/2 group cursor-pointer focus:outline-none"
-                title={`Click to inspect ${unit.title} (${unit.room})`}
-              >
-                <span className="relative flex h-7 w-7 items-center justify-center">
-                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                    selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
-                  }`}></span>
-                  <span className={`relative inline-flex rounded-full h-5 w-5 border-2 border-navy-900 shadow-md ${
-                    selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
-                  }`}></span>
-                </span>
-              </button>
-            ))}
-
-            {/* Active Unit Mini Card Overlay on Mobile Phones (< sm) */}
-            <div className="sm:hidden absolute top-2.5 left-2.5 z-30 max-w-[210px] bg-white/85 backdrop-blur-xl rounded-xl p-2.5 border border-white/80 shadow-2xl">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-black tracking-wider text-[#059669] uppercase">
-                  {currentUnit.title}
-                </span>
-                <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/50">
-                  {currentUnit.noise}
-                </span>
-              </div>
-              <div className="w-full h-11 rounded overflow-hidden bg-slate-100 mb-1 border border-slate-200/60">
-                <img 
-                  src={currentUnit.image} 
-                  alt={currentUnit.name} 
-                  className="w-full h-full object-cover" 
+          {viewMode === 'video' ? (
+            /* 3D Multi-Room Video Player (Sanitized VRF Homes Demonstration) */
+            <div className="relative w-full bg-slate-950 flex flex-col items-center justify-center min-h-[380px] xs:min-h-[440px] sm:min-h-[520px] md:min-h-[580px] overflow-hidden">
+              {/* Subtle Ambient Video Glow Backdrop */}
+              <div className="absolute inset-0 opacity-25 blur-3xl scale-110 pointer-events-none">
+                <video
+                  src="/videos/vrf-home-multi-room-animation.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-[11px] font-bold text-navy-950 truncate">
-                {currentUnit.name}
+
+              {/* Main Crisp Video Player */}
+              <div className="relative z-10 w-full max-w-xl mx-auto flex items-center justify-center p-2 sm:p-4">
+                <video
+                  ref={videoRef}
+                  src="/videos/vrf-home-multi-room-animation.mp4"
+                  poster="/videos/vrf-home-multi-room-poster.jpg"
+                  autoPlay
+                  loop
+                  muted={isMuted}
+                  playsInline
+                  className="w-full max-h-[540px] sm:max-h-[580px] object-contain shadow-2xl rounded-xl border border-white/10"
+                />
               </div>
-              <div className="text-[10px] text-slate-500 truncate">
-                {currentUnit.room}
+
+              {/* Top Floating Badge */}
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] sm:text-xs">
+                <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse"></span>
+                <span className="font-semibold">VRF Multi-Room Smart Cooling • 1 Outdoor Unit</span>
+              </div>
+
+              {/* Floating Video Action Controls */}
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={togglePlay}
+                  className="p-2 sm:p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all shadow-lg cursor-pointer"
+                  title={isPlaying ? 'Pause' : 'Play'}
+                >
+                  {isPlaying ? <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+                </button>
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  className="p-2 sm:p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all shadow-lg cursor-pointer"
+                  title={isMuted ? 'Unmute' : 'Mute'}
+                >
+                  {isMuted ? <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+                </button>
+              </div>
+
+              {/* Switch to Interactive Plan pill at bottom right of video */}
+              <div className="absolute bottom-3 right-3 z-20 hidden md:block">
+                <button
+                  type="button"
+                  onClick={() => setViewMode('interactive')}
+                  className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/20 text-xs font-semibold transition-all flex items-center gap-1.5"
+                >
+                  <LayoutGrid className="w-3 h-3" />
+                  <span>Inspect Room Floor Plan →</span>
+                </button>
               </div>
             </div>
+          ) : (
+            /* Interactive 3D Architectural Villa Floor Plan Cutaway */
+            <div className="relative min-h-[260px] xs:min-h-[300px] sm:min-h-[360px] md:aspect-[16/9] w-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
+                alt="3D Architectural VRF Home Floor Plan Cutaway"
+                className="w-full h-full object-cover object-center brightness-90 contrast-105"
+              />
+              {/* Ambient Lighting Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-900/40 pointer-events-none"></div>
 
-            {/* Floating Unit Cards with Dotted Callouts */}
-            {indoorUnits.map((unit) => {
-              const isActive = selectedUnit === unit.id;
-              return (
-                <div
+              {/* Dotted Refrigerant Piping Network Overlay */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="coolPipe" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#059669" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
+                  </linearGradient>
+                </defs>
+
+                {/* Dotted lines connecting units to room nodes */}
+                <line 
+                  x1="18%" y1="36%" x2="22%" y2="56%" 
+                  stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
+                  className="animate-pulse" 
+                />
+                <line 
+                  x1="38%" y1="20%" x2="52%" y2="38%" 
+                  stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
+                  className="animate-pulse" 
+                />
+                <line 
+                  x1="76%" y1="20%" x2="72%" y2="44%" 
+                  stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
+                  className="animate-pulse" 
+                />
+                <line 
+                  x1="16%" y1="84%" x2="26%" y2="78%" 
+                  stroke="url(#coolPipe)" strokeWidth="3" strokeDasharray="6,6" 
+                  className="animate-pulse" 
+                />
+                <path 
+                  d="M 22 56 Q 36 48 52 38 T 72 44" 
+                  fill="none" 
+                  stroke="#059669" 
+                  strokeWidth="2.5" 
+                  strokeDasharray="4,4" 
+                  opacity="0.75" 
+                />
+              </svg>
+
+              {/* Pulsing White Circular Nodes on the Rooms */}
+              {indoorUnits.map((unit) => (
+                <button
                   key={unit.id}
                   onClick={() => setSelectedUnit(unit.id)}
-                  className={`absolute z-30 transition-all duration-300 cursor-pointer hidden sm:block ${unit.calloutPos} ${
-                    isActive 
-                      ? 'scale-105 ring-2 ring-[#059669] shadow-2xl' 
-                      : 'hover:scale-102 opacity-90'
-                  }`}
+                  style={{ top: unit.pinPos.top, left: unit.pinPos.left }}
+                  className="absolute z-20 -translate-x-1/2 -translate-y-1/2 group cursor-pointer focus:outline-none"
+                  title={`Click to inspect ${unit.title} (${unit.room})`}
                 >
-                  <div className="bg-white/85 backdrop-blur-xl rounded-xl p-2.5 sm:p-3 border border-white/80 shadow-[0_12px_35px_rgba(0,0,0,0.18)] max-w-[180px] sm:max-w-[220px]">
-                    <div className="text-[10px] sm:text-xs font-black tracking-wider text-[#059669] uppercase mb-1">
-                      {unit.title}
-                    </div>
-                    <div className="w-full h-12 sm:h-16 rounded-lg overflow-hidden bg-slate-100 mb-1.5 border border-slate-200/60">
-                      <img 
-                        src={unit.image} 
-                        alt={unit.name} 
-                        className="w-full h-full object-cover" 
-                      />
-                    </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-navy-950 truncate">
-                      {unit.name}
-                    </div>
-                    <div className="text-[10px] text-slate-500 truncate">
-                      {unit.room}
+                  <span className="relative flex h-7 w-7 items-center justify-center">
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                      selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
+                    }`}></span>
+                    <span className={`relative inline-flex rounded-full h-5 w-5 border-2 border-navy-900 shadow-md ${
+                      selectedUnit === unit.id ? 'bg-[#059669]' : 'bg-white'
+                    }`}></span>
+                  </span>
+                </button>
+              ))}
+
+              {/* Active Unit Mini Card Overlay on Mobile Phones (< sm) */}
+              <div className="sm:hidden absolute top-2.5 left-2.5 z-30 max-w-[210px] bg-white/85 backdrop-blur-xl rounded-xl p-2.5 border border-white/80 shadow-2xl">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[10px] font-black tracking-wider text-[#059669] uppercase">
+                    {currentUnit.title}
+                  </span>
+                  <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/50">
+                    {currentUnit.noise}
+                  </span>
+                </div>
+                <div className="w-full h-11 rounded overflow-hidden bg-slate-100 mb-1 border border-slate-200/60">
+                  <img 
+                    src={currentUnit.image} 
+                    alt={currentUnit.name} 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <div className="text-[11px] font-bold text-navy-950 truncate">
+                  {currentUnit.name}
+                </div>
+                <div className="text-[10px] text-slate-500 truncate">
+                  {currentUnit.room}
+                </div>
+              </div>
+
+              {/* Floating Unit Cards with Dotted Callouts */}
+              {indoorUnits.map((unit) => {
+                const isActive = selectedUnit === unit.id;
+                return (
+                  <div
+                    key={unit.id}
+                    onClick={() => setSelectedUnit(unit.id)}
+                    className={`absolute z-30 transition-all duration-300 cursor-pointer hidden sm:block ${unit.calloutPos} ${
+                      isActive 
+                        ? 'scale-105 ring-2 ring-[#059669] shadow-2xl' 
+                        : 'hover:scale-102 opacity-90'
+                    }`}
+                  >
+                    <div className="bg-white/85 backdrop-blur-xl rounded-xl p-2.5 sm:p-3 border border-white/80 shadow-[0_12px_35px_rgba(0,0,0,0.18)] max-w-[180px] sm:max-w-[220px]">
+                      <div className="text-[10px] sm:text-xs font-black tracking-wider text-[#059669] uppercase mb-1">
+                        {unit.title}
+                      </div>
+                      <div className="w-full h-12 sm:h-16 rounded-lg overflow-hidden bg-slate-100 mb-1.5 border border-slate-200/60">
+                        <img 
+                          src={unit.image} 
+                          alt={unit.name} 
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-navy-950 truncate">
+                        {unit.name}
+                      </div>
+                      <div className="text-[10px] text-slate-500 truncate">
+                        {unit.room}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Bottom Interactive Spec Bar (Responsive Layout) */}
           <div className="bg-navy-950/85 backdrop-blur-2xl text-white p-3.5 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between border-t border-white/10 gap-3.5 sm:gap-4 shadow-xl">

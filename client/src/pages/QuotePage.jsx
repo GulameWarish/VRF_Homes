@@ -30,8 +30,59 @@ export default function QuotePage() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // 7 Brands as requested with real equipment images from voltas folder
+  // 9 Authorized Brands with genuine equipment and authentic specs
   const brands = [
+    {
+      id: 'daikin',
+      name: 'Daikin India',
+      tagline: 'Global Inventor of VRV • VRV Home & X Series',
+      logo: '/images/brands/daikin.svg',
+      image: '/images/equipment/daikin-outdoor.jpg',
+      indoorImage: '/images/equipment/daikin-indoor.jpg',
+      indoorName: 'Daikin VRV Home Inverter Indoor Unit',
+      category: 'VRV Home & VRV X Multi-Split',
+      context: 'Daikin revolutionized modern HVAC by inventing Variable Refrigerant Volume (VRV). Daikin India systems feature next-generation VRT (Variable Refrigerant Temperature) technology, dynamic part-load COP up to 6.2, and ultra-compact residential VRV Home outdoor units tailored for Indian luxury villas and penthouses.',
+      highlights: [
+        'Daikin VRV X & VRV Home Inverter Outdoor Units',
+        'Next-Gen VRT (Variable Refrigerant Temperature) Tech',
+        'Dynamic Seasonal COP up to 6.2 with Auto Oil Recovery',
+        'Nationwide Direct Daikin India Engineering & Service Support'
+      ]
+    },
+    {
+      id: 'blue-star',
+      name: 'Blue Star',
+      tagline: "India's Cooling Expert • VRF V Plus Inverter",
+      logo: '/images/brands/blue-star.svg',
+      image: '/images/equipment/blue-star-outdoor.jpg',
+      indoorImage: '/images/equipment/blue-star-indoor.jpg',
+      indoorName: 'Blue Star Inverter Split / VRF Indoor Unit',
+      category: 'VRF V Plus 100% Inverter',
+      context: "India's homegrown air conditioning pioneer with over 8 decades of specialized cooling engineering. Blue Star VRF V Plus systems are built for rugged 54°C Indian heat, high part-load efficiency, and flexible piping architectures up to 1,000m.",
+      highlights: [
+        'Blue Star VRF V Plus 100% Inverter Outdoor Condenser',
+        'Blue Star Concealed Ducted & Inverter Hi-Wall Indoor',
+        'Continuous Cooling Reliability Up to 54°C Ambient',
+        'Extended Piping Network Up to 1,000m Total Length'
+      ]
+    },
+    {
+      id: 'carrier',
+      name: 'Carrier India',
+      tagline: 'Carrier Airconditioning & Refrigeration / Carrier Midea',
+      logo: '/images/brands/carrier.svg',
+      image: '/images/equipment/carrier-outdoor.jpg',
+      indoorImage: '/images/equipment/carrier-indoor.webp',
+      indoorName: 'Carrier 1 Ton 3-Star High-Efficiency AC',
+      category: 'XPower High-Efficiency VRF & Multi-Split',
+      context: 'Carrier India operates through Carrier Airconditioning & Refrigeration Ltd. (Commercial VRF/Chillers) and Carrier Midea India Pvt. Ltd. (Residential Multi-Splits), featuring patented intelligent oil return algorithms, subcooling thermodynamic loops, and modular condenser scalability up to 1,000m copper piping.',
+      highlights: [
+        'Carrier Airconditioning & Refrigeration Ltd. Engineering',
+        'Carrier Midea India Inverter Multi-Split & Hi-Wall',
+        'Up to 1,000m Extended Piping Network with Subcooling',
+        'High Seasonal Energy Efficiency (ISEER) Ratings'
+      ]
+    },
     {
       id: 'voltas',
       name: 'Voltas',
@@ -50,40 +101,6 @@ export default function QuotePage() {
       ]
     },
     {
-      id: 'carrier',
-      name: 'Carrier',
-      tagline: 'The Inventor of Modern Air Conditioning',
-      logo: '/images/brands/carrier.svg',
-      image: '/images/equipment/carrier-outdoor.jpg',
-      indoorImage: '/images/equipment/carrier-indoor.webp',
-      indoorName: 'Carrier 1 Ton 3-Star High-Efficiency AC',
-      category: 'XPower High-Efficiency VRF',
-      context: 'Carrier XPower VRF systems feature patented intelligent oil return algorithms, subcooling thermodynamic loops, and modular condenser scalability up to 1,000 meters of total copper piping.',
-      highlights: [
-        'Carrier Commercial Outdoor Condenser & Split Unit',
-        'Up to 1,000m Extended Piping Network',
-        'Subcooling Thermodynamic Circuitry',
-        'High Seasonal Energy Efficiency (ISEER)'
-      ]
-    },
-    {
-      id: 'haier',
-      name: 'Haier',
-      tagline: 'Twin-Fan Inverter Multi-Split & MRV',
-      logo: '/images/brands/haier.svg',
-      image: '/images/equipment/haier-outdoor-dual-fan.jpg',
-      indoorImage: '/images/equipment/commercial-heavy-ductable-unit.jpg',
-      indoorName: 'Haier Commercial Ducted Inverter Unit',
-      category: 'Commercial MRV & Duct AC',
-      context: 'Proven in heavy-duty commercial hypermarkets, retail complexes, and luxury villa installations by Shukla Enterprise. Features twin-fan vertical discharge condensers, hydrophilic anti-corrosion fins, and high-static concealed ductable units.',
-      highlights: [
-        'Haier Twin-Fan DC Inverter Outdoor Condenser',
-        'Heavy-Duty Suspended Concealed Ductable Units',
-        'Engineered MS Cantilever Wall Frame Mounting',
-        'High-Airflow Jet Nozzle Diffusers for Large Spaces'
-      ]
-    },
-    {
       id: 'hitachi',
       name: 'Hitachi',
       tagline: 'Set-Free Intelligent Multi-Split',
@@ -98,23 +115,6 @@ export default function QuotePage() {
         'Hitachi YOSHI 5500SWXL 1.5 TR Hi-Wall',
         'Asymmetric Scroll Compressor Technology',
         '0.1 Hz Micro-Step Inverter Frequency'
-      ]
-    },
-    {
-      id: 'trane',
-      name: 'Trane',
-      tagline: 'Applied Systems & Chiller Technology',
-      logo: '/images/brands/trane.svg',
-      image: '/images/equipment/trane-outdoor.jpg',
-      indoorImage: '/images/equipment/trane-indoor.jpg',
-      indoorName: 'Trane Applied High-Static Indoor Unit',
-      category: 'Heavy-Duty Commercial VRF',
-      context: 'Trane is the global benchmark for critical cooling in hospitals, data centers, and luxury estates. Heavy-duty construction ensures seamless 24/7 continuous operation under punishing thermal loads.',
-      highlights: [
-        'Trane Heavy Commercial Outdoor Inverter Unit',
-        'Trane Applied Precision Indoor Unit',
-        'Hospital & Cleanroom Grade Reliability',
-        'Continuous 24/7 Heavy Duty Operation'
       ]
     },
     {
@@ -152,20 +152,37 @@ export default function QuotePage() {
       ]
     },
     {
-      id: 'blue-star',
-      name: 'Blue Star',
-      tagline: "India's Cooling Expert • VRF V Plus Inverter",
-      logo: '/images/brands/blue-star.svg',
-      image: '/images/equipment/blue-star-outdoor.jpg',
-      indoorImage: '/images/equipment/blue-star-indoor.jpg',
-      indoorName: 'Blue Star Inverter Split / VRF Indoor Unit',
-      category: 'VRF V Plus 100% Inverter',
-      context: "India's homegrown air conditioning pioneer with over 8 decades of specialized cooling engineering. Blue Star VRF V Plus systems are built for rugged 54°C Indian heat, high part-load efficiency, and flexible piping architectures.",
+      id: 'trane',
+      name: 'Trane',
+      tagline: 'Applied Systems & Chiller Technology',
+      logo: '/images/brands/trane.svg',
+      image: '/images/equipment/trane-outdoor.jpg',
+      indoorImage: '/images/equipment/trane-indoor.jpg',
+      indoorName: 'Trane Applied High-Static Indoor Unit',
+      category: 'Heavy-Duty Commercial VRF',
+      context: 'Trane is the global benchmark for critical cooling in hospitals, data centers, and luxury estates. Heavy-duty construction ensures seamless 24/7 continuous operation under punishing thermal loads.',
       highlights: [
-        'Blue Star VRF V Plus 100% Inverter Outdoor Condenser',
-        'Blue Star Concealed Ducted & Inverter Hi-Wall Indoor',
-        'Continuous Cooling Reliability Up to 54°C Ambient',
-        'Extended Piping Network Up to 1,000m Total Length'
+        'Trane Heavy Commercial Outdoor Inverter Unit',
+        'Trane Applied Precision Indoor Unit',
+        'Hospital & Cleanroom Grade Reliability',
+        'Continuous 24/7 Heavy Duty Operation'
+      ]
+    },
+    {
+      id: 'haier',
+      name: 'Haier',
+      tagline: 'Twin-Fan Inverter Multi-Split & MRV',
+      logo: '/images/brands/haier.svg',
+      image: '/images/equipment/haier-outdoor-dual-fan.jpg',
+      indoorImage: '/images/equipment/commercial-heavy-ductable-unit.jpg',
+      indoorName: 'Haier Commercial Ducted Inverter Unit',
+      category: 'Commercial MRV & Duct AC',
+      context: 'Proven in heavy-duty commercial hypermarkets, retail complexes, and luxury villa installations by Shukla Enterprise. Features twin-fan vertical discharge condensers, hydrophilic anti-corrosion fins, and high-static concealed ductable units.',
+      highlights: [
+        'Haier Twin-Fan DC Inverter Outdoor Condenser',
+        'Heavy-Duty Suspended Concealed Ductable Units',
+        'Engineered MS Cantilever Wall Frame Mounting',
+        'High-Airflow Jet Nozzle Diffusers for Large Spaces'
       ]
     }
   ];
@@ -361,14 +378,14 @@ export default function QuotePage() {
           {/* Section 2: Two Columns — Left: 7 Interactive Brand Images with Hover Context | Right: Project Quote Form */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
             
-            {/* LEFT COLUMN: 7 Brand Showcase Cards (7 cols on lg) */}
+            {/* LEFT COLUMN: 9 Brand Showcase Cards (7 cols on lg) */}
             <div className="lg:col-span-7 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-slate-200 gap-1.5">
                 <div>
                   <h2 className="text-base sm:text-lg font-extrabold text-navy-950 uppercase tracking-wider flex items-center space-x-2">
                     <span>Authorized Equipment Portfolio</span>
                     <span className="text-[10px] sm:text-xs bg-[#059669]/10 text-[#059669] px-2 py-0.5 rounded-full font-bold">
-                      7 Top Brands
+                      9 Authorized Brands
                     </span>
                   </h2>
                   <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
@@ -729,14 +746,15 @@ export default function QuotePage() {
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     >
                       <option value="All Brands (Unbiased Recommendation)">All Brands (Unbiased Recommendation)</option>
+                      <option value="Daikin India">Daikin India (VRV Home & VRV X)</option>
                       <option value="Blue Star">Blue Star VRF V Plus</option>
-                      <option value="Voltas">Voltas Inverter VRF</option>
-                      <option value="Carrier">Carrier XPower VRF</option>
-                      <option value="Haier">Haier MRV & Duct AC</option>
+                      <option value="Carrier India">Carrier India (Carrier Airconditioning & Refrigeration / Carrier Midea)</option>
                       <option value="Hitachi">Hitachi Set-Free VRF</option>
-                      <option value="Trane">Trane Applied VRF / Chillers</option>
+                      <option value="Voltas">Voltas Inverter VRF (A TATA Enterprise)</option>
                       <option value="O General">O General Tropical VRF</option>
                       <option value="Mitsubishi Electric">Mitsubishi Electric City Multi</option>
+                      <option value="Trane">Trane Applied VRF / Chillers</option>
+                      <option value="Haier">Haier MRV & Duct AC</option>
                     </select>
                   </div>
 

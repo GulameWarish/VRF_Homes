@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="daikinBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#009fe3"/>
+      <stop offset="100%" stop-color="#006eb5"/>
+    </linearGradient>
+  </defs>
+  <!-- Daikin Triangular/Parallelogram Wedge Glyph -->
+  <polygon points="12,18 48,18 30,62" fill="url(#daikinBlue)" />
+  <polygon points="34,62 70,18 52,62" fill="#009fe3" opacity="0.85" />
+  <!-- DAIKIN Text Typography -->
+  <text x="78" y="54" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="4" fill="#006eb5">DAIKIN</text>
+</svg>

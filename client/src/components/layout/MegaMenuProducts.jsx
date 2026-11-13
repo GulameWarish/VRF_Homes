@@ -5,6 +5,33 @@ import { ArrowRight, Layers, CheckCircle2 } from 'lucide-react';
 export default function MegaMenuProducts({ onClose, onOpenQuote }) {
   const brands = [
     {
+      name: 'Daikin India',
+      slug: 'daikin',
+      logo: '/images/brands/daikin.svg',
+      productImage: '/images/equipment/daikin-outdoor.jpg',
+      category: 'VRV Home & VRV X Multi-Split',
+      desc: 'The original global pioneer and inventor of VRV technology, engineered for luxury villas, apartments, and intelligent zone cooling.',
+      link: '/products?brand=Daikin'
+    },
+    {
+      name: 'Blue Star',
+      slug: 'blue-star',
+      logo: '/images/brands/blue-star.svg',
+      productImage: '/images/equipment/blue-star-outdoor.jpg',
+      category: 'VRF V Plus 100% Inverter',
+      desc: "India's leading cooling specialist with 8+ decades of engineering, 54°C high-ambient VRF V Plus, and 1,000m piping flexibility.",
+      link: '/products?brand=Blue+Star'
+    },
+    {
+      name: 'Carrier India',
+      slug: 'carrier',
+      logo: '/images/brands/carrier.svg',
+      productImage: '/images/equipment/carrier-outdoor.jpg',
+      category: 'Carrier Airconditioning & Refrigeration / Carrier Midea',
+      desc: 'Official Indian operations of the world HVAC inventor — delivering high-performance XPower VRF, multi-splits, and AHU plants.',
+      link: '/products?brand=Carrier'
+    },
+    {
       name: 'Mitsubishi Electric',
       slug: 'mitsubishi-electric',
       logo: '/images/brands/mitsubishi-electric.svg',
@@ -21,15 +48,6 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
       category: 'Tropical Heavy-Duty VRF & Splits',
       desc: 'Uncompromising cooling capacity under extreme desert-grade heat with high-efficiency twin rotary compressors.',
       link: '/products?brand=O+General'
-    },
-    {
-      name: 'Carrier',
-      slug: 'carrier',
-      logo: '/images/brands/carrier.svg',
-      productImage: '/images/equipment/carrier-outdoor.jpg',
-      category: 'XPower VRF & Chiller Plants',
-      desc: 'World leader in high-performance central chillers, air handling units (AHUs), and modular VRF systems.',
-      link: '/products?brand=Carrier'
     },
     {
       name: 'Hitachi',
@@ -66,15 +84,6 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
       category: 'Twin-Fan Inverter VRF & Duct AC',
       desc: 'Advanced MRV multi-split technology with gold-fin anti-corrosion coils proven in coastal projects.',
       link: '/products?brand=Haier'
-    },
-    {
-      name: 'Blue Star',
-      slug: 'blue-star',
-      logo: '/images/brands/blue-star.svg',
-      productImage: '/images/equipment/blue-star-outdoor.jpg',
-      category: 'VRF V Plus 100% Inverter',
-      desc: "India's leading cooling specialist with 8+ decades of engineering, 54°C high-ambient VRF V Plus, and 1,000m piping flexibility.",
-      link: '/products?brand=Blue+Star'
     }
   ];
 
