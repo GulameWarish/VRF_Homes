@@ -235,7 +235,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
   };
 
   return (
-    <header ref={navRef} className="sticky top-0 z-50 bg-white shadow-md">
+    <header ref={navRef} className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/60 shadow-[0_4px_25px_rgba(0,0,0,0.06)]">
       {/* Top Bar with Brand Logo and Search */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between">
         
@@ -263,7 +263,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-3.5 pr-9 py-1.5 text-xs sm:text-sm bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-[#059669] rounded-md focus:outline-none focus:ring-1 focus:ring-[#059669] text-slate-800 placeholder-slate-400 transition-all shadow-inner"
+              className="w-full pl-3.5 pr-9 py-1.5 text-xs sm:text-sm bg-slate-50/75 backdrop-blur-md hover:bg-white/90 focus:bg-white border border-slate-300/80 focus:border-[#059669] rounded-md focus:outline-none focus:ring-1 focus:ring-[#059669] text-slate-800 placeholder-slate-400 transition-all shadow-inner"
             />
             <button
               type="submit"
@@ -305,8 +305,8 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
         </div>
       </div>
 
-      {/* Solid Cyan/Blue Navigation Bar */}
-      <nav className="relative bg-[#059669] text-white select-none">
+      {/* Solid Emerald Glass Navigation Bar */}
+      <nav className="relative bg-gradient-to-r from-[#047857]/95 via-[#059669]/90 to-[#047857]/95 backdrop-blur-xl text-white select-none border-t border-white/10 shadow-[0_8px_30px_rgba(5,150,105,0.25)]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="hidden lg:flex items-center justify-between">
             
@@ -422,7 +422,7 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
 
         {/* Mobile Navigation Drawer with Accordion Support */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-navy-950 text-white border-t border-white/10 px-4 py-5 space-y-3 max-h-[85vh] overflow-y-auto">
+          <div className="lg:hidden bg-navy-950/90 backdrop-blur-2xl text-white border-t border-white/10 px-4 py-5 space-y-3 max-h-[85vh] overflow-y-auto">
             {/* Search Input */}
             <form onSubmit={handleSearchSubmit} className="mb-4">
               <div className="relative">

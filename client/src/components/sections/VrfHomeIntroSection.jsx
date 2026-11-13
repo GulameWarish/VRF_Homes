@@ -141,8 +141,8 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
 
             {/* Key Advantages List */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-start space-x-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-[#059669] flex items-center justify-center shrink-0 mt-0.5">
+              <div className="flex items-start space-x-3 p-3.5 rounded-xl glass-card border border-white/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-[#059669] flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200/60">
                   <Home className="w-4 h-4" />
                 </div>
                 <div>
@@ -153,8 +153,8 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="flex items-start space-x-3 p-3.5 rounded-xl glass-card border border-white/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200/60">
                   <Layers className="w-4 h-4" />
                 </div>
                 <div>
@@ -165,8 +165,8 @@ export default function VrfHomeIntroSection({ onOpenQuote }) {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="flex items-start space-x-3 p-3.5 rounded-xl glass-card border border-white/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 mt-0.5 border border-indigo-200/60">
                   <Zap className="w-4 h-4" />
                 </div>
                 <div>

@@ -4,7 +4,7 @@ import { ArrowRight, Check, Download } from 'lucide-react';
 
 export default function ProductCard({ product, onOpenQuote }) {
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-premium-hover transition-all duration-300 flex flex-col overflow-hidden group">
+    <div className="glass-card rounded-2xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(5,150,105,0.15)] transition-all duration-300 flex flex-col overflow-hidden group">
       {/* Product Image */}
       <div className="relative h-52 bg-gradient-to-b from-slate-50 to-slate-100/90 overflow-hidden flex items-center justify-center p-3">
         <img

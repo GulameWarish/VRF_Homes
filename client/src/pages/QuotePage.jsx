@@ -294,8 +294,8 @@ export default function QuotePage() {
             <span className="text-[#059669] uppercase">REQUEST A FREE ESTIMATE</span>
           </div>
 
-          {/* Section 1: VRF Home Introduction (As seen in Reference) */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm mb-6 sm:mb-10">
+          {/* Section 1: VRF Home Introduction (Glass Theme) */}
+          <div className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-white/80 shadow-[0_12px_40px_rgba(0,0,0,0.06)] mb-6 sm:mb-10">
             <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
               <span>Next-Gen Climate Engineering &amp; Architectural Luxury</span>
             </div>
@@ -537,8 +537,8 @@ export default function QuotePage() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Project Quote Form (5 cols on lg, fluid scroll on laptops) */}
-            <div className="lg:col-span-5 bg-white p-5 sm:p-7 lg:p-8 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto overscroll-contain">
+            {/* RIGHT COLUMN: Project Quote Form (Glass Card) */}
+            <div className="lg:col-span-5 glass-card p-5 sm:p-7 lg:p-8 rounded-2xl sm:rounded-3xl border border-white/80 shadow-[0_16px_50px_rgba(0,0,0,0.08)] lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto overscroll-contain">
               
               {/* Form Title (Matching Reference Screenshot) */}
               <div className="text-center pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-slate-100">

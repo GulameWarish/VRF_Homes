@@ -171,7 +171,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
             return (
               <div
                 key={idx}
-                className="group relative bg-white hover:bg-slate-50/80 rounded-2xl border border-slate-200/90 hover:border-[#059669]/50 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
+                className="group relative glass-card hover:bg-white/95 rounded-2xl border border-white/80 hover:border-[#059669]/50 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(5,150,105,0.12)] flex flex-col justify-between"
               >
                 <div>
                   {/* Top Row: Icon + Number */}
@@ -210,7 +210,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
         </div>
 
         {/* 4. QUICK 4-POINT COMPARISON CARD (Easy to grasp in 10 seconds) */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
+        <div className="glass-card rounded-3xl border border-white/80 p-6 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-3">
             <div>
               <span className="text-xs font-bold text-[#059669] uppercase tracking-wider block mb-1">
@@ -251,7 +251,7 @@ export default function WhyVrfHomeSection({ onOpenQuote }) {
           </div>
 
           {/* Bottom Conversion Banner */}
-          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-slate-50 via-blue-50/40 to-slate-50 p-5 rounded-2xl gap-4">
+          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-emerald-50/70 via-white/80 to-emerald-50/70 backdrop-blur-md p-5 rounded-2xl border border-white/80 gap-4 shadow-sm">
             <div className="flex items-center space-x-3 text-center sm:text-left">
               <div className="w-10 h-10 rounded-xl bg-[#059669]/10 text-[#059669] flex items-center justify-center shrink-0">
                 <Award className="w-5 h-5" />

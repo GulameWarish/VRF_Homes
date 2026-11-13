@@ -62,10 +62,13 @@ export default function HeroSection({ settings, onOpenQuote }) {
 
   return (
     <section className="relative bg-gradient-to-b from-[#059669]/10 via-slate-50 to-white overflow-hidden pb-12 pt-6 sm:pt-10">
+      {/* Ambient Glass Glow Orbs */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl pointer-events-none -z-0"></div>
+      <div className="absolute top-40 right-1/4 w-80 h-80 bg-teal-400/15 rounded-full blur-3xl pointer-events-none -z-0"></div>
       
       {/* Top Banner Tagline */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
-        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
+        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3 backdrop-blur-sm border border-[#059669]/20 shadow-xs">
           <span>VRF Home Climate Technology</span>
         </div>
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight">
@@ -81,10 +84,10 @@ export default function HeroSection({ settings, onOpenQuote }) {
             <button
               key={unit.id}
               onClick={() => setSelectedUnit(unit.id)}
-              className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
+              className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap shrink-0 backdrop-blur-md ${
                 selectedUnit === unit.id
-                  ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105'
-                  : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                  ? 'bg-[#059669] text-white shadow-md shadow-[#059669]/30 scale-105 border border-white/20'
+                  : 'bg-white/80 text-slate-700 hover:bg-white border border-white/80 shadow-xs'
               }`}
             >
               {unit.title}: {unit.room.split('&')[0]}
@@ -177,16 +180,16 @@ export default function HeroSection({ settings, onOpenQuote }) {
             ))}
 
             {/* Active Unit Mini Card Overlay on Mobile Phones (< sm) */}
-            <div className="sm:hidden absolute top-2.5 left-2.5 z-30 max-w-[210px] bg-white/95 backdrop-blur-md rounded-xl p-2 border border-slate-200/90 shadow-xl">
+            <div className="sm:hidden absolute top-2.5 left-2.5 z-30 max-w-[210px] bg-white/85 backdrop-blur-xl rounded-xl p-2.5 border border-white/80 shadow-2xl">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-black tracking-wider text-[#059669] uppercase">
                   {currentUnit.title}
                 </span>
-                <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
+                <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/50">
                   {currentUnit.noise}
                 </span>
               </div>
-              <div className="w-full h-11 rounded overflow-hidden bg-slate-100 mb-1 border border-slate-200">
+              <div className="w-full h-11 rounded overflow-hidden bg-slate-100 mb-1 border border-slate-200/60">
                 <img 
                   src={currentUnit.image} 
                   alt={currentUnit.name} 
@@ -214,11 +217,11 @@ export default function HeroSection({ settings, onOpenQuote }) {
                       : 'hover:scale-102 opacity-90'
                   }`}
                 >
-                  <div className="bg-white/95 backdrop-blur-md rounded-lg p-2.5 sm:p-3 border border-slate-200/90 shadow-xl max-w-[180px] sm:max-w-[220px]">
+                  <div className="bg-white/85 backdrop-blur-xl rounded-xl p-2.5 sm:p-3 border border-white/80 shadow-[0_12px_35px_rgba(0,0,0,0.18)] max-w-[180px] sm:max-w-[220px]">
                     <div className="text-[10px] sm:text-xs font-black tracking-wider text-[#059669] uppercase mb-1">
                       {unit.title}
                     </div>
-                    <div className="w-full h-12 sm:h-16 rounded overflow-hidden bg-slate-100 mb-1.5 border border-slate-200">
+                    <div className="w-full h-12 sm:h-16 rounded-lg overflow-hidden bg-slate-100 mb-1.5 border border-slate-200/60">
                       <img 
                         src={unit.image} 
                         alt={unit.name} 
@@ -238,7 +241,7 @@ export default function HeroSection({ settings, onOpenQuote }) {
           </div>
 
           {/* Bottom Interactive Spec Bar (Responsive Layout) */}
-          <div className="bg-navy-950 text-white p-3.5 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between border-t border-slate-800 gap-3.5 sm:gap-4">
+          <div className="bg-navy-950/85 backdrop-blur-2xl text-white p-3.5 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between border-t border-white/10 gap-3.5 sm:gap-4 shadow-xl">
             <div className="flex items-start sm:items-center space-x-3 sm:space-x-4">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#059669]/20 border border-[#059669]/40 flex items-center justify-center text-[#059669] shrink-0 mt-0.5 sm:mt-0">
                 <Wind className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -283,10 +286,10 @@ export default function HeroSection({ settings, onOpenQuote }) {
         </div>
       </div>
 
-      {/* Feature Highlights Grid Below Hero (Responsive) */}
+      {/* Feature Highlights Grid Below Hero (Responsive Glass Cards) */}
       <div className="max-w-6xl mx-auto px-3 sm:px-6 mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
-        <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0">
+        <div className="glass-card p-3 sm:p-4 rounded-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex items-center space-x-2.5 sm:space-x-3 transition-all hover:scale-102">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0 border border-emerald-100">
             <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
@@ -295,8 +298,8 @@ export default function HeroSection({ settings, onOpenQuote }) {
           </div>
         </div>
 
-        <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+        <div className="glass-card p-3 sm:p-4 rounded-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex items-center space-x-2.5 sm:space-x-3 transition-all hover:scale-102">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
             <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
@@ -305,8 +308,8 @@ export default function HeroSection({ settings, onOpenQuote }) {
           </div>
         </div>
 
-        <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+        <div className="glass-card p-3 sm:p-4 rounded-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex items-center space-x-2.5 sm:space-x-3 transition-all hover:scale-102">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100">
             <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">
@@ -315,8 +318,8 @@ export default function HeroSection({ settings, onOpenQuote }) {
           </div>
         </div>
 
-        <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5 sm:space-x-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+        <div className="glass-card p-3 sm:p-4 rounded-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex items-center space-x-2.5 sm:space-x-3 transition-all hover:scale-102">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100">
             <Sliders className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0">

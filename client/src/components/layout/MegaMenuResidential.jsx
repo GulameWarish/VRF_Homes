@@ -58,7 +58,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
   ];
 
   return (
-    <div className="w-full bg-white border-b border-slate-200/90 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200 select-none max-h-[82vh] overflow-y-auto overscroll-contain">
+    <div className="w-full bg-white/90 backdrop-blur-2xl border-b border-white/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] animate-in fade-in slide-in-from-top-2 duration-200 select-none max-h-[82vh] overflow-y-auto overscroll-contain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7">
         
         {/* Top Header Bar */}

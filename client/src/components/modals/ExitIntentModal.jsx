@@ -35,8 +35,8 @@ export default function ExitIntentModal({ onOpenQuote }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-navy-950/80 backdrop-blur-md animate-in fade-in duration-300 select-none overflow-y-auto">
-      <div className="relative w-full max-w-lg max-h-[92vh] flex flex-col bg-white rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-white/40 overflow-hidden animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-navy-950/70 backdrop-blur-xl animate-in fade-in duration-300 select-none overflow-y-auto">
+      <div className="relative w-full max-w-lg max-h-[92vh] flex flex-col bg-white/95 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border border-white/70 overflow-hidden animate-in zoom-in-95 duration-200">
         
         {/* Top Decorative Header with Blueprint Accent */}
         <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-[#059669] text-white p-5 sm:p-8 relative shrink-0">

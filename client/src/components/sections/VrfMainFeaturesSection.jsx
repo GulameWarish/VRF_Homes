@@ -97,10 +97,10 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
               <button
                 key={f.id}
                 onClick={() => setActiveTab(idx)}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center space-x-2 ${
+                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center space-x-2 backdrop-blur-md ${
                   activeTab === idx
-                    ? 'bg-navy-950 text-white shadow-md shadow-navy-950/20 scale-102'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+                    ? 'bg-navy-950 text-white shadow-md shadow-navy-950/20 scale-102 border border-white/20'
+                    : 'glass-pill text-slate-700 hover:bg-white border border-white/80 shadow-xs'
                 }`}
               >
                 <span>{f.tabName}</span>
@@ -109,8 +109,8 @@ export default function VrfMainFeaturesSection({ onOpenQuote }) {
           </div>
         </div>
 
-        {/* Active Feature Showcase: Real Equipment Photo & Deep Context */}
-        <div className="bg-slate-900 rounded-3xl border-2 border-slate-800 shadow-2xl overflow-hidden p-6 sm:p-10 text-white">
+        {/* Active Feature Showcase: Real Equipment Photo & Deep Context (Frosted Dark Glass Theme) */}
+        <div className="bg-slate-900/85 backdrop-blur-2xl rounded-3xl border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden p-6 sm:p-10 text-white">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left: Real Equipment / Installation Image */}

@@ -5,15 +5,19 @@ export default function TestimonialsSection({ testimonials }) {
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-slate-50 relative overflow-hidden">
+      {/* Subtle Ambient Glass Glow */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-300/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-1.5 text-xs font-bold tracking-wider uppercase text-hvac-600 bg-hvac-50 px-3 py-1 rounded-full mb-3">
+          <div className="inline-flex items-center space-x-1.5 text-xs font-bold tracking-wider uppercase text-[#059669] bg-emerald-50 px-3.5 py-1 rounded-full mb-3 border border-emerald-200/60 shadow-xs">
             <span>Verified Client Endorsements</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
-            Trusted by Luxury Homeowners & Corporate Leaders
+            Trusted by Luxury Homeowners &amp; Corporate Leaders
           </h2>
           <p className="mt-3 text-sm text-slate-600">
             Real feedback from villa owners, hospital directors, and facility heads whose spaces we have engineered.
@@ -24,7 +28,7 @@ export default function TestimonialsSection({ testimonials }) {
           {testimonials.map((t) => (
             <div
               key={t._id}
-              className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between"
+              className="p-6 sm:p-7 rounded-2xl glass-card border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(5,150,105,0.12)] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <Quote className="w-6 h-6 text-[#059669] mb-3 opacity-70" />

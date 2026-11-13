@@ -128,8 +128,8 @@ export default function QuoteModal({ isOpen, onClose, initialData = {} }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/75 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/60 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] border border-white/80 overflow-hidden my-8 animate-in zoom-in-95 duration-200">
         
         {/* Header */}
         <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-hvac-900 text-white p-6 sm:p-8 relative">

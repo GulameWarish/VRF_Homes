@@ -162,7 +162,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
           {SPEC_SHEETS.map((sheet) => (
             <div 
               key={sheet.id}
-              className="bg-white rounded-3xl p-6 border border-slate-200/90 hover:border-cyan-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="glass-card rounded-3xl p-6 border border-white/80 hover:border-emerald-500/50 hover:shadow-[0_20px_50px_rgba(5,150,105,0.15)] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -182,7 +182,7 @@ export default function SpecSheetsSection({ onOpenQuote }) {
                   {sheet.title}
                 </h3>
 
-                <p className="text-xs text-slate-600 mt-2.5 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100">
+                <p className="text-xs text-slate-600 mt-2.5 leading-relaxed bg-white/70 backdrop-blur-sm p-3 rounded-xl border border-white/80">
                   {sheet.specs}
                 </p>
               </div>

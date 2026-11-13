@@ -34,7 +34,7 @@ export default function CookieConsentBanner() {
       aria-label="Cookie Consent Banner"
       className="fixed bottom-3 left-3 right-3 sm:left-6 sm:right-auto sm:max-w-md z-50 animate-in slide-in-from-bottom-5 duration-300 select-none"
     >
-      <div className="bg-navy-950/95 backdrop-blur-md text-white p-4 sm:p-5 rounded-2xl border border-cyan-500/30 shadow-2xl shadow-navy-950/50">
+      <div className="bg-navy-950/85 backdrop-blur-2xl text-white p-4 sm:p-5 rounded-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
         
         {/* Top Header */}
         <div className="flex items-start justify-between gap-3 mb-2.5">
