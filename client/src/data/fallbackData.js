@@ -932,16 +932,6 @@ export const FALLBACK_BRANDS = [
         isPartner: true,
         authorizationNote: 'Authorized Blue Star VRF & System Integration Partner',
         sortOrder: 8
-      },
-      {
-        name: 'Daikin',
-        slug: 'daikin',
-        logo: '/images/brands/daikin.svg',
-        description: 'Global pioneer of VRV (Variable Refrigerant Volume) climate technology, swing inverter compressors, and next-gen R32 efficiency.',
-        categories: ['VRV', 'Residential', 'Commercial', 'Cassette AC', 'Split AC'],
-        isPartner: true,
-        authorizationNote: 'Authorized Daikin VRV & Inverter Partner',
-        sortOrder: 9
       }
     ];
 

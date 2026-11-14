@@ -16,7 +16,7 @@ export default function AdminResidential() {
     heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     introduction: '',
     overview: '',
-    availableBrands: 'Blue Star, Daikin, Mitsubishi Electric, O General, Hitachi, Carrier, Voltas, Trane, Haier',
+    availableBrands: 'Blue Star, Mitsubishi Electric, O General, Hitachi, Carrier, Voltas, Trane, Haier',
     isPublished: true
   };
 
@@ -233,7 +233,7 @@ export default function AdminResidential() {
                   type="text"
                   value={formData.availableBrands}
                   onChange={(e) => setFormData({ ...formData, availableBrands: e.target.value })}
-                  placeholder="Daikin, Mitsubishi, O General, Hitachi, Carrier, Voltas, Haier"
+                  placeholder="Blue Star, Mitsubishi, O General, Hitachi, Carrier, Voltas, Haier"
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-hidden"
                 />
               </div>

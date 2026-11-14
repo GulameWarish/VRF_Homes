@@ -161,8 +161,8 @@ export default function ResidentialDetailPage({ onOpenQuote }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
-            {['Blue Star', 'Daikin', 'Mitsubishi Electric', 'O General', 'Carrier', 'Hitachi', 'Voltas', 'Trane', 'Haier'].map((brandName) => (
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {['Blue Star', 'Mitsubishi Electric', 'O General', 'Carrier', 'Hitachi', 'Voltas', 'Trane', 'Haier'].map((brandName) => (
               <div
                 key={brandName}
                 className="p-4 rounded-xl bg-white border border-slate-200 text-center hover:border-hvac-300 transition-colors shadow-2xs"

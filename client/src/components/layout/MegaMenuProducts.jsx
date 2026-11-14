@@ -5,15 +5,6 @@ import { ArrowRight, Layers, CheckCircle2 } from 'lucide-react';
 export default function MegaMenuProducts({ onClose, onOpenQuote }) {
   const brands = [
     {
-      name: 'Daikin India',
-      slug: 'daikin',
-      logo: '/images/brands/daikin.svg',
-      productImage: '/images/equipment/daikin-outdoor.jpg',
-      category: 'VRV Home & VRV X Multi-Split',
-      desc: 'The original global pioneer and inventor of VRV technology, engineered for luxury villas, apartments, and intelligent zone cooling.',
-      link: '/products?brand=Daikin'
-    },
-    {
       name: 'Blue Star',
       slug: 'blue-star',
       logo: '/images/brands/blue-star.svg',

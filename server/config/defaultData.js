@@ -449,16 +449,6 @@ export const brandsData = [
         sortOrder: 7
       },
       {
-        name: 'Daikin India',
-        slug: 'daikin',
-        logo: '/images/brands/daikin.svg',
-        description: 'The global inventor of VRV (Variable Refrigerant Volume) technology, world leader in luxury residential VRV Home systems, high-efficiency VRT chillers, and precision multi-splits.',
-        categories: ['VRV', 'Residential', 'Commercial', 'Luxury Villas', 'Ducted AC'],
-        isPartner: true,
-        authorizationNote: 'Authorized Sales & Technical Engineering Partner',
-        sortOrder: 8
-      },
-      {
         name: 'Blue Star',
         slug: 'blue-star',
         logo: '/images/brands/blue-star.svg',
@@ -466,7 +456,7 @@ export const brandsData = [
         categories: ['VRF', 'Residential', 'Commercial', 'Ductable AC', 'Inverter Split'],
         isPartner: true,
         authorizationNote: 'Authorized Blue Star VRF & System Integration Partner',
-        sortOrder: 9
+        sortOrder: 8
       }
     ];
 

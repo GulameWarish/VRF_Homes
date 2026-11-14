@@ -30,25 +30,8 @@ export default function QuotePage() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // 9 Authorized Brands with genuine equipment and authentic specs
+  // 8 Authorized Brands with genuine equipment and authentic specs
   const brands = [
-    {
-      id: 'daikin',
-      name: 'Daikin India',
-      tagline: 'Global Inventor of VRV • VRV Home & X Series',
-      logo: '/images/brands/daikin.svg',
-      image: '/images/equipment/daikin-outdoor.jpg',
-      indoorImage: '/images/equipment/daikin-indoor.jpg',
-      indoorName: 'Daikin VRV Home Inverter Indoor Unit',
-      category: 'VRV Home & VRV X Multi-Split',
-      context: 'Daikin revolutionized modern HVAC by inventing Variable Refrigerant Volume (VRV). Daikin India systems feature next-generation VRT (Variable Refrigerant Temperature) technology, dynamic part-load COP up to 6.2, and ultra-compact residential VRV Home outdoor units tailored for Indian luxury villas and penthouses.',
-      highlights: [
-        'Daikin VRV X & VRV Home Inverter Outdoor Units',
-        'Next-Gen VRT (Variable Refrigerant Temperature) Tech',
-        'Dynamic Seasonal COP up to 6.2 with Auto Oil Recovery',
-        'Nationwide Direct Daikin India Engineering & Service Support'
-      ]
-    },
     {
       id: 'blue-star',
       name: 'Blue Star',
@@ -746,7 +729,6 @@ export default function QuotePage() {
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669]"
                     >
                       <option value="All Brands (Unbiased Recommendation)">All Brands (Unbiased Recommendation)</option>
-                      <option value="Daikin India">Daikin India (VRV Home & VRV X)</option>
                       <option value="Blue Star">Blue Star VRF V Plus</option>
                       <option value="Carrier India">Carrier India (Carrier Airconditioning & Refrigeration / Carrier Midea)</option>
                       <option value="Hitachi">Hitachi Set-Free VRF</option>

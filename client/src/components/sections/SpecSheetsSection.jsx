@@ -7,16 +7,6 @@ import api from '../../services/api';
 
 const SPEC_SHEETS = [
   {
-    id: 'daikin-vrv',
-    brand: 'Daikin India',
-    title: 'Daikin VRV X & VRV Home Engineering Technical Manual & Piping Architecture',
-    specs: 'VRT (Variable Refrigerant Temperature) dynamic modulation, part-load COP up to 6.2, 1,000m total piping network, indoor noise down to 19 dB(A)',
-    pages: '48 Pages PDF',
-    size: '8.2 MB',
-    badge: 'VRV Pioneer',
-    downloadUrl: '/images/equipment/daikin-outdoor.jpg'
-  },
-  {
     id: 'carrier-vrf',
     brand: 'Carrier India (Carrier Airconditioning & Refrigeration / Carrier Midea)',
     title: 'Carrier XPower VRF & Concealed Ducted Engineering Guide',

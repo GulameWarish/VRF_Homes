@@ -34,7 +34,7 @@ export default function AdminProducts() {
     keyFeatures: '',
     capacityRange: '',
     efficiencyRating: '',
-    relatedBrands: 'Daikin, Mitsubishi Electric',
+    relatedBrands: 'Blue Star, Mitsubishi Electric',
     brochureUrl: '',
     isFeatured: false,
     isPublished: true,
@@ -313,7 +313,7 @@ export default function AdminProducts() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Daikin VRF IV-X Heat Recovery System"
+                    placeholder="e.g. Blue Star VRF V Plus System"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-hidden"
                   />
                 </div>
@@ -389,7 +389,7 @@ export default function AdminProducts() {
                     type="text"
                     value={formData.relatedBrands}
                     onChange={(e) => setFormData({ ...formData, relatedBrands: e.target.value })}
-                    placeholder="Daikin, Mitsubishi, Carrier"
+                    placeholder="Blue Star, Mitsubishi, Carrier"
                     className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-hidden"
                   />
                 </div>

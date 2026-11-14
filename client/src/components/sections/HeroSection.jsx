@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 
 export default function HeroSection({ settings, onOpenQuote }) {
-  const [selectedUnit, setSelectedUnit] = useState(4); // default active unit
+  const [selectedUnit, setSelectedUnit] = useState(1); // default active unit starts from Unit 1
   const [viewMode, setViewMode] = useState('video'); // 'video' | 'interactive'
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -40,6 +40,18 @@ export default function HeroSection({ settings, onOpenQuote }) {
       image: '/images/units/unit1-concealed.svg',
       calloutPos: 'bottom-4 left-6 sm:bottom-8 sm:left-12',
       pinPos: { top: '78%', left: '26%' }
+    },
+    {
+      id: 2,
+      title: 'INDOOR UNIT 2',
+      name: 'Architectural Compact Cassette Unit',
+      category: '4-Way Cassette AC',
+      room: 'Drawing Room & Formal Lounge',
+      noise: '20 dB(A)',
+      features: '360° uniform airflow distribution with whisper-quiet DC fan motor and motorized vanes.',
+      image: '/images/units/unit4-ducted.svg',
+      calloutPos: 'top-20 left-12 sm:top-24 sm:left-24',
+      pinPos: { top: '65%', left: '42%' }
     },
     {
       id: 3,

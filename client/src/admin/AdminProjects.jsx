@@ -436,7 +436,7 @@ export default function AdminProjects() {
                     required
                     value={formData.hvacSystem}
                     onChange={(e) => setFormData({ ...formData, hvacSystem: e.target.value })}
-                    placeholder="e.g. Daikin VRF IV-X Heat Recovery System"
+                    placeholder="e.g. Blue Star VRF V Plus System"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-hidden"
                   />
                 </div>
@@ -462,7 +462,7 @@ export default function AdminProjects() {
                     type="text"
                     value={formData.brand}
                     onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                    placeholder="e.g. Daikin / Mitsubishi / Carrier"
+                    placeholder="e.g. Blue Star / Mitsubishi / Carrier"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-hidden"
                   />
                 </div>

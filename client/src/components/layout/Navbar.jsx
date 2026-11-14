@@ -628,7 +628,6 @@ export default function Navbar({ onOpenQuote, onOpenSearch }) {
                 <div className="mt-2 pl-3 pr-2 space-y-2 bg-white/5 rounded-xl p-3 border border-white/10 text-xs">
                   <div className="grid grid-cols-2 gap-2">
                     {[
-                      { name: 'Daikin India', slug: 'Daikin', logo: '/images/brands/daikin.svg' },
                       { name: 'Blue Star', slug: 'Blue+Star', logo: '/images/brands/blue-star.svg' },
                       { name: 'Mitsubishi Electric', slug: 'Mitsubishi+Electric', logo: '/images/brands/mitsubishi-electric.svg' },
                       { name: 'O General', slug: 'O+General', logo: '/images/brands/o-general.svg' },

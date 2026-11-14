@@ -432,16 +432,6 @@ export const autoSeedData = async () => {
 
     const brandsData = [
       {
-        name: 'Daikin India',
-        slug: 'daikin',
-        logo: '/images/brands/daikin.svg',
-        description: 'The global inventor of VRV (Variable Refrigerant Volume) technology, world leader in luxury residential VRV Home systems, high-efficiency VRT chillers, and precision multi-splits.',
-        categories: ['VRV', 'Residential', 'Commercial', 'Luxury Villas', 'Ducted AC'],
-        isPartner: true,
-        authorizationNote: 'Authorized Sales & Technical Engineering Partner',
-        sortOrder: 1
-      },
-      {
         name: 'Mitsubishi Electric',
         slug: 'mitsubishi-electric',
         logo: '/images/brands/mitsubishi-electric.svg',
@@ -1381,61 +1371,7 @@ export const autoSeedData = async () => {
       efficiencyRating: 'Commercial High-ISEER',
       isFeatured: true,
       isPublished: true,
-      sortOrder: 31
-    },
-    {
-      name: 'Daikin VRV X & VRV Home Intelligent Inverter Outdoor Unit',
-      slug: 'daikin-vrv-x-home-outdoor-unit',
-      category: 'VRF Systems',
-      tagline: 'Variable Refrigerant Temperature (VRT) Outdoor Condenser for Luxury Villas',
-      image: '/images/equipment/daikin-outdoor.jpg',
-      description: 'Daikin VRV X and VRV Home systems are the pinnacle of residential multi-room inverter air conditioning. Patented VRT prevents energy waste while delivering steady, draft-free comfort across all rooms.',
-      applications: ['Luxury Villas', 'Bungalows', 'High-Rise Apartments', 'Corporate Offices'],
-      keyFeatures: [
-        'VRT (Variable Refrigerant Temperature) dynamic modulation for highest part-load savings',
-        'Single compact outdoor unit powers up to 8 independent indoor rooms',
-        'Automatic refrigerant containment and intelligent oil management',
-        'Extreme ambient cooling capability with anti-corrosion condenser fin coating'
-      ],
-      technicalSpecs: [
-        { label: 'Tonnage Range', value: '3 TR to 60 TR modular bank' },
-        { label: 'COP / ISEER', value: 'Up to 6.2 Seasonal COP' },
-        { label: 'Maximum Piping Length', value: 'Up to 1,000m total equivalent piping' },
-        { label: 'Refrigerant', value: 'Eco-Friendly R-410A / R-32' }
-      ],
-      relatedBrands: ['Daikin', 'Daikin India'],
-      capacityRange: '3 TR - 60 TR',
-      efficiencyRating: 'ISEER 5-Star Equivalent',
-      isFeatured: true,
-      isPublished: true,
-      sortOrder: 31
-    },
-    {
-      name: 'Daikin VRV Concealed Duct & Designer Hi-Wall Indoor Unit',
-      slug: 'daikin-vrv-concealed-duct-hiwall-indoor',
-      category: 'Concealed AC',
-      tagline: 'Architectural False-Ceiling Concealed & Ultra-Quiet Indoor Units',
-      image: '/images/equipment/daikin-indoor.jpg',
-      description: 'Daikin VRV indoor fan coil units feature ultra-slim chassis for seamless ceiling concealment, 3D airflow diffusion, and ultra-quiet acoustics down to 19 dB(A).',
-      applications: ['Master Bedrooms', 'Living Salons', 'Home Theaters', 'Penthouses'],
-      keyFeatures: [
-        'Acoustically insulated blower housing with operating sound down to 19 dB(A)',
-        'Ultra-flat profile installs into shallow false ceilings without compromising headroom',
-        'Built-in high-lift condensate drain pump with antibacterial silver ion cartridge',
-        'Smart BMS Modbus/BACnet and smartphone cloud connectivity'
-      ],
-      technicalSpecs: [
-        { label: 'Tonnage Range', value: '0.8 TR to 4.0 TR' },
-        { label: 'Indoor Noise Level', value: 'Down to 19 dB(A)' },
-        { label: 'Static Pressure', value: 'Adjustable External Static up to 150 Pa' },
-        { label: 'Filtration', value: 'Titanium Apatite PM2.5 Photocatalytic Filter' }
-      ],
-      relatedBrands: ['Daikin', 'Daikin India'],
-      capacityRange: '0.8 TR - 4.0 TR',
-      efficiencyRating: 'Inverter VRV Grade',
-      isFeatured: true,
-      isPublished: true,
-      sortOrder: 32
+      sortOrder: 3
     }
   ];
 

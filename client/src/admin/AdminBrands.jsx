@@ -190,7 +190,7 @@ export default function AdminBrands() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="e.g. Daikin / Mitsubishi Electric / Voltas"
+                  placeholder="e.g. Blue Star / Mitsubishi Electric / Voltas"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-hidden"
                 />
               </div>
