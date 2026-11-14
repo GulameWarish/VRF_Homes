@@ -13,8 +13,8 @@ export const getProducts = async (req, res) => {
         filtered = filtered.filter(p => p.category && p.category.toLowerCase().includes(catTrim));
       }
       if (brand && brand !== 'All') {
-        const brandTrim = brand.toLowerCase().trim();
-        filtered = filtered.filter(p => p.relatedBrands && p.relatedBrands.some(b => b.toLowerCase().includes(brandTrim)));
+        const brandRegex = new RegExp(brand.replace(/[-+]/g, ' ').trim().replace(/\s+/g, '.*'), 'i');
+        filtered = filtered.filter(p => p.relatedBrands && p.relatedBrands.some(b => brandRegex.test(b)));
       }
       if (featured === 'true') {
         filtered = filtered.filter(p => p.isFeatured);
@@ -64,8 +64,9 @@ export const getProducts = async (req, res) => {
       }
     }
 
-    if (brand) {
-      query.relatedBrands = { $in: [new RegExp(brand, 'i')] };
+    if (brand && brand !== 'All') {
+      const normalizedBrand = brand.replace(/[-+]/g, ' ').trim().replace(/\s+/g, '.*');
+      query.relatedBrands = { $in: [new RegExp(normalizedBrand, 'i')] };
     }
 
     if (featured === 'true') {

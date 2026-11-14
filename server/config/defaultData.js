@@ -447,6 +447,26 @@ export const brandsData = [
         isPartner: true,
         authorizationNote: 'Authorized Product Partner',
         sortOrder: 7
+      },
+      {
+        name: 'Daikin India',
+        slug: 'daikin',
+        logo: '/images/brands/daikin.svg',
+        description: 'The global inventor of VRV (Variable Refrigerant Volume) technology, world leader in luxury residential VRV Home systems, high-efficiency VRT chillers, and precision multi-splits.',
+        categories: ['VRV', 'Residential', 'Commercial', 'Luxury Villas', 'Ducted AC'],
+        isPartner: true,
+        authorizationNote: 'Authorized Sales & Technical Engineering Partner',
+        sortOrder: 8
+      },
+      {
+        name: 'Blue Star',
+        slug: 'blue-star',
+        logo: '/images/brands/blue-star.svg',
+        description: "India's premier air conditioning brand with over 80 years of engineering expertise, VRF V Plus technology, and 54°C high ambient resilience.",
+        categories: ['VRF', 'Residential', 'Commercial', 'Ductable AC', 'Inverter Split'],
+        isPartner: true,
+        authorizationNote: 'Authorized Blue Star VRF & System Integration Partner',
+        sortOrder: 9
       }
     ];
 
@@ -1219,6 +1239,87 @@ export const productsData = [
       isFeatured: true,
       isPublished: true,
       sortOrder: 28
+    },
+    {
+      name: 'Blue Star VRF V Plus 100% Inverter Outdoor Condenser Unit',
+      slug: 'blue-star-vrf-v-plus-inverter-system',
+      category: 'VRF Air Conditioning Systems',
+      tagline: 'High Ambient Cooling Up to 54°C with 100% Inverter Scroll Technology',
+      image: '/images/equipment/blue-star-outdoor.jpg',
+      description: 'The Blue Star VRF V Plus Series is engineered specifically for punishing Indian summer ambient temperatures up to 54°C. Features high seasonal part-load efficiency, flexible piping architectures up to 1,000m total length, and smart BMS connectivity.',
+      applications: ['Luxury Villas & Mansions', 'Hotels & Resorts', 'Corporate Tech Parks', 'Hospitals'],
+      keyFeatures: [
+        '100% Inverter Scroll Compressor with high part-load IPLV efficiency',
+        'Operates seamlessly up to extreme 54°C Indian ambient temperatures',
+        'Extended refrigerant piping up to 1,000 meters total equivalent length',
+        'Gold-fin / Blue-fin anti-corrosion coil treatment for tropical resilience'
+      ],
+      technicalSpecs: [
+        { label: 'Capacity Range', value: '6 HP to 112 HP (modular combination)' },
+        { label: 'Compressor Type', value: 'All-DC Inverter Scroll' },
+        { label: 'Max Total Piping', value: '1,000 meters' },
+        { label: 'Ambient Temperature Range', value: '-5°C to 54°C' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '6 HP - 112 HP',
+      efficiencyRating: 'High-COP Inverter (BEE Compliant)',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 29
+    },
+    {
+      name: 'Blue Star Designer Inverter Hi-Wall AC (Gold Accent Trim)',
+      slug: 'blue-star-designer-inverter-split-gold-trim',
+      category: 'Split AC',
+      tagline: 'Precision 0.1°C Comfort with Luxury Gold Border Architecture',
+      image: '/images/equipment/blue-star-indoor.jpg',
+      description: 'The Blue Star Designer Inverter Hi-Wall unit combines an elegant curved aesthetic accented with gold perimeter trim and acoustic precision engineering down to 21 dB. Perfect for high-end master suites and designer living rooms.',
+      applications: ['Master Bedroom Suites', 'Home Theatres', 'Formal Living Lounges', 'Private Offices'],
+      keyFeatures: [
+        'Flagship curved front panel with premium brushed gold trim accents',
+        'Precision inverter temperature management calibrated to ±0.5°C',
+        'Multi-stage filtration: Anti-microbial, active carbon, and PM2.5 capture',
+        'Whisper-quiet acoustic airflow down to 21 dB'
+      ],
+      technicalSpecs: [
+        { label: 'Capacity Range', value: '1.0 TR - 2.0 TR' },
+        { label: 'Energy Rating', value: '5 Star Inverter' },
+        { label: 'Acoustic Sound Level', value: 'Down to 21 dB(A)' },
+        { label: 'Refrigerant', value: 'Eco-Friendly R32' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '1.0 TR - 2.0 TR',
+      efficiencyRating: '5 Star BEE Inverter',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 30
+    },
+    {
+      name: 'Blue Star Commercial VRF Lineup (Ducted AHU, Package & Outdoor Condenser)',
+      slug: 'blue-star-commercial-vrf-lineup',
+      category: 'Commercial Solutions',
+      tagline: 'Complete Commercial HVAC Ecosystem: Concealed Ducted, Packaged & VRF',
+      image: '/images/equipment/blue-star-lineup.jpg',
+      description: 'Comprehensive Blue Star commercial cooling lineup featuring low/high static concealed ductable indoor units, modular outdoor condensers, and vertical package ACs designed for retail showrooms, restaurants, and corporate floors.',
+      applications: ['Corporate Offices', 'Retail Showrooms', 'Banquet Halls', 'Restaurants'],
+      keyFeatures: [
+        'Complete commercial lineup with matching indoor ducted AHUs and condensers',
+        'Concealed low-height ducted chassis ideal for shallow false ceilings',
+        'High external static pressure for long duct distribution runs',
+        'Centralized touch-screen and Modbus/BACnet BMS integration'
+      ],
+      technicalSpecs: [
+        { label: 'Product Range', value: 'VRF Outdoor + Concealed Ducted + Package AC' },
+        { label: 'Static Pressure Range', value: 'Up to 200 Pa external static' },
+        { label: 'Controller Protocols', value: 'BACnet / Modbus / Centralized Touch' },
+        { label: 'Coil Coating', value: 'Hydrophilic Anti-Rust Fins' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '2.5 TR - 25 TR',
+      efficiencyRating: 'Commercial High-ISEER',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 31
     }
   ];
 

@@ -46,8 +46,11 @@ export default function ProductsCatalogPage({ onOpenQuote }) {
       });
     }
     if (selectedBrand && selectedBrand !== 'All') {
-      const brandTrim = selectedBrand.toLowerCase().trim();
-      list = list.filter(p => p.relatedBrands && p.relatedBrands.some(b => b.toLowerCase().includes(brandTrim)));
+      const brandClean = selectedBrand.replace(/[-+]/g, ' ').trim().toLowerCase();
+      list = list.filter(p => p.relatedBrands && p.relatedBrands.some(b => {
+        const bLower = b.toLowerCase();
+        return bLower.includes(brandClean) || brandClean.includes(bLower);
+      }));
     }
     if (searchTerm) {
       const s = searchTerm.toLowerCase();

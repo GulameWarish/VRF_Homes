@@ -16,7 +16,7 @@ export default function AdminResidential() {
     heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     introduction: '',
     overview: '',
-    availableBrands: 'Daikin, Mitsubishi Electric, O General, Hitachi, Carrier, Voltas',
+    availableBrands: 'Blue Star, Daikin, Mitsubishi Electric, O General, Hitachi, Carrier, Voltas, Trane, Haier',
     isPublished: true
   };
 

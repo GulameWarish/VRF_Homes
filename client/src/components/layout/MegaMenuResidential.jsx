@@ -36,7 +36,7 @@ export default function MegaMenuResidential({ onClose, onOpenQuote }) {
       slug: '/products?category=Split+AC',
       fallback: '/products',
       desc: 'High-ambient inverter cooling for drawing halls, home theaters, and bedroom suites.',
-      image: '/images/equipment/voltas-indoor.jpg',
+      image: '/images/equipment/blue-star-indoor.jpg',
       badge: 'Rapid Cooling'
     },
     {
