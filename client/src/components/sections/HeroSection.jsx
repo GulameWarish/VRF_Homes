@@ -153,38 +153,24 @@ export default function HeroSection({ settings, onOpenQuote }) {
         <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-900 group">
           
           {viewMode === 'video' ? (
-            /* 3D Multi-Room Video Player (Sanitized VRF Homes Demonstration) */
-            <div className="relative w-full bg-slate-950 flex flex-col items-center justify-center min-h-[380px] xs:min-h-[440px] sm:min-h-[520px] md:min-h-[580px] overflow-hidden">
-              {/* Subtle Ambient Video Glow Backdrop */}
-              <div className="absolute inset-0 opacity-25 blur-3xl scale-110 pointer-events-none">
-                <video
-                  src="/videos/vrf-home-multi-room-animation.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Main Crisp Video Player */}
-              <div className="relative z-10 w-full max-w-xl mx-auto flex items-center justify-center p-2 sm:p-4">
-                <video
-                  ref={videoRef}
-                  src="/videos/vrf-home-multi-room-animation.mp4"
-                  poster="/videos/vrf-home-multi-room-poster.jpg"
-                  autoPlay
-                  loop
-                  muted={isMuted}
-                  playsInline
-                  className="w-full max-h-[540px] sm:max-h-[580px] object-contain shadow-2xl rounded-xl border border-white/10"
-                />
-              </div>
+            /* 3D Multi-Room Video Player (True 16:9 Landscape Demonstration) */
+            <div className="relative w-full aspect-[16/9] bg-slate-950 flex items-center justify-center overflow-hidden">
+              {/* Main Crisp 16:9 Landscape Video Player */}
+              <video
+                ref={videoRef}
+                src="/videos/vrf-home-multi-room-animation.mp4"
+                poster="/videos/vrf-home-multi-room-poster.jpg"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                className="w-full h-full object-cover sm:object-contain"
+              />
 
               {/* Top Floating Badge */}
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] sm:text-xs">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] sm:text-xs shadow-lg">
                 <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse"></span>
-                <span className="font-semibold">VRF Multi-Room Smart Cooling • 1 Outdoor Unit</span>
+                <span className="font-semibold">3D Architectural Simulation • 1 Outdoor Unit Powers All Rooms</span>
               </div>
 
               {/* Floating Video Action Controls */}
@@ -212,9 +198,9 @@ export default function HeroSection({ settings, onOpenQuote }) {
                 <button
                   type="button"
                   onClick={() => setViewMode('interactive')}
-                  className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/20 text-xs font-semibold transition-all flex items-center gap-1.5"
+                  className="px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 text-xs font-semibold transition-all flex items-center gap-1.5 shadow-lg"
                 >
-                  <LayoutGrid className="w-3 h-3" />
+                  <LayoutGrid className="w-3.5 h-3.5" />
                   <span>Inspect Room Floor Plan →</span>
                 </button>
               </div>
