@@ -5,7 +5,7 @@ export const FALLBACK_PRODUCTS = [
       slug: 'blue-star-vrf-v-plus-inverter-system',
       category: 'VRF Air Conditioning Systems',
       tagline: 'High Ambient Cooling Up to 54°C with 100% Inverter Scroll Technology',
-      image: '/images/equipment/blue-star-outdoor.jpg',
+      image: '/images/equipment/bluestar-vrf-outdoor.jpg',
       description: 'The Blue Star VRF V Plus Series is engineered specifically for punishing Indian summer ambient temperatures up to 54°C. Features high seasonal part-load efficiency, flexible piping architectures up to 1,000m total length, and smart BMS connectivity.',
       applications: ['Luxury Villas & Mansions', 'Hotels & Resorts', 'Corporate Tech Parks', 'Hospitals'],
       keyFeatures: [
@@ -32,7 +32,7 @@ export const FALLBACK_PRODUCTS = [
       slug: 'blue-star-designer-inverter-split-gold-trim',
       category: 'Split AC',
       tagline: 'Precision 0.1°C Comfort with Luxury Gold Border Architecture',
-      image: '/images/equipment/blue-star-indoor.jpg',
+      image: '/images/equipment/bluestar-inverter-indoor.jpg',
       description: 'The Blue Star Designer Inverter Hi-Wall unit combines an elegant curved aesthetic accented with gold perimeter trim and acoustic precision engineering down to 21 dB. Perfect for high-end master suites and designer living rooms.',
       applications: ['Master Bedroom Suites', 'Home Theatres', 'Formal Living Lounges', 'Private Offices'],
       keyFeatures: [
@@ -59,7 +59,7 @@ export const FALLBACK_PRODUCTS = [
       slug: 'blue-star-commercial-vrf-lineup',
       category: 'Commercial Solutions',
       tagline: 'Complete Commercial HVAC Ecosystem: Concealed Ducted, Packaged & VRF',
-      image: '/images/equipment/blue-star-lineup.jpg',
+      image: '/images/equipment/bluestar-lineup.jpg',
       description: 'Comprehensive Blue Star commercial cooling lineup featuring low/high static concealed ductable indoor units, modular outdoor condensers, and vertical package ACs designed for retail showrooms, restaurants, and corporate floors.',
       applications: ['Corporate Offices', 'Retail Showrooms', 'Banquet Halls', 'Restaurants'],
       keyFeatures: [

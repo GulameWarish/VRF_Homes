@@ -74,7 +74,7 @@ const SPEC_SHEETS = [
     pages: '48 Pages PDF',
     size: '7.8 MB',
     badge: 'Indian Engineering Leader',
-    downloadUrl: '/images/equipment/blue-star-outdoor.jpg'
+    downloadUrl: '/images/equipment/bluestar-vrf-outdoor.jpg'
   },
   {
     id: 'trane-chiller',

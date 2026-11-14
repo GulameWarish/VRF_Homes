@@ -1305,7 +1305,7 @@ export const autoSeedData = async () => {
       slug: 'blue-star-vrf-v-plus-inverter-system',
       category: 'VRF Air Conditioning Systems',
       tagline: 'High Ambient Cooling up to 54°C with 100% Inverter Scroll Technology',
-      image: '/images/equipment/blue-star-outdoor.jpg',
+      image: '/images/equipment/bluestar-vrf-outdoor.jpg',
       description: "Blue Star VRF V Plus is India's leading 100% Inverter VRF system engineered to deliver unyielding comfort under extreme 54°C outdoor heat with 1,000m total piping length.",
       applications: ['Villas & Farmhouses', 'Boutique Hotels', 'Corporate Offices', 'Multi-Floor Residences'],
       keyFeatures: [
@@ -1327,14 +1327,14 @@ export const autoSeedData = async () => {
       efficiencyRating: 'High Seasonal COP',
       isFeatured: true,
       isPublished: true,
-      sortOrder: 29
+      sortOrder: 1
     },
     {
       name: 'Blue Star Inverter Concealed Ductable & Hi-Wall Indoor AC',
       slug: 'blue-star-inverter-concealed-ductable-hi-wall',
       category: 'Concealed AC',
       tagline: 'Concealed Architecture Cooling for High-End Residences & Corporate Offices',
-      image: '/images/equipment/blue-star-indoor.jpg',
+      image: '/images/equipment/bluestar-inverter-indoor.jpg',
       description: 'Blue Star concealed ductable and hi-wall inverter units designed for minimalist luxury interiors, fitting seamlessly inside false ceilings with ultra-low sound levels.',
       applications: ['Living Rooms', 'Master Bedrooms', 'Boardrooms', 'Executive Cabins'],
       keyFeatures: [
@@ -1354,14 +1354,14 @@ export const autoSeedData = async () => {
       efficiencyRating: '5 Star Inverter Grade',
       isFeatured: true,
       isPublished: true,
-      sortOrder: 30
+      sortOrder: 2
     },
     {
       name: 'Blue Star Commercial VRF Lineup (Ducted AHU, Package & Outdoor Condenser)',
       slug: 'blue-star-commercial-vrf-lineup',
       category: 'Commercial Solutions',
       tagline: 'Complete Commercial HVAC Ecosystem: Concealed Ducted, Packaged & VRF',
-      image: '/images/equipment/blue-star-lineup.jpg',
+      image: '/images/equipment/bluestar-lineup.jpg',
       description: 'Comprehensive Blue Star commercial cooling lineup featuring low/high static concealed ductable indoor units, modular outdoor condensers, and vertical package ACs designed for retail showrooms, restaurants, and corporate floors.',
       applications: ['Corporate Offices', 'Retail Showrooms', 'Banquet Halls', 'Restaurants'],
       keyFeatures: [

@@ -86,7 +86,7 @@ const REAL_PROJECTS = [
     equipment: 'Blue Star VRF V Plus Series 100% Inverter Condensers',
     units: '3x Blue Star Modular Inverter Outdoor Units on Vibration Isolation Stands',
     scope: 'Elevated structural mounting, dual-brazed refrigerant piping with UV jacket protection, zero facade noise',
-    image: '/images/real/blue-star-rooftop-installation.jpg',
+    image: '/images/real/bluestar-rooftop-installation.jpg',
     badge: 'Blue Star Turnkey Handover'
   }
 ];

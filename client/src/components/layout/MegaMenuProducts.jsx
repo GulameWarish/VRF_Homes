@@ -17,7 +17,7 @@ export default function MegaMenuProducts({ onClose, onOpenQuote }) {
       name: 'Blue Star',
       slug: 'blue-star',
       logo: '/images/brands/blue-star.svg',
-      productImage: '/images/equipment/blue-star-outdoor.jpg',
+      productImage: '/images/equipment/bluestar-vrf-outdoor.jpg',
       category: 'VRF V Plus 100% Inverter',
       desc: "India's leading cooling specialist with 8+ decades of engineering, 54°C high-ambient VRF V Plus, and 1,000m piping flexibility.",
       link: '/products?brand=Blue+Star'
