@@ -76,6 +76,18 @@ const REAL_PROJECTS = [
     scope: 'Resistant to saline coastal humidity, extreme whisper-quiet sleep operation down to 21 dB',
     image: '/images/real/luxury-villa-hero.webp',
     badge: 'Coastal Architecture'
+  },
+  {
+    id: 'delhi-bluestar-rooftop',
+    region: 'delhi',
+    title: 'Multi-Floor Rooftop VRF Installation, Delhi NCR',
+    city: 'Janakpuri / Dwarka, New Delhi',
+    category: 'Commercial & Residential VRF',
+    equipment: 'Blue Star VRF V Plus Series 100% Inverter Condensers',
+    units: '3x Blue Star Modular Inverter Outdoor Units on Vibration Isolation Stands',
+    scope: 'Elevated structural mounting, dual-brazed refrigerant piping with UV jacket protection, zero facade noise',
+    image: '/images/real/blue-star-rooftop-installation.jpg',
+    badge: 'Blue Star Turnkey Handover'
   }
 ];
 

@@ -56,14 +56,14 @@ export default function QuotePage() {
       logo: '/images/brands/blue-star.svg',
       image: '/images/equipment/blue-star-outdoor.jpg',
       indoorImage: '/images/equipment/blue-star-indoor.jpg',
-      indoorName: 'Blue Star Inverter Split / VRF Indoor Unit',
+      indoorName: 'Blue Star Designer Inverter Hi-Wall AC (Gold Accent)',
       category: 'VRF V Plus 100% Inverter',
       context: "India's homegrown air conditioning pioneer with over 8 decades of specialized cooling engineering. Blue Star VRF V Plus systems are built for rugged 54°C Indian heat, high part-load efficiency, and flexible piping architectures up to 1,000m.",
       highlights: [
         'Blue Star VRF V Plus 100% Inverter Outdoor Condenser',
-        'Blue Star Concealed Ducted & Inverter Hi-Wall Indoor',
-        'Continuous Cooling Reliability Up to 54°C Ambient',
-        'Extended Piping Network Up to 1,000m Total Length'
+        'Blue Star Designer Gold-Trim Inverter Hi-Wall AC',
+        'Blue Star Concealed Ducted & Commercial AHU Lineup',
+        'Field-Proven Rooftop Vibration-Isolated Installations'
       ]
     },
     {

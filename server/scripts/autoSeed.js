@@ -1357,6 +1357,33 @@ export const autoSeedData = async () => {
       sortOrder: 30
     },
     {
+      name: 'Blue Star Commercial VRF Lineup (Ducted AHU, Package & Outdoor Condenser)',
+      slug: 'blue-star-commercial-vrf-lineup',
+      category: 'Commercial Solutions',
+      tagline: 'Complete Commercial HVAC Ecosystem: Concealed Ducted, Packaged & VRF',
+      image: '/images/equipment/blue-star-lineup.jpg',
+      description: 'Comprehensive Blue Star commercial cooling lineup featuring low/high static concealed ductable indoor units, modular outdoor condensers, and vertical package ACs designed for retail showrooms, restaurants, and corporate floors.',
+      applications: ['Corporate Offices', 'Retail Showrooms', 'Banquet Halls', 'Restaurants'],
+      keyFeatures: [
+        'Complete commercial lineup with matching indoor ducted AHUs and condensers',
+        'Concealed low-height ducted chassis ideal for shallow false ceilings',
+        'High external static pressure for long duct distribution runs',
+        'Centralized touch-screen and Modbus/BACnet BMS integration'
+      ],
+      technicalSpecs: [
+        { label: 'Product Range', value: 'VRF Outdoor + Concealed Ducted + Package AC' },
+        { label: 'Static Pressure Range', value: 'Up to 200 Pa external static' },
+        { label: 'Controller Protocols', value: 'BACnet / Modbus / Centralized Touch' },
+        { label: 'Coil Coating', value: 'Hydrophilic Anti-Rust Fins' }
+      ],
+      relatedBrands: ['Blue Star'],
+      capacityRange: '2.5 TR - 25 TR',
+      efficiencyRating: 'Commercial High-ISEER',
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 31
+    },
+    {
       name: 'Daikin VRV X & VRV Home Intelligent Inverter Outdoor Unit',
       slug: 'daikin-vrv-x-home-outdoor-unit',
       category: 'VRF Systems',
